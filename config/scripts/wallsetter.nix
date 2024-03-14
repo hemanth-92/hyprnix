@@ -56,4 +56,3 @@ pkgs.writeShellScriptBin "wallsetter" ''
       sleep $TIMEOUT
     fi
   done
-''
