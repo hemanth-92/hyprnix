@@ -1,5 +1,5 @@
 {
-  description = "ZaneyOS";
+  description = "Shadowblaze";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -29,7 +29,8 @@
 	    allowUnfree = true;
       };
     };
-  in {
+  in
+  {
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem {
 	specialArgs = { 
