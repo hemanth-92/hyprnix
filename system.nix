@@ -52,6 +52,7 @@ in {
   };
 
   environment.variables = {
+    ENVER = "unstable";
     FLAKE = "${flakeDir}";
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
   };
