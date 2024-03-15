@@ -34,8 +34,8 @@ in
   wallpaperDir = "${userHome}/Pictures/Wallpapers";
   screenshotDir = "${userHome}/Pictures/Screenshots";
   flakeDir = "${flakeDir}";
-  flakePrev = "${userHome}/.zaneyos-previous";
-  flakeBackup = "${userHome}/.zaneyos-backup";
+  flakePrev = "${userHome}/.hyprnix-previous";
+  flakeBackup = "${userHome}/.hyprnix-backup";
  
   #theming
   theme = "catppuccin-mocha";
