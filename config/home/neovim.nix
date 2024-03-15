@@ -87,7 +87,6 @@ in {
 	  html.enable = true;
 	  ccls.enable = true;
 	  cmake.enable = true;
-	  csharp-ls.enable = true;
 	  cssls.enable = true;
 	  gopls.enable = true;
 	  jsonls.enable = true;
