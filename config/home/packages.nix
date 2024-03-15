@@ -3,7 +3,8 @@
 let 
   inherit (import ../../options.nix) 
     browser wallpaperDir wallpaperGit flakeDir;
-in {
+in 
+{
   # Install Packages For The User
   home.packages = with pkgs; [
     pkgs."${browser}"
@@ -50,7 +51,8 @@ in {
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
     (import ./../scripts/task-waybar.nix { inherit pkgs; })
     (import ./../scripts/squirtle.nix { inherit pkgs; })
-    (import ./../scripts/wallsetter.nix { inherit pkgs; inherit wallpaperDir;
+    (import ./../scripts/wallsetter.nix { 
+      inherit pkgs; inherit wallpaperDir;
       inherit username; inherit wallpaperGit; })
     (import ./../scripts/themechange.nix { inherit pkgs; inherit flakeDir; })
     (import ./../scripts/theme-selector.nix { inherit pkgs; })
@@ -60,6 +62,5 @@ in {
     (import ./../scripts/screenshootin.nix { inherit pkgs; })
     (import ./../scripts/list-hypr-bindings.nix { inherit pkgs; })
   ];
-
   programs.gh.enable = true;
 }
