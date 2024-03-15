@@ -7,7 +7,7 @@ let
   username = "sdvohet";
   hostname = "hyprnix";
   userHome = "/home/${username}";
-  flakeDir = "${userHome}/zaneyos";
+  flakeDir = "${userHome}/hyprnix";
   waybarStyle = "simplebar"; # simplebar, slickbar, or default
 
 in 
