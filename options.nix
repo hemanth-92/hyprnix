@@ -9,18 +9,26 @@ let
   userHome = "/home/${username}";
   flakeDir = "${userHome}/zaneyos";
   waybarStyle = "simplebar"; # simplebar, slickbar, or default
-in {
+
+in 
+{
   # User Variables
   username = "sdvohet";
   hostname = "hyprnix";
   gitUsername = "hemanth-92";
   gitEmail = "hemanth9679@gmail.com";
-  theme = "catppuccin-mocha";
+  browser = "firefox";
+  terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
+
+
+  #Hyprland desgin Settings
   slickbar = if waybarStyle == "slickbar" then true else false;
   simplebar = if waybarStyle == "simplebar" then true else false;
   bar-number = true; # Enable / Disable Workspace Numbers In Waybar
   borderAnim = true;
-  browser = "firefox";
+ 
+  
+  # Wallpaper and Directory Settings
   wallpaperGit = "https://github.com/hemanth-92/Wallpaper-bank.git"; # This will give you my wallpapers
   # ^ (use as is or replace with your own repo - removing will break the wallsetter script) 
   wallpaperDir = "${userHome}/Pictures/Wallpapers";
@@ -28,7 +36,10 @@ in {
   flakeDir = "${flakeDir}";
   flakePrev = "${userHome}/.zaneyos-previous";
   flakeBackup = "${userHome}/.zaneyos-backup";
-  terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
+ 
+  #theming
+  theme = "catppuccin-mocha";
+  #cursorTheme = "Simp1e-Tokyo-Night-Storm";
 
   # System Settings
   clock24h = false;
@@ -41,6 +52,8 @@ in {
   theShell = "zsh"; # Possible options: bash, zsh
   theKernel = "zen"; # Possible options: default, latest, lqx, xanmod, zen
   sdl-videodriver = "x11"; # Either x11 or wayland ONLY. Games might require x11 set here
+  
+
   # For Hybrid Systems intel-nvidia
   # Should Be Used As gpuType
   cpuType = "intel";
