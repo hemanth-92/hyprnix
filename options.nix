@@ -82,6 +82,7 @@ in
   flatpak = true;
   kdenlive = false;
   blender = false;
+  steam = false;
 
   # Enable Support For
   # Logitech Devices
