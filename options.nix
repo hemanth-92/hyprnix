@@ -78,11 +78,13 @@ in
   printer = true;
 
   # Enable Flatpak & Larger Programs
-  distrobox = true;
+  distrobox = false;
   flatpak = true;
   kdenlive = false;
   blender = false;
   steam = false;
+  obs-studio = false;
+  gimp = false;
 
   # Enable Support For
   # Logitech Devices
