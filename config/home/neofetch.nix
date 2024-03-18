@@ -3,7 +3,7 @@
 {
     home.file.".config/neofetch/config.conf".text = ''
         print_info() {
-            prin "$(color 6)  Hyprnix $ENVER "
+            prin "$(color 6)  Hyprnix $hostname"
             info underline
             info "$(color 7)  VER" kernel
             info "$(color 2)  UP " uptime
