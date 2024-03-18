@@ -1,13 +1,13 @@
 ## FIRST LINE/ROW: Info & Status
 [username]
-format = " [$user]($style)"
+format = " [╭$user]($style)@"
 show_always = true
 style_root = "bold red"
 style_user = "bold red"
 
 [hostname]
 disabled = false
-format =" at [$hostname]($style) in "
+format ="[$hostname]($style) in "
 ssh_only = false
 #style = "bold dimmed red"
 # If enabled hostnames with dashes will be cut off  ##
@@ -39,12 +39,21 @@ behind = "⇣${count}"
 untracked = "[${count}?](blue)"
 staged = "[${count}+](green)"
 
-
+[git_state]
+style =	"bold red"
+format = "[$state( $progress_current/$progress_total) ]($style)"
+rebase = "rebase"
+merge = "merge"
+revert = "revert"
+cherry_pick = "cherry"
+bisect = "bisect"
+am = "am"
+am_or_rebase = "am/rebase"
 
 [cmd_duration]
 min_time = 1
 format = 'took [$duration]($style)'
-disabled = false
+disabled = true
 style = "bold italic cyan"
 
 
@@ -77,19 +86,6 @@ disabled = true
 format = " 🕙 $time($style)\n"
 style = "bright-white"
 time_format = "%T"
-
-# Prompt: param 2
-[character]
-error_symbol = " [×](bold red)"
-success_symbol = " [╰─](bold red)"
-
-# SYMBOLS
-[status]
-disabled = false
-format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
-map_symbol = true
-pipestatus = true
-symbol = "🔴"
 
 [aws]
 symbol = " "
@@ -143,7 +139,14 @@ symbol = " "
 symbol = " "
 
 [python]
-symbol = " "
+symbol = "🐍"
+#pyenv_version_name = true
+format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
+style = "bold yellow"
+pyenv_prefix = "venv "
+python_binary = ["./venv/bin/python", "python", "python3", "python2"]
+detect_extensions = ["py"]
+version_format = "v${raw}"
 
 [ruby]
 symbol = " "
