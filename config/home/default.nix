@@ -23,6 +23,8 @@
     ./zsh.nix
     ./zoxide.nix
     ./vscode.nix
+    ./obs-studio.nix
+    ./gimp.nix
     ./discord.nix
     # Place Home Files Like Pictures
     ./files.nix
