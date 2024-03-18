@@ -3,7 +3,8 @@
 let
   plugins = pkgs.vimPlugins;
   theme = config.colorScheme.palette;
-in {
+in 
+{
   programs.nixvim = {
     enable = true;
 
@@ -49,7 +50,6 @@ in {
     plugins = {
       barbecue.enable = true;
       gitsigns.enable = true;
-      cmp-nvim-lua.enable = true;
       neo-tree.enable = true;
       luasnip.enable  = true;
       surround.enable = true;
@@ -83,7 +83,7 @@ in {
 	    installRustc = true;
 	    installCargo = true;
 	  };
-	  nixd.enable = true;
+          nil_ls.enable = true;
 	  html.enable = true;
 	  ccls.enable = true;
 	  cmake.enable = true;
@@ -101,22 +101,32 @@ in {
 	enable = true;
         nixGrammars = true;
       };
-      nvim-cmp = {
-	enable = true;
-	autoEnableSources = true;
-	sources = [
-	  { name = "nvim_lsp"; }
-	  { name = "path"; }
-	  { name = "buffer"; }
-	];
-	mapping = {
-	  "<CR>" = "cmp.mapping.confirm({ select = true })";
-	  "<Tab>" = {
-	    action = ''cmp.mapping.select_next_item()'';
-	    modes = [ "i" "s" ];
-	  };
-	};
+      cmp = {
+        enable = true;
+        settings = {
+          snippet.expand = ''
+            function(args)
+              require('luasnip').lsp_expand(args.body)
+            end
+          '';
+        };
       };
+      #nvim-cmp = {
+#	enable = true;
+#	autoEnableSources = true;
+#	sources = [
+#	  { name = "nvim_lsp"; }
+#	  { name = "path"; }
+#	  { name = "buffer"; }
+#	];
+#	mapping = {
+#	  "<CR>" = "cmp.mapping.confirm({ select = true })";
+#	  "<Tab>" = {
+#	    action = ''cmp.mapping.select_next_item()'';
+#	    modes = [ "i" "s" ];
+#	  };
+#	};
+ #     };
     };
 
     extraPlugins = [ plugins.telescope-file-browser-nvim ];
