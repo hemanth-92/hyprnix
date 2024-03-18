@@ -5,7 +5,7 @@
 let
   # THINGS YOU NEED TO CHANGE
   username = "sdvohet";
-  hostname = "hyprnix";
+  hostname = "shadowblaze";
   userHome = "/home/${username}";
   flakeDir = "${userHome}/hyprnix";
   waybarStyle = "simplebar"; # simplebar, slickbar, or default
@@ -13,8 +13,8 @@ let
 in 
 {
   # User Variables
-  username = "sdvohet";
-  hostname = "hyprnix";
+  username = "${username}";
+  hostname = "${hostname}";
   gitUsername = "hemanth-92";
   gitEmail = "hemanth9679@gmail.com";
   browser = "firefox";
@@ -84,7 +84,7 @@ in
   blender = false;
   steam = false;
   obs-studio = false;
-  gimp = false;
+  gimp = true;
 
   # Enable Support For
   # Logitech Devices
