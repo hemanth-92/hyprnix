@@ -124,7 +124,7 @@ in with lib; {
         new_is_master = true
       }
       bind = ${modifier},Return,exec,${terminal}
-      bind = ${modifier},exec,rofi-launcher
+      bind = ${modifier},A,exec,rofi-launcher
       bind = ${modifier}SHIFT,W,exec,web-search
       bind = ${modifier}SHIFT,N,exec,swaync-client -rs
       ${if browser == "google-chrome" then ''
@@ -132,7 +132,7 @@ in with lib; {
       '' else ''
 	bind = ${modifier},W,exec,${browser}
       ''}
-      bind = ${modifier},SHIFT,P,exec,wlogout
+      bind = ${modifier}SHIFT,P,exec,wlogout
       bind = ${modifier},E,exec,emopicker9000
       bind = ${modifier},S,exec,screenshootin
       bind = ${modifier},D,exec,discord
