@@ -18,7 +18,6 @@ in
     imv
     transmission-gtk
     mpv
-    gimp obs-studio
     rustup
     audacity
     pavucontrol
@@ -44,8 +43,8 @@ in
     vscode
     wl-clipboard
     swaylock
-   # electron_28
-    #obsidian
+    obsidian
+    tenki
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
