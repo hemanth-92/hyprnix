@@ -14,10 +14,14 @@ in
       clipboard="unnamedplus";
       number = true;         # Show line numbers
       relativenumber = true; # Show relative line numbers
+      tabstop = 2;
       shiftwidth = 2;        # Tab width should be 2
       softtabstop = 2;
+      expandtab = true;
+      shiftround = true;
       smartindent = true;
       wrap = false;
+      smartcase = true;
       swapfile = false;
       backup = false;
       hlsearch = false;
@@ -48,7 +52,7 @@ in
     };
     
     plugins = {
-      barbecue.enable = true;
+      barbecue.enable = true;  
       gitsigns.enable = true;
       neo-tree.enable = true;
       luasnip.enable  = true;
@@ -78,6 +82,7 @@ in
           tsserver.enable = true;
           lua-ls.enable = true;
           bashls.enable = true;
+          eslint.enable = true;
 	  rust-analyzer = {
 	    enable = true;
 	    installRustc = true;
@@ -86,7 +91,8 @@ in
           nil_ls.enable = true;
 	  html.enable = true;
 	  ccls.enable = true;
-	  cmake.enable = true;
+          cmake.enable = true;
+          emmet_ls.enable = true;
 	  cssls.enable = true;
 	  gopls.enable = true;
 	  jsonls.enable = true;
@@ -111,6 +117,61 @@ in
           '';
         };
       };
+      conform-nvim = {
+        enable = true;
+        formatOnSave = {
+          lspFallback = true;
+          timeoutMs = 500;
+        };
+        formattersByFt = {
+          html = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          css = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          javascript = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          javascriptreact = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          typescript = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          typescriptreact = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          python = [ "black" ];
+          # lua = [ "stylua" ];
+          nix = [ "nixfmt" ];
+          markdown = [
+            [
+              "prettierd"
+              "prettier"
+            ]
+          ];
+          rust = [ "rustfmt" ];
+        };
+    };
       #nvim-cmp = {
 #	enable = true;
 #	autoEnableSources = true;
@@ -227,4 +288,4 @@ in
       }
     ];
   };
-} 
+}
