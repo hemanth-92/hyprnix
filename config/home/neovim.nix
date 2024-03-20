@@ -104,7 +104,7 @@ in
       lsp-lines.enable = true;
       lsp-format.enable =true;
       treesitter = {
-	enable = true;
+     	enable = true;
         nixGrammars = true;
       };
       cmp = {
@@ -171,7 +171,8 @@ in
           ];
           rust = [ "rustfmt" ];
         };
-    };
+      };
+   };
       #nvim-cmp = {
 #	enable = true;
 #	autoEnableSources = true;
@@ -188,7 +189,7 @@ in
 #	  };
 #	};
  #     };
-    };
+
 
     extraPlugins = [ plugins.telescope-file-browser-nvim ];
 
