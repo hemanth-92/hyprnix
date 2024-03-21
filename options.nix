@@ -15,7 +15,7 @@ in
   # User Variables
   username = "${username}";
   hostname = "${hostname}";
-  gitUsername = "hemanth-92";
+  gitUserName = "hemanth-92";
   gitEmail = "hemanth9679@gmail.com";
   browser = "firefox";
   terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
