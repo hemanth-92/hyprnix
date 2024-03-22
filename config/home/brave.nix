@@ -45,6 +45,8 @@
       { id = "fcphghnknhkimeagdglkljinmpbagone"; }
       # Youtube-shorts block
       { id = "jiaopdjbehhjgokpphdfgmapkobbnmjp"; }
+      # adblocer ultimate
+      { id = "ohahllgiabjaoigichmmfljhkcfikeof"; }
     ];
   };
 
