@@ -25,7 +25,6 @@
     ./vscode.nix
     ./obs-studio.nix
     ./gimp.nix
-    ./discord.nix
     ./git.nix
     # Place Home Files Like Pictures
     ./files.nix
