@@ -45,6 +45,7 @@ in
     swaylock
     obsidian
     tenki
+    firefox-unwrapped
     jetbrains.pycharm-community-bin
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts

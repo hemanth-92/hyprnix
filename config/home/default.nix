@@ -26,6 +26,7 @@
     ./obs-studio.nix
     ./gimp.nix
     ./git.nix
+    ./brave.nix
     # Place Home Files Like Pictures
     ./files.nix
   ];
