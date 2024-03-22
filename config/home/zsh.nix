@@ -58,7 +58,7 @@ lib.mkIf (theShell == "zsh") {
       "..."="cd ../..";
       "...."="cd ../../..";
       config="cd ~/.config";
-      reboot="systemctl reboot";
+      restart="systemctl reboot";
       poweroff="systemctl poweroff";
       neofetch="neofetch --ascii ~/.config/ascii-neofetch";
     };

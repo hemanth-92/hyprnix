@@ -135,7 +135,7 @@ in with lib; {
       bind = ${modifier}SHIFT,P,exec,wlogout
       bind = ${modifier},E,exec,emopicker9000
       bind = ${modifier},S,exec,screenshootin
-      bind = ${modifier},D,exec,discord
+      bind = ${modifier},D,exec,firefox --new-window --kiosk https://discord.com/login
       bind = ${modifier},O,exec,obs
       bind = ${modifier},G,exec,gimp
       bind = ${modifier}SHIFT,G,exec,godot4
