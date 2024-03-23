@@ -27,6 +27,7 @@
     ./gimp.nix
     ./git.nix
     ./brave.nix
+    ./discord.nix
     # Place Home Files Like Pictures
     ./files.nix
   ];
