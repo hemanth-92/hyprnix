@@ -46,6 +46,7 @@ in
     obsidian
     tenki
     firefox-devedition-bin
+    discord
     jetbrains.pycharm-community-bin
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
