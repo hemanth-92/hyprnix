@@ -44,6 +44,7 @@ in
     wl-clipboard
     swaylock
     obsidian
+    youtube-music
     tenki
     firefox-devedition-bin
     jetbrains.pycharm-community-bin
