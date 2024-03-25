@@ -28,6 +28,7 @@
     ./git.nix
     ./brave.nix
     ./discord.nix
+    ./eza.nix
     # Place Home Files Like Pictures
     ./files.nix
   ];
