@@ -69,6 +69,11 @@ in
       nvim-autopairs.enable = true;
       nix.enable = true;
       comment-nvim.enable = true;
+      cmp-nvim-lsp.enable = true;
+      cmp-nvim-lsp-document-symbol.enable = true;
+      cmp-nvim-lsp-signature-help.enable = true;
+      cmp-nvim-lua.enable = true;
+      cmp_luasnip.enable = true;
       lualine = {
         enable = true;
       };
@@ -109,7 +114,14 @@ in
       };
       cmp = {
         enable = true;
-        settings = {
+        settings = {          
+        sources = [
+            { name = "nvim_lsp"; }
+            { name = "nvim_lsp_document_symbol"; }
+            { name = "nvim_lsp_signature_help"; }
+            { name = "luasnip"; }
+            { name = "path"; }
+          ];
           snippet.expand = ''
             function(args)
               require('luasnip').lsp_expand(args.body)
@@ -173,23 +185,6 @@ in
         };
       };
    };
-      #nvim-cmp = {
-#	enable = true;
-#	autoEnableSources = true;
-#	sources = [
-#	  { name = "nvim_lsp"; }
-#	  { name = "path"; }
-#	  { name = "buffer"; }
-#	];
-#	mapping = {
-#	  "<CR>" = "cmp.mapping.confirm({ select = true })";
-#	  "<Tab>" = {
-#	    action = ''cmp.mapping.select_next_item()'';
-#	    modes = [ "i" "s" ];
-#	  };
-#	};
- #     };
-
 
     extraPlugins = [ plugins.telescope-file-browser-nvim ];
 
