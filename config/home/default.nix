@@ -32,5 +32,6 @@
     # Place Home Files Like Pictures
     ./files.nix
     ./yazi.nix
+    ./fish.nix
   ];
 }
