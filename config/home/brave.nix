@@ -21,8 +21,6 @@
       { id = "gbmdgpbipfallnflgajpaliibnhdgobh"; }
       # Looty
       # {id = "ajfbflclpnpbjkfibijekgcombcgehbi";}
-      # Old Reddit Redirect
-      { id = "dneaehbmnbhcippjikoajpoabadpodje"; }
       # PoE Wiki Search
       { id = "nalpbalegehinpooppmmgjidgiebblad"; }
       # React Dev Tools
