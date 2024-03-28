@@ -6,7 +6,7 @@
 }:
 let inherit (import ../../options.nix) flakeDir theShell hostname; 
 in 
- lib.mklf(theShell == "fish")
+ lib.mkIf(theShell == "fish")
 {
   programs = {
     fish = {
@@ -20,6 +20,22 @@ in
       };
       shellAliases = {
         ehistory = "nvim ${config.xdg.dataHome}/fish/fish_history";
+        sv="sudo nvim";
+        rebuild="nh os switch --hostname ${hostname}";
+        update="nh os switch --hostname ${hostname} --update";
+        gcCleanup="nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+        v="nvim";
+        ls="eza -lah";
+        ll="lsd -l";
+        la="lsd -a";
+        lal="lsd -al";
+        ".."="cd ..";
+        "..."="cd ../..";
+        "...."="cd ../../..";
+        config="cd ~/.config";
+        restart="systemctl reboot";
+        poweroff="systemctl poweroff";
+        neofetch="neofetch --ascii ~/.config/ascii-neofetch";
       };
       shellInit = ''
         # shut up welcome message
@@ -27,6 +43,7 @@ in
 
         # set options for plugins
         set sponge_regex_patterns 'password|passwd'
+        neofetch --ascii ~/.config/ascii-neofetch
       '';
       # setup vi mode
       interactiveShellInit = ''
