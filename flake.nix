@@ -26,31 +26,31 @@
     pkgs = import nixpkgs {
       inherit system;
       config = {
-	    allowUnfree = true;
+        allowUnfree = true;
       };
     };
   in
   {
     nixosConfigurations = {
       "${hostname}" = nixpkgs.lib.nixosSystem{ 
-	specialArgs = { 
+        specialArgs = { 
           inherit system; inherit inputs; 
           inherit username; inherit hostname;
         };
-	modules = [ 
-	  ./system.nix
-	  impermanence.nixosModules.impermanence
+        modules = [ 
+          ./system.nix
+          impermanence.nixosModules.impermanence
           home-manager.nixosModules.home-manager {
-	    home-manager.extraSpecialArgs = {
-	      inherit username; inherit inputs;
+            home-manager.extraSpecialArgs = {
+              inherit username; inherit inputs;
               inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
             };
-	    home-manager.useGlobalPkgs = true;
+            home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
             home-manager.backupFileExtension = "backup";
-	    home-manager.users.${username} = import ./home.nix;
-	  }
-	];
+            home-manager.users.${username} = import ./home.nix;
+          }
+        ];
       };
     };
   };
