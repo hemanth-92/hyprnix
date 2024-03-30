@@ -130,7 +130,7 @@ in with lib; {
       ${if browser == "google-chrome" then ''
 	bind = ${modifier},W,exec,google-chrome-stable
       '' else ''
-	bind = ${modifier},W,exec,${browser}
+	bind = ${modifier},W,exec,firefox
       ''}
       bind = ${modifier}SHIFT,P,exec,wlogout
       bind = ${modifier},E,exec,emopicker9000

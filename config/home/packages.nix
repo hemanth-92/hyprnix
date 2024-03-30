@@ -46,8 +46,6 @@ in
     obsidian
     youtube-music
     tenki
-    firefox-devedition-bin
-    jetbrains.pycharm-community-bin
     yazi
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts

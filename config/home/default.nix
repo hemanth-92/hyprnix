@@ -34,5 +34,6 @@
     ./yazi.nix
     ./fish.nix
     ./zathura.nix
+    ./firefox.nix
   ];
 }

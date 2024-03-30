@@ -1,48 +1,74 @@
 {
+  config,
   inputs,
   lib,
   pkgs,
-  user,
   ...
 }:
-let
-  firefoxPkg = pkgs.firefox-devedition-bin;
-in
 {
-  programs = {
-    # firefox dev edition
-    firefox = {
-      enable = true;
-      package = firefoxPkg;
+  programs.firefox = {
+    enable = true;
 
-      profiles.sdvohet = {
-        name = "sdvohet";
-        isDefault = true;
-      
-        extensions = with inputs.firefox-addons.packages.${pkgs.system}; [
-          bitwarden
-          darkreader
-          screenshot-capture-annotate
-          sponsorblock
-          ublock-origin
-        ];
+    policies = {
+      BlockAboutConfig = false;
+      DefaultDownloadDirectory = "\${home}/downloads";
+    };
+
+    profiles.sdvohet = {
+      name = "sdvohet";
+      isDefault = true;
+
+      search = {
+        default = "Google";
+
+        engines = {
+          "Google".metaData.alias = "@g";
+
+          "Bing".metaData.alias = "@b";
+
+          "Nix Packages" = {
+            urls = [
+              {
+                template = "https://search.nixos.org/packages";
+                params = [
+                  {
+                    name = "type";
+                    value = "packages";
+                  }
+                  {
+                    name = "query";
+                    value = "{searchTerms}";
+                  }
+                ];
+              }
+            ];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@np"];
+          };
+
+          "NixOS Wiki" = {
+            urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
+            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
+            definedAliases = ["@nw"];
+          };
+        };
       };
     };
+  };
+  home.sessionVariables = {
+    DEFAULT_BROWSER = lib.getExe pkgs.brave;
+    BROWSER = lib.getExe pkgs.brave;
+  };
+  xdg.mimeApps.defaultApplications = {
+    "text/html" = "firefox.desktop";
+    "x-scheme-handler/http" = "firefox.desktop";
+    "x-scheme-handler/https" = "firefox.desktop";
+    "x-scheme-handler/about" = "firefox.desktop";
+    "x-scheme-handler/unknown" = "firefox.desktop";
   };
 
   wayland.windowManager.hyprland.settings = {
     # do not idle while watching videos
     windowrule = [ "idleinhibit fullscreen,firefox-aurora" ];
-  };
-
-  # overwrite desktop entry with user profile
-  xdg.desktopEntries.firefox-developer-edition = {
-    name = "Firefox Developer Edition";
-    genericName = "Web Browser";
-     icon = "${firefoxPkg}/share/icons/hicolor/128x128/apps/firefox.png";
-    categories = [
-      "Network"
-      "WebBrowser"
-    ];
   };
 }
