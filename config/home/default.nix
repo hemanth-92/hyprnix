@@ -33,5 +33,6 @@
     ./files.nix
     ./yazi.nix
     ./fish.nix
+    ./zathura.nix
   ];
 }
