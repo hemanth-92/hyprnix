@@ -47,23 +47,4 @@
       { id = "ohahllgiabjaoigichmmfljhkcfikeof"; }
     ];
   };
-
-  # set default browser
-  home.sessionVariables = {
-    DEFAULT_BROWSER = lib.getExe pkgs.brave;
-    BROWSER = lib.getExe pkgs.brave;
-  };
-
-  xdg.mimeApps.defaultApplications = {
-    "text/html" = "brave.desktop";
-    "x-scheme-handler/http" = "brave.desktop";
-    "x-scheme-handler/https" = "brave.desktop";
-    "x-scheme-handler/about" = "brave.desktop";
-    "x-scheme-handler/unknown" = "brave.desktop";
-  };
-
-  wayland.windowManager.hyprland.settings.windowrule = [
-    # do not idle while watching videos
-    "idleinhibit fullscreen,Brave-browser"
-  ];
 }
