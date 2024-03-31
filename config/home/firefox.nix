@@ -18,8 +18,7 @@
       name = "sdvohet";
       isDefault = true;
 
-      extensions = with inputs.firefox-addons.packages."x86_64-linux";[
-        behind-the-overlay-revival
+      extensions = with inputs.firefox-addons.packages.${pkgs.system};[
         sponsorblock
         kristofferhagen-nord-theme
         playback-speed
@@ -44,6 +43,8 @@
         "privacy.donottrackheader.enabled" = true;
         "privacy.globalprivacycontrol.enabled" = true;
         "privacy.globalprivacycontrol.was_ever_enabled" = true;
+        "security.ask_for_password" = 1;
+        "security.password_lifetime" = 0;
       };
 
     };
