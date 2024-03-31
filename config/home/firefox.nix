@@ -18,46 +18,39 @@
       name = "sdvohet";
       isDefault = true;
 
-      search = {
-        default = "Google";
-
-        engines = {
-          "Google".metaData.alias = "@g";
-
-          "Bing".metaData.alias = "@b";
-
-          "Nix Packages" = {
-            urls = [
-              {
-                template = "https://search.nixos.org/packages";
-                params = [
-                  {
-                    name = "type";
-                    value = "packages";
-                  }
-                  {
-                    name = "query";
-                    value = "{searchTerms}";
-                  }
-                ];
-              }
-            ];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@np"];
-          };
-
-          "NixOS Wiki" = {
-            urls = [{template = "https://nixos.wiki/index.php?search={searchTerms}";}];
-            icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-            definedAliases = ["@nw"];
-          };
-        };
+      extensions = with inputs.firefox-addons.packages."x86_64-linux";[
+        behind-the-overlay-revival
+        sponsorblock
+        kristofferhagen-nord-theme
+        playback-speed
+        privacy-badger
+        return-youtube-dislikes
+        ublock-origin
+        user-agent-string-switcher
+        screenshot-capture-annotate
+        vimium
+      ];
+      settings = {
+        "app.normandy.api_url" = "";
+        "app.normandy.enabled" = false;
+        "app.normandy.first_run" = false;
+        "app.shield.optoutstudies.enabled" = false;
+        "beacon.enabled" = false;
+        "browser.aboutConfig.showWarning" = false;
+        "browser.discovery.enabled" = false;
+        "browser.display.use_system_colors" = true;
+        "keyword.enabled" = true;
+        "media.eme.enabled" = true;
+        "privacy.donottrackheader.enabled" = true;
+        "privacy.globalprivacycontrol.enabled" = true;
+        "privacy.globalprivacycontrol.was_ever_enabled" = true;
       };
+
     };
   };
   home.sessionVariables = {
-    DEFAULT_BROWSER = lib.getExe pkgs.brave;
-    BROWSER = lib.getExe pkgs.brave;
+    DEFAULT_BROWSER = lib.getExe pkgs.firefox;
+    BROWSER = lib.getExe pkgs.firefox;
   };
   xdg.mimeApps.defaultApplications = {
     "text/html" = "firefox.desktop";
