@@ -1,14 +1,16 @@
-{ pkgs, config, ... }:
+{ pkgs, config,inputs, ... }:
 
 {
-  # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.kernel.sysctl = { "vm.max_map_count" = 2147483642; };
-  boot.tmp.useTmpfs = false;
-  boot.tmp.tmpfsSize = "25%";
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
+    useOSProber = true;
+    theme = inputs.catppuccin-grub + "/src/catppuccin-mocha-grub-theme";
+  };
 
-  # This is for OBS Virtual Cam Support - v4l2loopback setup
-#  boot.kernelModules = [ "v4l2loopback" ];
- # boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot.loader.efi = {
+    canTouchEfiVariables = true;
+    efiSysMountPoint = "/boot";
+  };
 }
