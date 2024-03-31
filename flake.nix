@@ -19,6 +19,10 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    catppuccin-grub = {
+      url = "github:catppuccin/grub";
+      flake = false;
+    };
     impermanence.url = "github:nix-community/impermanence";
   };
 
