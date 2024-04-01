@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  inherit ( import ../../options.nix ) terminal browser;
+  inherit ( import ../../options.nix ) terminal;
 in
 pkgs.writeShellScriptBin "list-hypr-bindings" ''
   yad --width=800 --height=650 \
@@ -21,7 +21,7 @@ pkgs.writeShellScriptBin "list-hypr-bindings" ''
   " + Q" "Kill Focused Window" "killactive" \
   " + SHIFT + W" "Search Websites Like Nix Packages" "web-search" \
   " + SHIFT + N" "Reload SwayNC Styling" "swaync-client -rs" \
-  " + W" "Launch Web Browser" "${browser}" \
+  " + W" "Launch Web Browser"\
   " + E" "Launch Emoji Selector" "emopicker9000" \
   " + S" "Take Screenshot" "screenshootin" \
   " + D" "Launch Discord" "discord" \

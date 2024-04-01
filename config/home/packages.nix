@@ -2,12 +2,11 @@
 
 let 
   inherit (import ../../options.nix) 
-    browser wallpaperDir wallpaperGit flakeDir;
+  wallpaperDir wallpaperGit flakeDir;
 in 
-{
+  {
   # Install Packages For The User
   home.packages = with pkgs; [
-    pkgs."${browser}"
     libvirt
     swww
     grim
@@ -55,13 +54,13 @@ in
     (import ./../scripts/wallsetter.nix { 
       inherit pkgs; inherit wallpaperDir;
       inherit username; inherit wallpaperGit; })
-    (import ./../scripts/themechange.nix { inherit pkgs; inherit flakeDir; })
-    (import ./../scripts/theme-selector.nix { inherit pkgs; })
-    (import ./../scripts/nvidia-offload.nix { inherit pkgs; })
-    (import ./../scripts/web-search.nix { inherit pkgs; })
-    (import ./../scripts/rofi-launcher.nix { inherit pkgs; })
-    (import ./../scripts/screenshootin.nix { inherit pkgs; })
-    (import ./../scripts/list-hypr-bindings.nix { inherit pkgs; })
-  ];
-  programs.gh.enable = true;
-}
+      (import ./../scripts/themechange.nix { inherit pkgs; inherit flakeDir; })
+      (import ./../scripts/theme-selector.nix { inherit pkgs; })
+      (import ./../scripts/nvidia-offload.nix { inherit pkgs; })
+      (import ./../scripts/web-search.nix { inherit pkgs; })
+      (import ./../scripts/rofi-launcher.nix { inherit pkgs; })
+      (import ./../scripts/screenshootin.nix { inherit pkgs; })
+      (import ./../scripts/list-hypr-bindings.nix { inherit pkgs; })
+    ];
+    programs.gh.enable = true;
+  }
