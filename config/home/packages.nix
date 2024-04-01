@@ -35,7 +35,6 @@ in
     ripgrep
     dua
     font-awesome
-    spotify
     swayidle
     neovide
     element-desktop
@@ -43,7 +42,6 @@ in
     wl-clipboard
     swaylock
     obsidian
-    youtube-music
     tenki
     yazi
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
