@@ -57,6 +57,7 @@ in
         neo-tree.enable = true;
         luasnip.enable  = true;
         surround.enable = true;
+        cmp.enable = true;
         telescope = {
           enable = true;
           keymaps = {
@@ -107,24 +108,17 @@ in
           enable = true;
           nixGrammars = true;
         };
-        cmp = {
+        cmp.settings = {
           enable = true;
-          settings = {
-            autoEnableSources = true;
-            sources = [
-              { name = "nvim_lsp"; }
-              { name = "nvim_lsp_document_symbol"; }
-              { name = "nvim_lsp_signature_help"; }
-              { name = "luasnip"; }
-              { name = "path"; }
-            ];
-            snippet.expand = ''
-            function(args)
-            require('luasnip').lsp_expand(args.body)
-            end
-            '';
-          };
-          extraOptions.mapping = {
+          autoEnableSources = true;
+          sources = [
+            { name = "nvim_lsp"; }
+            { name = "nvim_lsp_document_symbol"; }
+            { name = "nvim_lsp_signature_help"; }
+            { name = "luasnip"; }
+            { name = "path"; }
+          ];
+          mapping = {
             "<C-b>" = "cmp.mapping.scroll_docs(-4)";
             "<C-f>" = "cmp.mapping.scroll_docs(4)";
             "<C+c>" = "cmp.mapping.abort()";
@@ -171,6 +165,11 @@ in
                 )
                 '';
               };
+              snippet.expand = ''
+              function(args)
+              require('luasnip').lsp_expand(args.body)
+              end
+              '';
             };
             conform-nvim = {
               enable = true;
