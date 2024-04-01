@@ -2,22 +2,22 @@
 
 let inherit (import ../../options.nix) flakeDir theShell hostname; in
 lib.mkIf (theShell == "zsh") {
-  programs.zsh = {
+  programs.zsh = { 
     enable = true;
     enableCompletion = true;
     syntaxHighlighting.enable = true;
-    enableAutosuggestions = true;
+    autosuggestion.enable = true;
     historySubstringSearch.enable = true;
     profileExtra = ''
       #if [ -z "$DISPLAY" ] && [ "$XDG_VNTR" = 1 ]; then
       #  exec Hyprland
       #fi
-    '';
-    initExtra = ''
+      '';
+      initExtra = ''
       zstyle ":completion:*" menu select
       zstyle ":completion:*" matcher-list "" "m:{a-z0A-Z}={A-Za-z}" "r:|=*" "l:|=* r:|=*"
       if type nproc &>/dev/null; then
-        export MAKEFLAGS="$MAKEFLAGS -j$(($(nproc)-1))"
+      export MAKEFLAGS="$MAKEFLAGS -j$(($(nproc)-1))"
       fi
       bindkey '^[[3~' delete-char                     # Key Del
       bindkey '^[[5~' beginning-of-buffer-or-history  # Key Page Up
@@ -28,11 +28,11 @@ lib.mkIf (theShell == "zsh") {
       bindkey '^[[F' end-of-line                      # Key End
       neofetch --ascii ~/.config/ascii-neofetch
       if [ -f $HOME/.zshrc-personal ]; then
-        source $HOME/.zshrc-personal
-        fi
-        eval "$(starship init zsh)"
-    '';
-    initExtraFirst = ''
+      source $HOME/.zshrc-personal
+      fi
+      eval "$(starship init zsh)"
+      '';
+      initExtraFirst = ''
       HISTFILE=~/.histfile
       HISTSIZE=1000
       SAVEHIST=1000
@@ -40,27 +40,27 @@ lib.mkIf (theShell == "zsh") {
       unsetopt beep extendedglob notify
       autoload -Uz compinit
       compinit
-    '';
-    sessionVariables = {
+      '';
+      sessionVariables = {
 
+      };
+      shellAliases = {
+        sv="sudo nvim";
+        rebuild="nh os switch --hostname ${hostname}";
+        update="nh os switch --hostname ${hostname} --update";
+        gcCleanup="nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+        v="nvim";
+        ls="eza -lah";
+        ll="lsd -l";
+        la="lsd -a";
+        lal="lsd -al";
+        ".."="cd ..";
+        "..."="cd ../..";
+        "...."="cd ../../..";
+        config="cd ~/.config";
+        restart="systemctl reboot";
+        poweroff="systemctl poweroff";
+        neofetch="neofetch --ascii ~/.config/ascii-neofetch";
+      };
     };
-    shellAliases = {
-      sv="sudo nvim";
-      rebuild="nh os switch --hostname ${hostname}";
-      update="nh os switch --hostname ${hostname} --update";
-      gcCleanup="nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
-      v="nvim";
-      ls="eza -lah";
-      ll="lsd -l";
-      la="lsd -a";
-      lal="lsd -al";
-      ".."="cd ..";
-      "..."="cd ../..";
-      "...."="cd ../../..";
-      config="cd ~/.config";
-      restart="systemctl reboot";
-      poweroff="systemctl poweroff";
-      neofetch="neofetch --ascii ~/.config/ascii-neofetch";
-    };
-  };
-}
+  }
