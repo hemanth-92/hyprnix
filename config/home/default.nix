@@ -35,5 +35,6 @@
     ./fish.nix
     ./zathura.nix
     ./firefox.nix
+    ./spotify.nix
   ];
 }
