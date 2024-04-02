@@ -6,6 +6,8 @@
   ...
 }:
 {
+  imports = [inputs.nur.nixosModules.nur];
+
   programs.firefox = {
     enable = true;
 
@@ -18,9 +20,9 @@
       name = "sdvohet";
       isDefault = true;
 
-      extensions = with inputs.firefox-addons.packages.${pkgs.system};[
+      extensions =with config.nur.repos.rycee.firefox-addons;[
         sponsorblock
-        kristofferhagen-nord-theme
+        nord123
         playback-speed
         privacy-badger
         return-youtube-dislikes
