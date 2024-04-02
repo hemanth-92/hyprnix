@@ -495,6 +495,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-small": {
+      "locked": {
+        "lastModified": 1712004559,
+        "narHash": "sha256-87vZKDepF3ZqpinX5zarC5Xb9dwpGgmfcl4Woy26lYA=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "5476cea4892cedbf6f8bbebdb93ba07e3f5f5e38",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
+        "ref": "nixos-unstable-small",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1710451336,
@@ -606,6 +622,7 @@
         "impermanence": "impermanence",
         "nix-colors": "nix-colors",
         "nixpkgs": "nixpkgs_2",
+        "nixpkgs-small": "nixpkgs-small",
         "nixvim": "nixvim",
         "nur": "nur",
         "spicetify-nix": "spicetify-nix"
