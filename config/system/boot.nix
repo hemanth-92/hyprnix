@@ -13,4 +13,6 @@
     canTouchEfiVariables = true;
     efiSysMountPoint = "/boot";
   };
+  zramSwap.enable = true;
+  zramSwap.memoryPercent = 200;
 }
