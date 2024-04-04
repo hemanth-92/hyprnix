@@ -7,12 +7,12 @@
   xdg.portal = {
     enable = true;
     extraPortals = [ pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-    configPackages = [ pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal
-    ];
+    pkgs.xdg-desktop-portal
+  ];
+  configPackages = [ pkgs.xdg-desktop-portal-gtk
+  pkgs.xdg-desktop-portal-hyprland
+  pkgs.xdg-desktop-portal
+];
   };
   services.pipewire = {
     enable = true;
@@ -20,7 +20,26 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    extraConfig.pipewire-pulse."92-low-latency" = {
+      context.modules = [
+        {
+          name = "libpipewire-module-protocol-pulse";
+          args = {
+            pulse.min.req = "32/48000";
+            pulse.default.req = "32/48000";
+            pulse.max.req = "32/48000";
+            pulse.min.quantum = "32/48000";
+            pulse.max.quantum = "32/48000";
+          };
+        }
+      ];
+      stream.properties = {
+        node.latency = "32/48000";
+        resample.quality = 1;
+      };
+    };
   };
+
   hardware.pulseaudio.enable = false;
   sound.enable = true;
   security.rtkit.enable = true;
@@ -33,7 +52,7 @@
   services.blueman.enable = true;
   security.pam.services.swaylock = {
     text = ''
-      auth include login
+    auth include login
     '';
   };
 }
