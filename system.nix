@@ -59,7 +59,6 @@ in {
 
   # Optimization settings and garbage collection automation
   nix = {
-    package = pkgs.nixUnstable;
     settings = {
       auto-optimise-store = true;
       experimental-features = [ "nix-command" "flakes" ];
