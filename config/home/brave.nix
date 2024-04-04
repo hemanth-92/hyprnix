@@ -45,10 +45,6 @@
       { id = "jiaopdjbehhjgokpphdfgmapkobbnmjp"; }
       # adblocer ultimate
       { id = "ohahllgiabjaoigichmmfljhkcfikeof"; }
-    ];
-    wayland.windowManager.hyprland.settings.windowrule = [
-    # do not idle while watching videos
-    "idleinhibit fullscreen,Brave-browser"
-  ];
-};
+    ]; 
+  };
 }
