@@ -58,6 +58,7 @@ in
         luasnip.enable  = true;
         surround.enable = true;
         cmp.enable = true;
+        lazy.enable = true;
         telescope = {
           enable = true;
           keymaps = {
@@ -291,6 +292,19 @@ in
       },
       tabline = {},
       extensions = {},
+      require("neo-tree").setup({
+        event_handlers = {
+          {
+            event = "file_opened",
+            handler = function(file_path)
+              -- auto close
+              -- vimc.cmd("Neotree close")
+              -- OR
+              require("neo-tree.command").execute({ action = "close" })
+            end
+          },
+        }
+      })
     }
     '';
 
@@ -318,7 +332,7 @@ in
       }
       {
         action = "<cmd>Neotree toggle<CR>";
-        key = "<leader>b";  # this line is changed
+        key = "<leader>e";  # this line is changed
         mode = "n";
         options = {
           desc = "Toggle Tree View.";
