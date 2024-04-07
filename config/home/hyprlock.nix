@@ -17,8 +17,8 @@ in {
       {
         monitor = "";
         path = toString (pkgs.fetchurl {
-          url = "https://raw.githubusercontent.com/hemanth-92/Wallpaper-bank/blob/main/cat-leaves.png";
-          sha256 = "sha256-kegUK62YtI7G3P/pIqcWdFGlqN4S1/4xOOmOboPxJKE=";
+          url = "https://github.com/hemanth-92/Wallpaper-bank/blob/main/cat-leaves.png";
+          sha256 = "16wr59qr83p857ywwxq2jl39y8s1r17cdfx8bjzsrr2dgsxi416w";
         });
       }
     ];
