@@ -30,6 +30,7 @@
         user-agent-string-switcher
         screenshot-capture-annotate
         vimium
+        adblocker-ultimate
       ];
       settings = {
         "app.normandy.api_url" = "";
