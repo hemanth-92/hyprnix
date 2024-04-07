@@ -27,6 +27,10 @@
     impermanence.url = "github:nix-community/impermanence";
     nur.url = "github:nix-community/nur";
     spicetify-nix.url = "github:the-argus/spicetify-nix";
+    hyprlock = {
+      url = "github:hyprwm/hyprlock";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ nixpkgs, home-manager, impermanence, ... }:
