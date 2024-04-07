@@ -23,7 +23,7 @@ in with lib; {
     monitor=,preferred,auto,1
     windowrule = fullscreen, ^(wlogout)$
     windowrule = animation fade,^(wlogout)$
-    windowrulev2 = workspace 2, class:^(discord)$
+    windowrulev2 = workspace 1, class:^(discord)$
     general {
       gaps_in = 6
       gaps_out = 8
@@ -124,6 +124,7 @@ in with lib; {
     master {
       new_is_master = true
     }
+    bind = ${modifier},l,exec,hyprlock
     bind = ${modifier},Return,exec,${terminal}
     bind = ${modifier},A,exec,rofi-launcher
     bind = ${modifier}SHIFT,W,exec,web-search

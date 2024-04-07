@@ -1,7 +1,8 @@
-{pkgs, ...}:
+{pkgs,username, ...}:
 # Fetch the fontName variable from system/options.nix to determine which font to use.
 let
-  # TODO: Replace this with proper Catppuccin colors.
+  # TODO: Replace this with proper Catppuccin colors. 
+  wallpaper = "/home/${username}/Pictures/Wallpapers/cat-leaves.png";
   placeholderAndTimeColor = "rgb(205, 214, 244)";
 in {
   programs.hyprlock = {
@@ -16,10 +17,7 @@ in {
     backgrounds = [
       {
         monitor = "";
-        path = toString (pkgs.fetchurl {
-          url = "https://github.com/hemanth-92/Wallpaper-bank/blob/main/cat-leaves.png";
-          sha256 = "16wr59qr83p857ywwxq2jl39y8s1r17cdfx8bjzsrr2dgsxi416w";
-        });
+        path = "${wallpaper}";
       }
     ];
 
@@ -37,13 +35,16 @@ in {
         placeholder_text = "password...";
         dots_spacing = 0.3;
         dots_center = true;
+        fail_color = "rgb(204, 34, 34)"; # if authentication failed, changes outer_color and fail message color
+        fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>"; # can be set to empty
+        fail_transition = 300; # transition time in ms between normal outer_color and fail_color
       }
     ];
 
     labels = [
       {
         monitor = "";
-        text = "$TIME";
+        text = " cmd[update:1000] echo $TIME";
         font_family = "MonoLisa Nerd Font";
         font_size = 50;
         color = placeholderAndTimeColor;

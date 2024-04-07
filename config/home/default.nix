@@ -1,4 +1,4 @@
-{ pkgs, config, ... }:
+{inputs, pkgs, config, ... }:
 
 {
   imports = [
@@ -36,5 +36,7 @@
     ./zathura.nix
     ./firefox.nix
     ./spotify.nix
+    ./hyprlock.nix
+    inputs.hyprlock.homeManagerModules.hyprlock
   ];
 }
