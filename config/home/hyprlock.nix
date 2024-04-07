@@ -1,8 +1,6 @@
 {pkgs,username, ...}:
-# Fetch the fontName variable from system/options.nix to determine which font to use.
 let
-  # TODO: Replace this with proper Catppuccin colors. 
-  wallpaper = "/home/${username}/Pictures/Wallpapers/cat-leaves.png";
+  wallpaper = "/home/${username}/Pictures/Wallpapers/lofi-computer.png";
   placeholderAndTimeColor = "rgb(205, 214, 244)";
 in {
   programs.hyprlock = {
@@ -13,7 +11,6 @@ in {
       no_fade_in = false;
     };
 
-    # The background image is fetched from GitHub. I don't store my wallpapers locally.
     backgrounds = [
       {
         monitor = "";
@@ -28,9 +25,9 @@ in {
           height = 40;
         };
         outline_thickness = 2;
-        outer_color = "rgb(69, 71, 90)";
+        outer_color = "rgb(0, 0,0)";
         inner_color = placeholderAndTimeColor;
-        font_color = "rgb(127, 132, 156)";
+        font_color = "rgb(0,0,0)";
         fade_on_empty = false;
         placeholder_text = "password...";
         dots_spacing = 0.3;
@@ -44,10 +41,10 @@ in {
     labels = [
       {
         monitor = "";
-        text = " cmd[update:1000] echo $TIME";
+       text = "cmd[update:1000] echo \"<b><big>$(date +'%I:%M %p')</big></b>\"";
         font_family = "MonoLisa Nerd Font";
         font_size = 50;
-        color = placeholderAndTimeColor;
+        color = "rgb(0,0,0)";
         position = {
           x = 0;
           y = 70;
