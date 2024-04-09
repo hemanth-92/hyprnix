@@ -1,15 +1,16 @@
-{ config, pkgs, inputs, username,
-  gtkThemeFromScheme, ... }:
+{  pkgs, inputs, username,catppuccin,
+gtkThemeFromScheme, ... }:
 let 
   inherit (import ./options.nix)
-    gitUsername gitEmail theme browser 
-    wallpaperDir wallpaperGit flakeDir 
-    waybarStyle;
+  gitUsername gitEmail theme browser 
+  wallpaperDir wallpaperGit flakeDir 
+  waybarStyle;
 in {
   # Home Manager Settings
   home.username = "${username}";
   home.homeDirectory = "/home/${username}";
   home.stateVersion = "23.11";
+  home.sessionVariables.EDITOR = "nvim";
 
   # Set The Colorscheme
   colorScheme = inputs.nix-colors.colorSchemes."${theme}";
@@ -19,6 +20,7 @@ in {
     inputs.nix-colors.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
     inputs.hyprland.homeManagerModules.default
+    inputs.hyprlock.homeManagerModules.hyprlock
     ./config/home
   ];
 
@@ -37,9 +39,10 @@ in {
   # Create XDG Dirs
   xdg = {
     userDirs = {
-        enable = true;
-        createDirectories = true;
+      enable = true;
+      createDirectories = true;
     };
+    mimeApps.enable = true;
   };
 
   dconf.settings = {
