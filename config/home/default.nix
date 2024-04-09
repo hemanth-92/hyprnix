@@ -39,5 +39,6 @@
     ./btop.nix
     ./cava.nix
     ./bat.nix
+    ./xdg.nix
   ];
 }
