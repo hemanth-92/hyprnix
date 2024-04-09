@@ -178,6 +178,7 @@ in
                 lspFallback = true;
                 timeoutMs = 500;
               };
+              notifyOnError = true;
               formattersByFt = {
                 html = [
                   [
@@ -217,7 +218,7 @@ in
                 ];
                 python = [ "black" ];
           # lua = [ "stylua" ];
-          nix = [ "nixfmt" ];
+          nix = [ "alejandra" ];
           markdown = [
             [
               "prettierd"
@@ -332,7 +333,7 @@ in
       }
       {
         action = "<cmd>Neotree toggle<CR>";
-        key = "<leader>e";  # this line is changed
+        key = "<leader>b";  # this line is changed
         mode = "n";
         options = {
           desc = "Toggle Tree View.";
