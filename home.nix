@@ -29,23 +29,7 @@ in {
     "Xcursor.size" = 24;
   };
 
-  # Install & Configure Git
-  programs.git = {
-    enable = true;
-    userName = "${gitUsername}";
-    userEmail = "${gitEmail}";
-  };
-
-  # Create XDG Dirs
-  xdg = {
-    userDirs = {
-      enable = true;
-      createDirectories = true;
-    };
-    mimeApps.enable = true;
-  };
-
-  dconf.settings = {
+   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
       autoconnect = ["qemu:///system"];
       uris = ["qemu:///system"];
