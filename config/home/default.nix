@@ -36,6 +36,8 @@
     ./firefox.nix
     ./spotify.nix
     ./hyprlock.nix
-    inputs.hyprlock.homeManagerModules.hyprlock
+    ./btop.nix
+    ./cava.nix
+    ./bat.nix
   ];
 }
