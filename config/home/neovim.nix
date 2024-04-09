@@ -10,27 +10,41 @@ in
 
       globals.mapleader = " "; # Sets the leader key to space
 
+
       opts = {
         clipboard="unnamedplus";
-        number = true;         # Show line numbers
-        relativenumber = true; # Show relative line numbers
+        # Enable relative line numbers
+        number = true;         
+        relativenumber = true;
+
+        # Set tabs to 2 spaces
         tabstop = 2;
-        shiftwidth = 2;        # Tab width should be 2
+        shiftwidth = 2;       
         softtabstop = 2;
         expandtab = true;
         shiftround = true;
+
+        # Enable auto indenting and set it to spaces
         smartindent = true;
-        wrap = false;
+
+        # Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
+        breakindent = true;
+        
+        # Enable text wrap
+        wrap = true;        
         smartcase = true;
         swapfile = false;
         backup = false;
+
+        # Enable incremental searching
         hlsearch = false;
         incsearch = true;
+
+        # Enable 24-bit colors
         termguicolors = true;
         scrolloff = 8;
         updatetime = 50;
       };
-
       colorschemes.base16.enable = true;
       colorschemes.base16.colorscheme = {
         base00 = "#${theme.base00}";
@@ -298,10 +312,10 @@ in
           {
             event = "file_opened",
             handler = function(file_path)
-              -- auto close
-              -- vimc.cmd("Neotree close")
-              -- OR
-              require("neo-tree.command").execute({ action = "close" })
+            -- auto close
+            -- vimc.cmd("Neotree close")
+            -- OR
+            require("neo-tree.command").execute({ action = "close" })
             end
           },
         }
