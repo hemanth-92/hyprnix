@@ -6,7 +6,7 @@
   imageViewer = "org.gnome.Loupe.desktop";
   mediaPlayer = "mpv.desktop";
   browser = "firefox.desktop";
-  docOpener = "zathura.desktop";
+  docOpener = "zathura";
   fileManager = "org.gnome.Nautilus.desktop";
   torrentClient = "transmission-gtk.desktop";
   textEditor = "neovim.desktop";
@@ -23,9 +23,6 @@ in {
     userDirs = {
       enable = true;
       createDirectories = true;
-      desktop = "${config.home.homeDirectory}/Projects";
-      publicShare = "${config.home.homeDirectory}/.local/public";
-      templates = "${config.home.homeDirectory}/.local/templates";
     };
 
     mimeApps = rec {
