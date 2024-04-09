@@ -34,14 +34,14 @@ in {
         dots_center = true;
         fail_color = "rgb(204, 34, 34)"; # if authentication failed, changes outer_color and fail message color
         fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>"; # can be set to empty
-        fail_transition = 300; # transition time in ms between normal outer_color and fail_color
+        fail_transition = 50; # transition time in ms between normal outer_color and fail_color
       }
     ];
 
     labels = [
       {
         monitor = "";
-       text = "cmd[update:1000] echo \"<b><big>$(date +'%I:%M %p')</big></b>\"";
+        text = "cmd[update:1000] echo \"<b><big>$(date +'%I:%M %p')</big></b>\"";
         font_family = "MonoLisa Nerd Font";
         font_size = 50;
         color = "rgb(0,0,0)";
@@ -52,7 +52,19 @@ in {
         valign = "center";
         halign = "center";
       }
+      #quote
+      {
+        text = "TIME NOT STOPPING FOR U :)";
+        color = "rgba(255,0,0,1.0)";
+        font_size = 25;
+        font_family = "Noto Sans";
+        position = {
+          x = 0;
+          y = 40;
+        };
+        halign = "center";
+        valign = "center";
+      }
     ];
   };
 }
-# Thanks to Fufexan for creating these amazing home-manager modules.
