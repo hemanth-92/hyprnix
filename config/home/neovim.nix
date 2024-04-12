@@ -29,7 +29,7 @@ in
 
         # Enable smart indenting (see https://stackoverflow.com/questions/1204149/smart-wrap-in-vim)
         breakindent = true;
-        
+
         # Enable text wrap
         wrap = true;        
         smartcase = true;
@@ -69,8 +69,32 @@ in
         barbecue.enable = true;  
         gitsigns.enable = true;
         neo-tree.enable = true;
-        luasnip.enable  = true;
+        lsp-format.enable = true;
         surround.enable = true;
+        luasnip = {
+          enable = true;
+          extraConfig = {
+            enable_autosnippets = true;
+            store_selection_keys = "<Tab>";
+          };
+          fromVscode = [
+            {
+              lazyLoad = true;
+              paths = "${pkgs.vimPlugins.friendly-snippets}";
+            }
+          ];
+        };
+
+        lspkind = {
+          enable = true;
+          symbolMap = {
+            Copilot = "";
+          };
+          extraOptions = {
+            maxwidth = 50;
+            ellipsis_char = "...";
+          };
+        };
         cmp.enable = true;
         lazy.enable = true;
         telescope = {
@@ -118,7 +142,6 @@ in
           };
         };
         lsp-lines.enable = true;
-        lsp-format.enable =true;
         treesitter = {
           enable = true;
           nixGrammars = true;
