@@ -13,7 +13,7 @@
 
     policies = {
       BlockAboutConfig = false;
-      DefaultDownloadDirectory = "\${home}/downloads";
+      DefaultDownloadDirectory = "\${home}/Downloads";
     };
 
     profiles.sdvohet = {
