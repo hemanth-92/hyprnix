@@ -23,7 +23,7 @@ in with lib; {
     monitor=,preferred,auto,1
     windowrule = fullscreen, ^(wlogout)$
     windowrule = animation fade,^(wlogout)$
-    windowrulev2 = workspace 1, class:^(discord)$
+    windowrulev2 = workspace 1, class:^(vesktop)$
     general {
       gaps_in = 6
       gaps_out = 8
