@@ -45,6 +45,8 @@ in
     tenki
     yazi
     loupe
+    zed-editor
+    telegram-desktop
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
