@@ -1,5 +1,3 @@
-{inputs, pkgs, config, ... }:
-
 {
   imports = [
     # Enable &/ Configure Programs
@@ -26,7 +24,7 @@
     ./gimp.nix
     ./git.nix
     ./brave.nix
-    ./discord.nix
+    ./vesktop.nix.nix
     ./eza.nix
     # Place Home Files Like Pictures
     ./files.nix
