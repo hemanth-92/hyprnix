@@ -14,7 +14,6 @@ in {
 
   # Set The Colorscheme
   colorScheme = inputs.nix-colors.colorSchemes."${theme}";
-
   # Import Program Configurations
   imports = [
     inputs.nix-colors.homeManagerModules.default
@@ -29,7 +28,14 @@ in {
     "Xcursor.size" = 24;
   };
 
-   dconf.settings = {
+  # Install & Configure Git
+  programs.git = {
+    enable = true;
+    userName = "${gitUsername}";
+    userEmail = "${gitEmail}";
+  };
+
+  dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
       autoconnect = ["qemu:///system"];
       uris = ["qemu:///system"];
