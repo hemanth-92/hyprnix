@@ -2,7 +2,7 @@
   config,
   pkgs,
   ...
-}: let
+}:let
   imageViewer = "org.gnome.Loupe.desktop";
   mediaPlayer = "mpv.desktop";
   browser = "firefox.desktop";
@@ -31,6 +31,7 @@ in {
         "x-scheme-handler/https" = browser;
         "x-scheme-handler/about" = browser;
         "x-scheme-handler/unknown" = browser;
+        "text/html" = [browser];
 
         # Images
         "image/jpeg" = imageViewer;
