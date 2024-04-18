@@ -24,7 +24,7 @@
     ./gimp.nix
     ./git.nix
     ./brave.nix
-    ./vesktop.nix.nix
+    ./vesktop.nix
     ./eza.nix
     # Place Home Files Like Pictures
     ./files.nix
