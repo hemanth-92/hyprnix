@@ -133,7 +133,7 @@ in with lib; {
     bind = ${modifier}SHIFT,P,exec,wlogout
     bind = ${modifier},E,exec,emopicker9000
     bind = ${modifier},S,exec,screenshootin
-    bind = ${modifier},D,exec,Vesktop
+    bind = ${modifier},D,exec,vesktop
     #bind = ${modifier},B,exec,brave --app=https://discord.com/login --window-mode=windowed
     bind = ${modifier},O,exec,obs
     bind = ${modifier},G,exec,gimp
