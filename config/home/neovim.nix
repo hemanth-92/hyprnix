@@ -128,7 +128,6 @@ in
               installRustc = true;
               installCargo = true;
             };
-            nil_ls.enable = true;
             html.enable = true;
             ccls.enable = true;
             cmake.enable = true;
@@ -139,6 +138,7 @@ in
             pyright.enable = true;
             tailwindcss.enable = true;
             java-language-server.enable = true;
+            nixd.enable = true;
           };
         };
         lsp-lines.enable = true;
