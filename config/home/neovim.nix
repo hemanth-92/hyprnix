@@ -68,7 +68,11 @@ in
       plugins = {
         barbecue.enable = true;  
         gitsigns.enable = true;
-        neo-tree.enable = true;
+        neo-tree = {
+          enable = true;
+          filesystem.filteredItems.alwaysShow = [".gitignore"];
+          filesystem.hijackNetrwBehavior = "open_current";
+        };
         lsp-format.enable = true;
         surround.enable = true;
         luasnip = {
