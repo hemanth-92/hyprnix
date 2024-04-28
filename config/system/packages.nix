@@ -48,6 +48,7 @@
     yad
     playerctl
     nh
+    nodePackages.pnpm
   ];
 
   programs = {
