@@ -12,9 +12,6 @@
         sorting_strategy = "ascending";
       };
       keymaps = {
-        "<leader><space>" = {
-          action = "find_files, {}";
-        };
         "<leader>/" = {
           action = "live_grep";
         };
@@ -80,7 +77,7 @@
         };
         "<leader>so" = {
           action = ''
-          vim_options, {}'';
+            vim_options, {}'';
         };
         "<leader>sR" = {
           action = "resume, {}";
