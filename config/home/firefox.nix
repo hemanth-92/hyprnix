@@ -31,6 +31,7 @@
         screenshot-capture-annotate
         vimium
         adblocker-ultimate
+        improved-tube
       ];
       settings = {
         "app.normandy.api_url" = "";
