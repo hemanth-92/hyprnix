@@ -8,7 +8,6 @@
     ./kdenlive.nix
     ./kitty.nix
     ./neofetch.nix
-    ./neovim.nix
     ./packages.nix
     ./rofi.nix
     ./starship.nix
@@ -38,5 +37,6 @@
     ./cava.nix
     ./bat.nix
     ./xdg.nix
+    ./nixvim
   ];
 }
