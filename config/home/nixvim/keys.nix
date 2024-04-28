@@ -1,34 +1,80 @@
+_:
 let
-  bind = mode: key: action:
-  {
-    inherit mode;
-    inherit key;
-    inherit action;
-  };
-in {
-  keymaps = [
-    # General maps
-    (bind "n" "<leader>s" "+search" {})
-    (bind "n" "<leader>q" "+quit/session" {})
-    (bind ["n" "v"] "<leader>g" "+git" {})
-    (bind "n" "<leader>+u" "+ui" {})
-    (bind "n" "<leader>w" "+windows" {})
-    (bind "n" "<leader><Tab>" "+tab" {})
-    (bind "n" "<leader>f" "+find/file" {})
-    (bind ["n" "v"] "<leader>d" "+debug" {})
-    (bind ["n" "v"] "<leader>c" "+code" {})
-    (bind ["n" "v"] "<leader>t" "+test" {})
-
-    (bind "v" "J" ":m '>+1<CR>gv=gv" {desc = "Move line(s) down.";})
-    (bind "v" "K" ":m '>-2<CR>gv=gv" {desc = "Move line(s) up.";})
-    (bind "n" "<leader>nh" "nohlsearch" {desc = "Turn off search highlight.";})
-    (bind ["n" "v"] "<leader>y" ''"+y'' {desc = "Copy to system clipboard.";})
-    (bind ["n" "v"] "<leader>p" ''"+P'' {desc = "Paste from system clipboard.";})
-
-    # Do stuff whilst keeping the cursor in the center.
-    (bind "n" "<C-d>" "<C-d>zz" {})
-    (bind "n" "<C-u>" "<C-u>zz" {})
-    (bind "n" "n" "nzzzv" {})
-    (bind "n" "N" "Nzzzv" {})
+  mkKeymap = mode: key: action: { inherit mode key action; };
+  mkKeymapWithOpts =
+    mode: key: action: opts:
+    (mkKeymap mode key action) // { options = opts; };
+in
+{
+  programs.nixvim.keymaps = [
+    # fix page up and page down so the cursor doesn't move
+    (mkKeymap "n" "<PageUp>" "<C-U>")
+    (mkKeymap "n" "<PageDown>" "<C-D>")
+    (mkKeymap "i" "<PageUp>" "<C-O><C-U>")
+    (mkKeymap "i" "<PageDown>" "<C-O><C-D>")
+    # ctrl-s to save
+    (mkKeymap "n" "<C-S>" ":w<CR>")
+    (mkKeymap "i" "<C-S>" "<C-O>:up<CR>")
+    (mkKeymap "v" "<C-S>" "<C-C>:up<CR>")
+    # L to go to the end of the line
+    (mkKeymap "n" "L" "$")
+    # Y copies to end of line
+    (mkKeymap "n" "Y" "y$")
+    # keep cursor in place when joining lines
+    (mkKeymap "n" "J" "mzJ`z")
+    # visual shifting (does not exit visual mode)
+    (mkKeymap "v" "<" "<gv")
+    (mkKeymap "v" ">" ">gv")
+    # copy and paste to clipboard
+    (mkKeymap "v" "<C-C>" ''"+y'')
+    (mkKeymap "n" "<C-V>" ''"+P'')
+    (mkKeymap "i" "<C-V>" ''<C-O>"+P'')
+    # replace highlighted text when pasting
+    (mkKeymap "v" "<C-V>" ''"+P'')
+    # automatically jump to end of text pasted
+    (mkKeymapWithOpts "v" "y" "y`]" { silent = true; })
+    (mkKeymapWithOpts "v" "p" "p`]" { silent = true; })
+    (mkKeymapWithOpts "n" "p" "p`]" { silent = true; })
+    # reselect text
+    (mkKeymap "v" "gV" "`[v`]")
+    # disable F1 key
+    (mkKeymap "n" "<F1>" "<Esc>")
+    (mkKeymap "i" "<F1>" "<Esc>")
+    (mkKeymap "v" "<F1>" "<Esc>")
+    # TODO: disable manual key k?
+    # jk or kj to escape insert mode
+    (mkKeymap "i" "jk" "<Esc>")
+    (mkKeymap "i" "kj" "<Esc>")
+    # center display after searches
+    (mkKeymap "n" "n" "nzzzv")
+    (mkKeymap "n" "N" "Nzzzv")
+    (mkKeymap "n" "*" "*zzzv")
+    (mkKeymap "n" "#" "#zzzv")
+    (mkKeymap "n" "g*" "g*zzzv")
+    (mkKeymap "n" "g#" "g#zzzv")
+    # only jumps of more than 5 lines are added to the jumplist
+    (mkKeymapWithOpts "n" "k" "(v:count > 5 ? \"m'\" . v:count : \"\") . 'k'" { expr = true; })
+    (mkKeymapWithOpts "n" "j" "(v:count > 5 ? \"m'\" . v:count : \"\") . 'j'" { expr = true; })
+    # vv enter visual block mode
+    (mkKeymap "n" "vv" "<C-V>")
+    # ; is an alias for :
+    (mkKeymap "n" ";" ":")
+    # better command line editing
+    (mkKeymap "c" "<C-A>" "<Home>")
+    (mkKeymap "c" "<C-E>" "<End>")
+    # easier buffer navigation
+    (mkKeymap "n" "<Tab>" ":bnext<CR>")
+    (mkKeymap "n" "<S-Tab>" ":bprevious<CR>")
+    # swap functionality of gj and gk
+    (mkKeymap "n" "j" "gj")
+    (mkKeymap "n" "k" "gk")
+    (mkKeymap "n" "gj" "j")
+    (mkKeymap "n" "gk" "k")
+    # TODO: incsearch?
+    # better quickfix navigation
+    (mkKeymap "n" "<C-J>" ":cnext<CR>")
+    (mkKeymap "n" "<C-K>" ":cprevious<CR>")
+    # vim fugitive
+    (mkKeymap "n" "<leader>gs" ":G<CR>")
   ];
 }

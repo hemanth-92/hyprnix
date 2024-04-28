@@ -4,10 +4,8 @@
 }: 
 {
   imports = [
-    ./plug
     ./sets.nix
     ./keys.nix
-    
 
     ./plug/completion/cmp.nix
     ./plug/completion/lspkind.nix
@@ -35,9 +33,7 @@
     ./plug/ui/neoscroll.nix
     ./plug/ui/nvim-notify.nix
     ./plug/ui/telescope.nix
-    ./plug/ui/search.nix
 
-    ./plug/utils/comment.nix
     ./plug/utils/extra.nix
     ./plug/utils/dap.nix
     ./plug/utils/flash.nix
@@ -51,6 +47,8 @@
     defaultEditor = true;
     viAlias = true;
     vimAlias = true;
+
+    globals.mapleader = " ";
 
     clipboard = {
       providers.wl-copy.enable = true;

@@ -1,3 +1,5 @@
 {
-  plugins.treesitter-context.enable = true;
+  programs.nixvim = {
+    plugins.treesitter-context.enable = true;
+  };
 }

@@ -1,5 +1,6 @@
-{pkgs, ...}: {
-  config.opts = {
+{pkgs, ...}: 
+{
+  programs.nixvim.opts = {
     # Enable relative line numbers
     number = true;
     relativenumber = true;

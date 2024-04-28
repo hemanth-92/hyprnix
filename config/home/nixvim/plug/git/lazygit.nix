@@ -1,20 +1,23 @@
-{pkgs, ...}: 
-let
-  plugins = pkgs.vimPlugins;
-in
+{pkgs, ...}:
 {
-  plugins = {
-    lazygit-nvim.enable = true;
-  };
+  programs.nixvim = {
+    extraPlugins = [
+      pkgs.vimPlugins.lazygit-nvim
+    ];
 
-  keymaps = [
-    {
-      mode = "n";
-      key = "<leader>gg";
-      action = "<cmd>LazyGit<CR>";
-      options = {
-        desc = "LazyGit (root dir)";
-      };
-    }
-  ];
+    extraConfigLua = ''
+    require("telescope").load_extension("lazygit")
+    '';
+
+    keymaps = [
+      {
+        mode = "n";
+        key = "<leader>gg";
+        action = "<cmd>LazyGit<CR>";
+        options = {
+          desc = "LazyGit (root dir)";
+        };
+      }
+    ];
+  };
 }
