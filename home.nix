@@ -7,13 +7,16 @@ let
   waybarStyle;
 in {
   # Home Manager Settings
-  home.username = "${username}";
-  home.homeDirectory = "/home/${username}";
-  home.stateVersion = "23.11";
-  home.sessionVariables.EDITOR = "nvim";
+  home = {
+    username = "${username}";
+    homeDirectory = "/home/${username}";
+    stateVersion = "23.11";
+    sessionVariables.EDITOR = "nvim";
+  };
 
   # Set The Colorscheme
   colorScheme = inputs.nix-colors.colorSchemes."${theme}";
+
   # Import Program Configurations
   imports = [
     inputs.nix-colors.homeManagerModules.default
@@ -41,6 +44,5 @@ in {
       uris = ["qemu:///system"];
     };
   };
-
   programs.home-manager.enable = true;
 }
