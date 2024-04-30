@@ -29,7 +29,6 @@
     ./plug/ui/neoscroll.nix
     ./plug/ui/nvim-notify.nix
     ./plug/ui/telescope.nix
-    ./plug/ui/btw.nix
 
     ./plug/utils/extra.nix
     ./plug/utils/dap.nix
