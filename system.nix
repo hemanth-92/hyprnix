@@ -1,18 +1,29 @@
-{ inputs, config, pkgs,
-  username, hostname, ... }:
-
-let 
-  inherit (import ./options.nix) 
-    theLocale theTimezone gitUsername
-    theShell wallpaperDir wallpaperGit
-    theLCVariables theKBDLayout flakeDir
-    theme;
+{
+  inputs,
+  config,
+  pkgs,
+  username,
+  hostname,
+  ...
+}: let
+  inherit
+    (import ./options.nix)
+    theLocale
+    theTimezone
+    gitUsername
+    theShell
+    wallpaperDir
+    wallpaperGit
+    theLCVariables
+    theKBDLayout
+    flakeDir
+    theme
+    ;
 in {
-  imports =
-    [
-      ./hardware.nix
-      ./config/system
-    ];
+  imports = [
+    ./hardware.nix
+    ./config/system
+  ];
 
   # Enable networking
   networking.hostName = "${hostname}"; # Define your hostname
@@ -44,7 +55,7 @@ in {
       hashedPassword = "$6$18JKFnAP84d62vB.$63g0TDv22PItmkWhnh26yctPwwi5K.4x48CSHnNs11bxY0yKw/setlgeCB/pePMuCEYYgoqdN9pjFLWRQ9ZXR/";
       isNormalUser = true;
       description = "${gitUsername}";
-      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+      extraGroups = ["networkmanager" "wheel" "libvirtd"];
       shell = pkgs.${theShell};
       ignoreShellProgramCheck = true;
       packages = with pkgs; [];
@@ -55,13 +66,14 @@ in {
     ENVER = "unstable";
     FLAKE = "${flakeDir}";
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+    EDITOR = "nvim";
   };
 
   # Optimization settings and garbage collection automation
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = ["nix-command" "flakes"];
       substituters = ["https://hyprland.cachix.org"];
       trusted-public-keys = [
         "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="

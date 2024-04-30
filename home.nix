@@ -1,10 +1,22 @@
-{  pkgs, inputs, username,catppuccin,
-gtkThemeFromScheme, ... }:
-let 
-  inherit (import ./options.nix)
-  gitUsername gitEmail theme browser 
-  wallpaperDir wallpaperGit flakeDir 
-  waybarStyle;
+{
+  pkgs,
+  inputs,
+  username,
+  catppuccin,
+  gtkThemeFromScheme,
+  ...
+}: let
+  inherit
+    (import ./options.nix)
+    gitUsername
+    gitEmail
+    theme
+    browser
+    wallpaperDir
+    wallpaperGit
+    flakeDir
+    waybarStyle
+    ;
 in {
   # Home Manager Settings
   home = {
