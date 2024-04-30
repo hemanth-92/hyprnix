@@ -9,7 +9,7 @@
       "--hyperlink"
     ];
   };
-    home.shellAliases = {
-    tree = "eza -la --git-ignore --icons --tree --hyperlink --level 3";
+  home.shellAliases = {
+    t = "eza -la --git-ignore --icons --tree --hyperlink --level 3";
   };
 }
