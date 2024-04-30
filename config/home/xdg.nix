@@ -2,13 +2,14 @@
   config,
   pkgs,
   ...
-}:let
+}: let
   imageViewer = "org.gnome.Loupe.desktop";
   mediaPlayer = "mpv.desktop";
   browser = "firefox.desktop";
   docOpener = "zathura.desktop";
   fileManager = "org.gnome.Nautilus.desktop";
   torrentClient = "transmission-gtk.desktop";
+  textEditor = "neovim.desktop";
 in {
   home.packages = [pkgs.xdg-utils];
   xdg = {
@@ -18,42 +19,53 @@ in {
       createDirectories = true;
     };
 
-    mimeApps = rec {
+    # TODO: use 'map' to avoid unnecessary repetition.
+    mimeApps = let
+      br = browser;
+      fm = fileManager;
+      iv = imageViewer;
+      mp = mediaPlayer;
+      te = textEditor;
+    in rec {
       enable = true;
       associations.added = defaultApplications;
       defaultApplications = {
-        "application/pdf" = [docOpener];
-        "inode/directory" = [fileManager];
-        "x-scheme-handler/magnet" = torrentClient;
+        # Office documents.
+        "application/pdf" = br;
+
+        "inode/directory" = fm;
 
         # Web stuff
-        "x-scheme-handler/http" = browser;
-        "x-scheme-handler/https" = browser;
-        "x-scheme-handler/about" = browser;
-        "x-scheme-handler/unknown" = browser;
-        "text/html" = [browser];
+        "x-scheme-handler/http" = br;
+        "x-scheme-handler/https" = br;
+        "x-scheme-handler/about" = br;
+        "x-scheme-handler/unknown" = br;
+        "text/html" = br;
 
         # Images
-        "image/jpeg" = imageViewer;
-        "image/avif" = imageViewer;
-        "image/gif" = imageViewer;
-        "image/jpg" = imageViewer;
-        "image/pjpeg" = imageViewer;
-        "image/png" = imageViewer;
-        "image/tiff" = imageViewer;
-        "image/webp" = imageViewer;
-        "image/x-bmp" = imageViewer;
-        "image/x-gray" = imageViewer;
-        "image/x-icb" = imageViewer;
-        "image/x-ico" = imageViewer;
-        "image/x-png" = imageViewer;
+        "image/jpeg" = iv;
+        "image/avif" = iv;
+        "image/gif" = iv;
+        "image/jpg" = iv;
+        "image/pjpeg" = iv;
+        "image/png" = iv;
+        "image/tiff" = iv;
+        "image/webp" = iv;
+        "image/x-bmp" = iv;
+        "image/x-gray" = iv;
+        "image/x-icb" = iv;
+        "image/x-ico" = iv;
+        "image/x-png" = iv;
+
+        # Plain text & code.
+        "application/x-shellscript" = te;
+        "text/plain" = te;
 
         # Videos
-        "video/webm" = mediaPlayer;
-        "video/mp4" = mediaPlayer;
-        "video/mkv" = mediaPlayer;
+        "video/webm" = mp;
+        "video/mp4" = mp;
+        "video/mkv" = mp;
       };
     };
   };
-  xdg.configFile."mimeapps.list".force = true;
 }

@@ -29,6 +29,7 @@
     ./plug/ui/neoscroll.nix
     ./plug/ui/nvim-notify.nix
     ./plug/ui/telescope.nix
+    ./plug/ui/btw.nix
 
     ./plug/utils/extra.nix
     ./plug/utils/dap.nix
@@ -36,6 +37,8 @@
     ./plug/utils/illuminate.nix
     ./plug/utils/oil.nix
     ./plug/utils/undotree.nix
+    ./plug/utils/neotree.nix
+    ./plug/utils/comment.nix
   ];
   programs.nixvim = {
     enable = true;
