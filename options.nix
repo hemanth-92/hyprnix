@@ -46,7 +46,7 @@ in {
   theKBDVariant = "";
   theLCVariables = "en_US.UTF-8";
   theTimezone = "Asia/Kolkata";
-  theShell = "zsh"; # Possible options: bash, zsh , fish
+  theShell = "fish"; # Possible options: bash, zsh , fish
   theKernel = "zen"; # Possible options: default, latest, lqx, xanmod, zen
   sdl-videodriver = "x11"; # Either x11 or wayland ONLY. Games might require x11 set here
 
