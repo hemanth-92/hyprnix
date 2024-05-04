@@ -5,9 +5,7 @@ let
   userHome = "/home/${username}";
   flakeDir = "${userHome}/hyprnix";
   waybarStyle = "simplebar"; # simplebar, slickbar, or default
-
-in 
-  {
+in {
   # User Variables
   username = "${username}";
   hostname = "${hostname}";
@@ -15,17 +13,21 @@ in
   gitEmail = "131354764+hemanth-92@users.noreply.github.com";
   terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
 
-
   #Hyprland desgin Settings
-  slickbar = if waybarStyle == "slickbar" then true else false;
-  simplebar = if waybarStyle == "simplebar" then true else false;
+  slickbar =
+    if waybarStyle == "slickbar"
+    then true
+    else false;
+  simplebar =
+    if waybarStyle == "simplebar"
+    then true
+    else false;
   bar-number = true; # Enable / Disable Workspace Numbers In Waybar
   borderAnim = true;
 
-
   # Wallpaper and Directory Settings
   wallpaperGit = "https://github.com/hemanth-92/Wallpaper-bank.git"; # This will give you my wallpapers
-  # ^ (use as is or replace with your own repo - removing will break the wallsetter script) 
+  # ^ (use as is or replace with your own repo - removing will break the wallsetter script)
   wallpaperDir = "${userHome}/Pictures/Wallpapers";
   screenshotDir = "${userHome}/Pictures/Screenshots";
   flakeDir = "${flakeDir}";
@@ -48,7 +50,6 @@ in
   theKernel = "zen"; # Possible options: default, latest, lqx, xanmod, zen
   sdl-videodriver = "x11"; # Either x11 or wayland ONLY. Games might require x11 set here
 
-
   # For Hybrid Systems intel-nvidia
   # Should Be Used As gpuType
   cpuType = "intel";
@@ -56,7 +57,7 @@ in
 
   # Nvidia Hybrid Devices
   # ONLY NEEDED FOR HYBRID
-  # SYSTEMS! 
+  # SYSTEMS!
   intel-bus-id = "PCI:1:0:0";
   nvidia-bus-id = "PCI:0:2:0";
 
@@ -96,5 +97,4 @@ in
 
   # Enable SyncThing
   syncthing = false;
-
 }
