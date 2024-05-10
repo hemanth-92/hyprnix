@@ -78,11 +78,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1715227380,
-        "narHash": "sha256-56TsrSnWkMyyIIAJxkifmeyE9fECe71hbk9rVO4Ycnc=",
+        "lastModified": 1715313798,
+        "narHash": "sha256-reowtx9npdWiww0gPD4pIk3Y1XyDaOYbHBmDPv/LQ3U=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "ad65e9ed739554e747ddcdbe697fbd49d5162635",
+        "rev": "c1868764f5a840e07396a2b821e85048f429d949",
         "type": "gitlab"
       },
       "original": {
@@ -330,17 +330,19 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1715305136,
-        "narHash": "sha256-lorANNzN9Ox1OvplE7HY4KJAdHpTkBzlTqpwO3iNBBI=",
-        "owner": "hyprwm",
-        "repo": "Hyprland",
-        "rev": "2ba6bb69c4b455ff6327596a63bf1785d0910d2c",
-        "type": "github"
+        "lastModified": 1715342341,
+        "narHash": "sha256-o7KB55Nd2QC7eOThktD8uOeE5JseK1aFUPE8o0/j2ZI=",
+        "ref": "refs/heads/main",
+        "rev": "38911d6df4977b6b00557cc887eb151d032e505b",
+        "revCount": 4661,
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/hyprwm/Hyprland"
       },
       "original": {
-        "owner": "hyprwm",
-        "repo": "Hyprland",
-        "type": "github"
+        "submodules": true,
+        "type": "git",
+        "url": "https://github.com/hyprwm/Hyprland"
       }
     },
     "hyprland-plugins": {
@@ -577,11 +579,11 @@
     },
     "nixpkgs_2": {
       "locked": {
-        "lastModified": 1715087517,
-        "narHash": "sha256-CLU5Tsg24Ke4+7sH8azHWXKd0CFd4mhLWfhYgUiDBpQ=",
+        "lastModified": 1715266358,
+        "narHash": "sha256-doPgfj+7FFe9rfzWo1siAV2mVCasW+Bh8I1cToAXEE4=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "b211b392b8486ee79df6cdfb1157ad2133427a29",
+        "rev": "f1010e0469db743d14519a1efd37e23f8513d714",
         "type": "github"
       },
       "original": {
@@ -637,11 +639,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1715299664,
-        "narHash": "sha256-Wg0O5PoLx8IoU1B9eKabueyDpaNWsEnVxPk/0eZwUwI=",
+        "lastModified": 1715337032,
+        "narHash": "sha256-3LsEuO/XXCp3TJb9Ohy7qG3/KrJu7MHn3+a+3UC29PA=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "083aa39d120538b395d7612ce040fda391ca99b1",
+        "rev": "b2bf515ec0f3ba5aea9f209ce9f0b97c9cdc66f4",
         "type": "github"
       },
       "original": {

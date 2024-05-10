@@ -3,14 +3,14 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-  
+
     home-manager.url = "github:nix-community/home-manager/master";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
     nix-colors.url = "github:misterio77/nix-colors";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-     hyprlock = {
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
+    hyprlock = {
       url = "github:hyprwm/hyprlock";
       inputs.nixpkgs.follows = "nixpkgs";
     };
@@ -41,8 +41,13 @@
     catppuccin.url = "github:catppuccin/nix";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, impermanence, catppuccin,... }:
-  let
+  outputs = inputs @ {
+    nixpkgs,
+    home-manager,
+    impermanence,
+    catppuccin,
+    ...
+  }: let
     system = "x86_64-linux";
     inherit (import ./options.nix) username hostname;
 
@@ -52,20 +57,23 @@
         allowUnfree = true;
       };
     };
-  in
-  {
+  in {
     nixosConfigurations = {
-      "${hostname}" = nixpkgs.lib.nixosSystem{ 
-        specialArgs = { 
-          inherit system; inherit inputs; 
-          inherit username; inherit hostname;
+      "${hostname}" = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          inherit system;
+          inherit inputs;
+          inherit username;
+          inherit hostname;
         };
-        modules = [ 
+        modules = [
           ./system.nix
           impermanence.nixosModules.impermanence
-          home-manager.nixosModules.home-manager {
+          home-manager.nixosModules.home-manager
+          {
             home-manager.extraSpecialArgs = {
-              inherit username; inherit inputs;
+              inherit username;
+              inherit inputs;
               inherit (inputs.nix-colors.lib-contrib {inherit pkgs;}) gtkThemeFromScheme;
             };
             home-manager.useGlobalPkgs = true;
