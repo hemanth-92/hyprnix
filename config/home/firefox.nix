@@ -4,8 +4,7 @@
   lib,
   pkgs,
   ...
-}:
-{
+}: {
   imports = [inputs.nur.nixosModules.nur];
 
   programs.firefox = {
@@ -20,7 +19,7 @@
       name = "sdvohet";
       isDefault = true;
 
-      extensions =with config.nur.repos.rycee.firefox-addons;[
+      extensions = with config.nur.repos.rycee.firefox-addons; [
         sponsorblock
         nord123
         playback-speed
@@ -50,7 +49,6 @@
         "security.ask_for_password" = 1;
         "security.password_lifetime" = 0;
       };
-
     };
   };
   home.sessionVariables = {
@@ -59,6 +57,6 @@
   };
   wayland.windowManager.hyprland.settings = {
     # do not idle while watching videos
-    windowrule = [ "idleinhibit fullscreen,firefox-aurora" ];
+    windowrule = ["idleinhibit fullscreen,firefox-aurora"];
   };
 }

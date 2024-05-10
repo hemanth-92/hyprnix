@@ -10,8 +10,8 @@ in {
   imports = [inputs.spicetify-nix.homeManagerModule];
   programs.spicetify = {
     enable = true;
-      theme = spicePkgs.themes.catppuccin;
-      colorScheme = "mocha";
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "mocha";
 
     customColorScheme = with config.colorScheme.palette; {
       accent = base0B;
