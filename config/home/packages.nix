@@ -54,6 +54,7 @@ in {
     loupe
     zed-editor
     telegram-desktop
+    playwright
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     # Import Scripts
     (import ./../scripts/emopicker9000.nix {inherit pkgs;})
