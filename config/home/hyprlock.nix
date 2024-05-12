@@ -1,5 +1,8 @@
-{pkgs,username, ...}:
-let
+{
+  pkgs,
+  username,
+  ...
+}: let
   wallpaper = "/home/${username}/Pictures/Wallpapers/lofi-computer.png";
   placeholderAndTimeColor = "rgb(205, 214, 244)";
 in {
