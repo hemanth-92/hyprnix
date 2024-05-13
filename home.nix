@@ -34,7 +34,6 @@ in {
     inputs.nix-colors.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
     inputs.hyprland.homeManagerModules.default
-    inputs.hyprlock.homeManagerModules.hyprlock
     ./config/home
   ];
 

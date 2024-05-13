@@ -32,7 +32,7 @@
     ./zathura.nix
     ./firefox.nix
     ./spotify.nix
-    ./hyprlock.nix
+    ./swaylock.nix
     ./btop.nix
     ./cava.nix
     ./bat.nix
