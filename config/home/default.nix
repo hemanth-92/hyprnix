@@ -32,10 +32,11 @@
     ./zathura.nix
     ./firefox.nix
     ./spotify.nix
-    ./swaylock.nix
+    ./hyprlock.nix
     ./btop.nix
     ./cava.nix
     ./bat.nix
     ./nixvim
+    ./fastfetch.nix
   ];
 }

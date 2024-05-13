@@ -140,15 +140,15 @@ in
             exec-once = swaync
             exec-once = wallsetter
             exec-once = nm-applet --indicator
-            exec-once = swayidle -w timeout 720 'swaylock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'swaylock -f -c 000000'
-            dwindle {
+            exec-once = swayidle -w timeout 300 'hyprlock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'hyprlock -f -c 000000'
+                       dwindle {
               pseudotile = true
               preserve_split = true
             }
             master {
               new_is_master = true
             }
-            bind = ${modifier},l,exec,swaylock
+            bind = ${modifier},l,exec,hyprlock
             bind = ${modifier}, B, exec, killall -SIGUSR1 waybar
             bind = ${modifier},Return,exec,${terminal}
             bind = ${modifier},A,exec,rofi-launcher
