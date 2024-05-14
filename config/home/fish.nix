@@ -34,7 +34,8 @@ in
           config = "cd ~/.config";
           restart = "systemctl reboot";
           poweroff = "systemctl poweroff";
-          neofetch = "neofetch --ascii ~/.config/ascii-neofetch";
+          nf = "neofetch --ascii ~/.config/ascii-neofetch";
+          fs = "fastfetch";
         };
         shellInit = ''
           # shut up welcome message

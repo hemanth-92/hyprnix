@@ -1,11 +1,8 @@
-{ config, lib, pkgs, ... }:
-
-{
+_: {
   programs.zoxide = {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    options = [ "--cmd cd" ];
+    options = ["--cmd cd"];
   };
 }
-
