@@ -1,24 +1,18 @@
-{ config,pkgs,... }:
-
-let 
-  inherit (import  ../../options.nix) gitUsername gitEmail;
-
-in 
-  {
-    programs = {
-      git = {
+_: {
+  programs = {
+    git = {
+      enable = true;
+      userName = "hemanth-92";
+      userEmail = "131354764+hemanth-92@users.noreply.github.com";
+      difftastic = {
         enable = true;
-        userName = "${gitUsername}";
-        userEmail = "${gitEmail}";
-        difftastic = {
-          enable = true;
-          background = "dark";
+        background = "dark";
+      };
+      extraConfig = {
+        init = {
+          defaultBranch = "main";
         };
-        extraConfig = {
-          init = {
-            defaultBranch = "main";
-          };
-          alias = {
+        alias = {
           # blame with ignore whitespace and track movement across all commits
           blame = "blame -w -C -C -C";
           diff = "diff --word-diff";
@@ -62,7 +56,7 @@ in
     };
 
     lazygit.enable = true;
-  }; 
+  };
   home.shellAliases = {
     lg = "lazygit";
     ga = "git add";
@@ -92,5 +86,5 @@ in
     github = "open `git remote -v | grep github.com | grep fetch | head -1 | awk '{print $2}' | sed 's/git:/http:/git'`";
     # cleanup leftover files from merges
     mergeclean = "find . -type f -name '*.orig' -exec rm -f {} ;";
-    };
-  }
+  };
+}
