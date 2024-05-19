@@ -11,7 +11,9 @@
             fetchingTimeout = 200;
             maxViewEntries = 30;
           };
-          snippet.expand = "luasnip";
+          snippet = {
+            expand = "function(args) require('luasnip').lsp_expand(args.body) end";
+          };
           formatting.fields = ["kind" "abbr" "menu"];
           sources = [
             {name = "nvim_lsp";}
@@ -36,7 +38,9 @@
               border = "rounded";
               winhighlight = "Normal:Normal,FloatBorder:FloatBorder,CursorLine:Visual,Search:None";
             };
-            documentation.border = "rounded";
+            documentation = {
+              border = "rounded";
+            };
           };
 
           mapping = {
@@ -52,12 +56,12 @@
           };
         };
       };
-      cmp-buffer.enable = true;
-      cmp-cmdline.enable = true; # autocomplete for cmdline
-      cmp-emoji.enable = true;
-      cmp_luasnip.enable = true; # snippets
-      cmp-nvim-lsp.enable = true; # lsp
-      cmp-path.enable = true; # file system paths
+      cmp-buffer = {enable = true;};
+      cmp-cmdline = {enable = true;}; # autocomplete for cmdline
+      cmp-emoji = {enable = true;};
+      cmp_luasnip = {enable = true;}; # snippets
+      cmp-nvim-lsp = {enable = true;}; # lsp
+      cmp-path = {enable = true;}; # file system paths
     };
   };
 }
