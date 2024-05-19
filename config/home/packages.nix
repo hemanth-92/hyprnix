@@ -56,6 +56,7 @@ in {
     telegram-desktop
     playwright
     hyfetch
+    nomacs
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     # Import Scripts
     (import ./../scripts/emopicker9000.nix {inherit pkgs;})
