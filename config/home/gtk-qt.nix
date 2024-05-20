@@ -1,6 +1,9 @@
-{ pkgs, config, gtkThemeFromScheme, ... }:
-
 {
+  pkgs,
+  config,
+  gtkThemeFromScheme,
+  ...
+}: {
   # Configure Cursor Theme
   home.pointerCursor = {
     gtk.enable = true;
@@ -27,10 +30,10 @@
       package = pkgs.papirus-icon-theme;
     };
     gtk3.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
+      gtk-application-prefer-dark-theme = 1;
     };
     gtk4.extraConfig = {
-      gtk-application-prefer-dark-theme=1;
+      gtk-application-prefer-dark-theme = 1;
     };
   };
 
@@ -39,8 +42,8 @@
     enable = true;
     platformTheme = "gtk";
     style = {
-        name = "adwaita-dark";
-        package = pkgs.adwaita-qt;
+      name = "adwaita-dark";
+      package = pkgs.adwaita-qt;
     };
   };
 }

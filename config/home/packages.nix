@@ -57,6 +57,7 @@ in {
     playwright
     hyfetch
     nomacs
+    obs-studio
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     # Import Scripts
     (import ./../scripts/emopicker9000.nix {inherit pkgs;})
