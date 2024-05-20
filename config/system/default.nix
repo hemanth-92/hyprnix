@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+_: {
   imports = [
     ./amd-gpu.nix
     ./appimages.nix
