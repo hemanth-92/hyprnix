@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  inherit (import ../../options.nix) flakeDir theShell hostname;
+  inherit (import ../../options.nix) theShell hostname;
 in
   lib.mkIf (theShell == "fish") {
     programs = {
@@ -20,8 +20,8 @@ in
         shellAliases = {
           ehistory = "nvim ${config.xdg.dataHome}/fish/fish_history";
           sv = "sudo nvim";
-          rebuild = "nh os switch --hostname ${hostname} -- --option eval-cache false ";
-          update = "nh os switch --hostname ${hostname} --update";
+          rebuild = "nh os switch --hostname ${hostname}";
+          update = "nh os switch --hostname ${hostname}  --update";
           gcCleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
           v = "nvim";
           ls = "eza -lah";
@@ -35,7 +35,7 @@ in
           restart = "systemctl reboot";
           poweroff = "systemctl poweroff";
           nf = "neofetch --ascii ~/.config/ascii-neofetch";
-          fs = "fastfetch --ascii ~/.config/ascii-neofetch";
+          fs = "fastfetch";
         };
         shellInit = ''
           # shut up welcome message
