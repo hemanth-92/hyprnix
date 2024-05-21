@@ -18,18 +18,18 @@
           black = {
             enable = true;
             withArgs = ''
-            {
-              extra_args = { "--fast" },
-            }
+              {
+                extra_args = { "--fast" },
+              }
             '';
           };
           prettier = {
             enable = true;
             disableTsServerFormatter = true;
             withArgs = ''
-            {
-              extra_args = { "--no-semi", "--single-quote" },
-            }
+              {
+                extra_args = { "--no-semi", "--single-quote" },
+              }
             '';
           };
           stylua.enable = true;
