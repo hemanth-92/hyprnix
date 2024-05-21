@@ -20,7 +20,7 @@ in
         shellAliases = {
           ehistory = "nvim ${config.xdg.dataHome}/fish/fish_history";
           sv = "sudo nvim";
-          rebuild = "nh os switch --hostname ${hostname}";
+          rebuild = "nh os switch --hostname ${hostname} -- --option eval-cache false ";
           update = "nh os switch --hostname ${hostname} --update";
           gcCleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
           v = "nvim";
@@ -35,7 +35,7 @@ in
           restart = "systemctl reboot";
           poweroff = "systemctl poweroff";
           nf = "neofetch --ascii ~/.config/ascii-neofetch";
-          fs = "fastfetch";
+          fs = "fastfetch --ascii ~/.config/ascii-neofetch";
         };
         shellInit = ''
           # shut up welcome message

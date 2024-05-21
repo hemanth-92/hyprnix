@@ -18,7 +18,6 @@
     ./wezterm.nix
     ./zsh.nix
     ./zoxide.nix
-    ./vscode.nix
     ./obs-studio.nix
     ./gimp.nix
     ./git.nix
@@ -38,5 +37,6 @@
     ./bat.nix
     ./nixvim
     ./fastfetch.nix
+    ./vscodium.nix
   ];
 }

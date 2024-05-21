@@ -45,7 +45,6 @@ in {
     swayidle
     neovide
     element-desktop
-    vscode
     wl-clipboard
     swaylock
     obsidian

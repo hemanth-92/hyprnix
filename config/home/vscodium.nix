@@ -27,7 +27,6 @@
       "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "catppuccin-mocha";
       "catppuccin.accentColor" = "lavender";
-      "vsicons.dontShowNewVersionMessage" = true;
       "explorer.confirmDragAndDrop" = false;
       "editor.fontLigatures" = true;
       "editor.minimap.enabled" = false;
@@ -42,7 +41,7 @@
       "workbench.editor.limit.enabled" = true;
       "workbench.editor.limit.value" = 10;
       "workbench.editor.limit.perEditorGroup" = true;
-      "workbench.editor.showTabs" = "single";
+      "workbench.editor.showTabs" = "multiple";
       "files.autoSave" = "onWindowChange";
       "explorer.openEditors.visible" = 0;
       "breadcrumbs.enabled" = false;
@@ -74,31 +73,6 @@
       "editor.cursorBlinking" = "expand";
       "editor.find.cursorMoveOnType" = false;
       "editor.cursorSmoothCaretAnimation" = "on";
-
-      "C_Cpp.autocompleteAddParentheses" = true;
-      "C_Cpp.formatting" = "vcFormat";
-      "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyFunction" = true;
-      "C_Cpp.vcFormat.newLine.closeBraceSameLine.emptyType" = true;
-      "C_Cpp.vcFormat.space.beforeEmptySquareBrackets" = true;
-      "C_Cpp.vcFormat.newLine.beforeOpenBrace.block" = "sameLine";
-      "C_Cpp.vcFormat.newLine.beforeOpenBrace.function" = "sameLine";
-      "C_Cpp.vcFormat.newLine.beforeElse" = false;
-      "C_Cpp.vcFormat.newLine.beforeCatch" = false;
-      "C_Cpp.vcFormat.newLine.beforeOpenBrace.type" = "sameLine";
-      "C_Cpp.vcFormat.space.betweenEmptyBraces" = true;
-      "C_Cpp.vcFormat.space.betweenEmptyLambdaBrackets" = true;
-      "C_Cpp.vcFormat.indent.caseLabels" = true;
-      "C_Cpp.intelliSenseCacheSize" = 2048;
-      "C_Cpp.intelliSenseMemoryLimit" = 2048;
-      "C_Cpp.default.browse.path" = [
-        ''''${workspaceFolder}/**''
-      ];
-      "C_Cpp.default.cStandard" = "gnu11";
-      "C_Cpp.inlayHints.parameterNames.hideLeadingUnderscores" = false;
-      "C_Cpp.intelliSenseUpdateDelay" = 500;
-      "C_Cpp.workspaceParsingPriority" = "medium";
-      "C_Cpp.clang_format_sortIncludes" = true;
-      "C_Cpp.doxygen.generatedStyle" = "/**";
     };
     # Keybindings
     keybindings = [
