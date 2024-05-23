@@ -19,7 +19,6 @@ in {
     slurp
     gnome.file-roller
     swaynotificationcenter
-    rofi-wayland
     imv
     transmission-gtk
     mpv
@@ -54,9 +53,9 @@ in {
     zed-editor
     telegram-desktop
     playwright
-    hyfetch
     nomacs
     obs-studio
+    maxfetch
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     # Import Scripts
     (import ./../scripts/emopicker9000.nix {inherit pkgs;})
