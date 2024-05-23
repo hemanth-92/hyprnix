@@ -36,6 +36,6 @@
     ./bat.nix
     ./nixvim
     ./fastfetch.nix
-    ./vscode.nix.nix
+    ./vscode.nix
   ];
 }
