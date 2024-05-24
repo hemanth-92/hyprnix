@@ -1,6 +1,4 @@
-{ pkgs, config,inputs, ... }:
-
-{
+{inputs, ...}: {
   boot.loader.grub = {
     enable = true;
     device = "nodev";
@@ -13,6 +11,4 @@
     canTouchEfiVariables = true;
     efiSysMountPoint = "/boot";
   };
-  zramSwap.enable = true;
-  zramSwap.memoryPercent = 200;
 }
