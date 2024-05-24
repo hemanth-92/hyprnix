@@ -1,8 +1,4 @@
-{
-  pkgs,
-  lib,
-  ...
-}: {
+{pkgs, ...}: {
   config = {
     home = {
       packages = [pkgs.fastfetch];
@@ -10,51 +6,89 @@
 
     xdg.configFile."fastfetch/config.jsonc".text = builtins.toJSON {
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
-      logo = {
-        source = "nixos_small";
-        padding = {
-          left = 1;
-          right = 3;
+      "logo" = {
+        "padding" = {
+          "top" = 2;
         };
+        "type" = "small";
       };
-      display = {
-        separator = " ";
-        keyWidth = 14;
+      "display" = {
+        "separator" = " -> ";
       };
-      modules = [
+      "modules" = [
+        "break"
         {
-          type = "os";
-          key = " system  ";
-          format = "{3}";
+          "type" = "title";
+          "keyWidth" = 10;
+          "format" = "      {6}{7}{8}";
         }
         {
-          type = "kernel";
-          key = " kernel  ";
-          format = "{1} {2} ({4})";
+          "type" = "custom";
+          "format" = "  ╭───────────────────────╮";
         }
         {
-          type = "uptime";
-          key = " uptime  ";
+          "type" = "kernel";
+          "key" = " ";
+          "format" = "{1} {2} ({4})";
+          "keyColor" = "yellow";
         }
         {
-          type = "wm";
-          key = " wm      ";
+          "type" = "wm";
+          "key" = " ";
+          "keyColor" = "blue";
         }
         {
-          type = "command";
-          key = "󰆧 packages";
-          text = "(${lib.getExe' pkgs.nix "nix-store"} --query --requisites /run/current-system | wc -l | tr -d '\n') && echo ' (nix; /run/current-system)'";
+          "type" = "shell";
+          "key" = " ";
+          "keyColor" = "yellow";
         }
         {
-          type = "memory";
-          key = "󰍛 memory  ";
+          "type" = "terminal";
+          "key" = " ";
+          "keyColor" = "blue";
         }
         {
-          type = "disk";
-          key = "󱥎 storage ";
-          format = "{1} / {2} ({3})";
-          folders = "/";
+          "type" = "packages";
+          "key" = "󰏖 ";
+          "keyColor" = "yellow";
         }
+        {
+          "type" = "memory";
+          "key" = "󰍛 ";
+          "keyColor" = "magenta";
+          # format: used / total
+          "format" = "{1} / {2}";
+        }
+        {
+          "type" = "uptime";
+          "key" = "󰔛 ";
+          "keyColor" = "green";
+        }
+        {
+          "type" = "disk";
+          "key" = "󱥎 ";
+          "format" = "{1} / {2} ({3})";
+          "folders" = "/";
+        }
+        {
+          "type" = "cpu";
+          "key" = "󰻠 ";
+          "keyColor" = "green";
+        }
+        {
+          "type" = "gpu";
+          "key" = " 󰻑 ";
+          "keyColor" = "green";
+        }
+        {
+          "type" = "custom";
+          "format" = "  ╰───────────────────────╯";
+        }
+        {
+          "type" = "custom";
+          "format" = "   \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m  \u001b[90m ";
+        }
+        "break"
       ];
     };
   };
