@@ -37,5 +37,6 @@
     ./nixvim
     ./fastfetch.nix
     ./vscode.nix
+    ./direnv.nix
   ];
 }
