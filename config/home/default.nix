@@ -36,5 +36,6 @@
     ./fastfetch.nix
     ./vscode.nix
     ./direnv.nix
+    ./zsh.nix
   ];
 }
