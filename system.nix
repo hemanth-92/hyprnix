@@ -1,6 +1,4 @@
 {
-  inputs,
-  config,
   pkgs,
   username,
   hostname,
@@ -8,16 +6,8 @@
 }: let
   inherit
     (import ./options.nix)
-    theLocale
-    theTimezone
     gitUsername
-    theShell
-    wallpaperDir
-    wallpaperGit
-    theLCVariables
-    theKBDLayout
     flakeDir
-    theme
     ;
 in {
   imports = [
@@ -29,23 +19,23 @@ in {
   networking.hostName = "${hostname}"; # Define your hostname
   networking.networkmanager.enable = true;
   # Set your time zone
-  time.timeZone = "${theTimezone}";
+  time.timeZone = "Asia/Kolkata";
 
   # Select internationalisation properties
-  i18n.defaultLocale = "${theLocale}";
+  i18n.defaultLocale = "en_US.UTF-8";
   i18n.extraLocaleSettings = {
-    LC_ADDRESS = "${theLCVariables}";
-    LC_IDENTIFICATION = "${theLCVariables}";
-    LC_MEASUREMENT = "${theLCVariables}";
-    LC_MONETARY = "${theLCVariables}";
-    LC_NAME = "${theLCVariables}";
-    LC_NUMERIC = "${theLCVariables}";
-    LC_PAPER = "${theLCVariables}";
-    LC_TELEPHONE = "${theLCVariables}";
-    LC_TIME = "${theLCVariables}";
+    LC_ADDRESS = "en_US.UTF-8";
+    LC_IDENTIFICATION = "en_US.UTF-8";
+    LC_MEASUREMENT = "en_US.UTF-8";
+    LC_MONETARY = "en_US.UTF-8";
+    LC_NAME = "en_US.UTF-8";
+    LC_NUMERIC = "en_US.UTF-8";
+    LC_PAPER = "en_US.UTF-8";
+    LC_TELEPHONE = "en_US.UTF-8";
+    LC_TIME = "en_US.UTF-8";
   };
 
-  console.keyMap = "${theKBDLayout}";
+  console.keyMap = "us";
 
   # Define a user account.
   users = {
@@ -56,14 +46,13 @@ in {
       isNormalUser = true;
       description = "${gitUsername}";
       extraGroups = ["networkmanager" "wheel" "libvirtd"];
-      shell = pkgs.${theShell};
+      shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [];
     };
   };
 
   environment.variables = {
-    ENVER = "unstable";
     FLAKE = "${flakeDir}";
     POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
     EDITOR = "nvim";

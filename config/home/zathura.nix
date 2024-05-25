@@ -1,8 +1,4 @@
-{
-  config,
-  lib,
-  ...
-}: {
+_: {
   programs = {
     zathura = {
       enable = true;
@@ -17,15 +13,12 @@
         p = "print";
         i = "recolor";
       };
-      extraConfig = ''
-        include "${config.xdg.cacheHome}/wallust/zathurarc"
-      '';
       options = {
         statusbar-h-padding = 0;
         statusbar-v-padding = 0;
         page-padding = 1;
         adjust-open = "best-fit";
-        recolor = true; # invert by default
+        recolor = false; # invert by default
       };
     };
   };
