@@ -14,8 +14,6 @@
     ./wlogout.nix
     ./swappy.nix
     ./swaync.nix
-    ./wezterm.nix
-    ./zsh.nix
     ./zoxide.nix
     ./obs-studio.nix
     ./gimp.nix
