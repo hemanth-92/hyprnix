@@ -4,6 +4,12 @@ The process is:
 - mount partitions onto /mnt
 - nixos-install
 
+Run this command to ensure Git & Vim are installed:
+
+```bash
+nix-shell -p git vim
+```
+
 #### Git clone this repo
 
 Now enter the following commands to get my repo:
