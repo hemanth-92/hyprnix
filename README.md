@@ -1,3 +1,10 @@
+The process is:
+
+##partition your disks
+##mount partitions onto /mnt
+##nixos-install
+
+
 #### Git clone this repo
 
 Now enter the following commands to get my repo:
