@@ -6,7 +6,6 @@ _: {
     ./boot.nix
     ./displaymanager.nix
     ./distrobox.nix
-    ./flatpak.nix
     ./hwclock.nix
     ./intel-amd.nix
     ./intel-gpu.nix
