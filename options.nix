@@ -1,6 +1,6 @@
 let
   # THINGS YOU NEED TO CHANGE
-  username = "sdvohet";
+  username = "zenith";
   hostname = "shadowblaze";
   userHome = "/home/${username}";
   flakeDir = "${userHome}/hyprnix";
