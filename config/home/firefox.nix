@@ -28,7 +28,7 @@
         ublock-origin
         user-agent-string-switcher
         screenshot-capture-annotate
-        vimium
+        tridactyl
         adblocker-ultimate
       ];
       settings = {
