@@ -46,7 +46,7 @@ When you're done with all of your changes, you are ready to install the system. 
 
 ```bash
 NIX_CONFIG="experimental-features = nix-command flakes"
-sudo nixos-rebuild switch --flake .#<The-Hostname-You-Set-In-The-Options-File> --install-bootloader
+sudo nixos-rebuild switch --flake .#<The-Hostname-You-Set-In-The-Options-File>  --install-bootloader
 (--install-bootloader is to load the boot)
 ```
 
