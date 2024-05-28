@@ -1,8 +1,8 @@
 The process is:
 
--partition your disks
--mount partitions onto /mnt
--nixos-install
+- partition your disks
+- mount partitions onto /mnt
+- nixos-install
 
 #### Git clone this repo
 
