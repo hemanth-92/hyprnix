@@ -1,9 +1,8 @@
 The process is:
 
-##partition your disks
-##mount partitions onto /mnt
-##nixos-install
-
+partition your disks
+mount partitions onto /mnt
+nixos-install
 
 #### Git clone this repo
 
@@ -56,4 +55,3 @@ NIX_CONFIG="experimental-features = nix-command flakes"
 sudo nixos-rebuild switch --flake .#<The-Hostname-You-Set-In-The-Options-File>  --install-bootloader
 (--install-bootloader is to load the boot)
 ```
-
