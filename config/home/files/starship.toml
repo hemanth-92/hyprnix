@@ -1,33 +1,36 @@
 ## FIRST LINE/ROW: Info & Status
+# User Configuration
 [username]
 format = " [╭$user]($style)@"
 show_always = true
 style_root = "bold red"
 style_user = "bold red"
 
+# Hostname Configuration
 [hostname]
 disabled = false
-format ="[$hostname]($style) in "
+format = "[$hostname]($style) in "
 ssh_only = false
-#style = "bold dimmed red"
-# If enabled hostnames with dashes will be cut off  ##
-#trim_at = "-"
+# Uncomment the following line if you want to trim hostnames at dashes
+# trim_at = "-"
 
-
-# Replace the "❯" symbol in the prompt with "➜"
-[character]                            # The name of the module we are configuring is "character"
-success_symbol = "[❯](bold cyan)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+# Prompt Character
+[character]
+success_symbol = "[❯](bold cyan)"
 error_symbol = "[✗](bold red)"
 
+# Directory Configuration
 [directory]
 read_only = " "
 truncation_length = 10
-truncate_to_repo = true # truncates directory to root folder if in github repo
+truncate_to_repo = true
 style = "bold italic cyan"
 
+# Sudo Configuration
 [sudo]
 disabled = false
 
+# Git Status Configuration
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
 stashed = "[${count}*](cyam)"
@@ -39,8 +42,9 @@ behind = "⇣${count}"
 untracked = "[${count}?](blue)"
 staged = "[${count}+](green)"
 
+# Git State Configuration
 [git_state]
-style =	"bold red"
+style = "bold red"
 format = "[$state( $progress_current/$progress_total) ]($style)"
 rebase = "rebase"
 merge = "merge"
@@ -50,43 +54,43 @@ bisect = "bisect"
 am = "am"
 am_or_rebase = "am/rebase"
 
+# Command Duration Configuration
 [cmd_duration]
 min_time = 1
 format = 'took [$duration]($style)'
 disabled = true
 style = "bold italic cyan"
 
-
-## SECOND LINE/ROW: Prompt
-# Somethere at the beginning
+# Battery Configuration
 [battery]
 charging_symbol = ""
-disabled = true
 discharging_symbol = ""
 full_symbol = ""
+disabled = true
 
 [[battery.display]]  # "bold red" style when capacity is between 0% and 10%
-disabled = false
-style = "bold red"
 threshold = 15
+style = "bold red"
+disabled = false
 
-[[battery.display]]  # "bold yellow" style when capacity is between 10% and 30%
-disabled = true
-style = "bold yellow"
+[[battery.display]]  # "bold yellow" style when capacity is between 10% and 50%
 threshold = 50
-
-[[battery.display]]  # "bold green" style when capacity is between 10% and 30%
+style = "bold yellow"
 disabled = true
-style = "bold green"
-threshold = 80
 
-# Prompt: optional param 1
+[[battery.display]]  # "bold green" style when capacity is between 50% and 100%
+threshold = 80
+style = "bold green"
+disabled = true
+
+# Time Configuration
 [time]
 disabled = true
 format = " 🕙 $time($style)\n"
 style = "bright-white"
 time_format = "%T"
 
+# Various Language/Environment Symbols
 [aws]
 symbol = " "
 
@@ -140,7 +144,6 @@ symbol = " "
 
 [python]
 symbol = "🐍"
-#pyenv_version_name = true
 format = 'via [${symbol}python (${version} )(\($virtualenv\) )]($style)'
 style = "bold yellow"
 pyenv_prefix = "venv "
