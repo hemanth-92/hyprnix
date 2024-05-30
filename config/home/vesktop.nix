@@ -122,6 +122,14 @@
           logEdits = true;
           logDeletes = true;
         };
+        IgnoreActivities = {
+          enabled = true;
+          ignorePlaying = true;
+          ignreStreaming = true;
+          ignoreListening = true;
+          ignoreWatching = true;
+          ignoreCompleting = true;
+        };
         MessagePopoverAPI.enabled = true;
         MoreUserTags = {
           enabled = true;
