@@ -125,10 +125,10 @@
         IgnoreActivities = {
           enabled = true;
           ignorePlaying = true;
-          ignreStreaming = true;
+          ignoreStreaming = true;
           ignoreListening = true;
           ignoreWatching = true;
-          ignoreCompleting = true;
+          ignoreCompeting = true;
         };
         MessagePopoverAPI.enabled = true;
         MoreUserTags = {

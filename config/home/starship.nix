@@ -83,7 +83,8 @@
         time = {
           format = "[ $time ]($style)";
           disabled = false;
-          time_format = "%H:%M";
+          use_12hr = false;
+          time_format = "%I:%M";
           style = accent_style;
         };
       };
