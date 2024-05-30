@@ -46,7 +46,7 @@ in {
       isNormalUser = true;
       description = "${gitUsername}";
       extraGroups = ["networkmanager" "wheel" "libvirtd"];
-      shell = pkgs.zsh;
+      shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [];
     };

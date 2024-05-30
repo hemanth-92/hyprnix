@@ -4,7 +4,6 @@ _: {
     ".emoji".source = ./files/emoji;
     ".base16-themes".source = ./files/base16-themes;
     ".config/rofi/rofi.jpg".source = ./files/rofi.jpg;
-    ".config/starship.toml".source = ./files/starship.toml;
     ".config/swaylock-bg.jpg".source = ./files/media/swaylock-bg.jpg;
     ".config/ascii-neofetch".source = ./files/ascii-neofetch;
     ".local/share/fonts" = {
