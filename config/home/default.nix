@@ -37,5 +37,6 @@
     ./vscode.nix
     ./direnv.nix
     ./zsh.nix
+    ./obs-studio.nix
   ];
 }

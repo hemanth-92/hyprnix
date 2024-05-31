@@ -32,7 +32,7 @@ in {
     fastfetch
     brave
     klavaro
-    jdk17_headless
+    jdk17
     vlc
     bat
     gotop
@@ -52,10 +52,10 @@ in {
     loupe
     zed-editor
     telegram-desktop
-    playwright
     nomacs
     obs-studio
     maxfetch
+    inxi
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     # Import Scripts
     (import ./../scripts/emopicker9000.nix {inherit pkgs;})
