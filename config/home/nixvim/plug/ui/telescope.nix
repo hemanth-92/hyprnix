@@ -8,7 +8,11 @@
         fzf-native.enable = true;
       };
       settings.defaults = {
-        layout_config.horizontal.prompt_position = "top";
+        layout_config = {
+          horizontal = {
+            prompt_position = "top";
+          };
+        };
         sorting_strategy = "ascending";
       };
       keymaps = {
@@ -16,74 +20,73 @@
           action = "live_grep";
         };
         "<leader>:" = {
-          action = "command_history, {}";
+          action = "command_history";
         };
         "<leader>b" = {
-          action = "buffers, {}";
+          action = "buffers";
         };
         "<leader>ff" = {
-          action = "find_files, {}";
+          action = "find_files";
         };
         "<leader>fr" = {
-          action = "live_grep, {}";
+          action = "live_grep";
         };
         "<leader>fR" = {
-          action = "resume, {}";
+          action = "resume";
         };
         "<leader>fg" = {
-          action = "oldfiles, {}";
+          action = "oldfiles";
         };
         "<leader>fb" = {
-          action = "buffers, {}";
+          action = "buffers";
         };
         "<C-p>" = {
-          action = "git_files, {}";
+          action = "git_files";
         };
         "<leader>gc" = {
-          action = "git_commits, {}";
+          action = "git_commits";
         };
         "<leader>gs" = {
-          action = "git_status, {}";
+          action = "git_status";
         };
         "<leader>sa" = {
-          action = "autocommands, {}";
+          action = "autocommands";
         };
         "<leader>sb" = {
-          action = "current_buffer_fuzzy_find, {}";
+          action = "current_buffer_fuzzy_find";
         };
         "<leader>sc" = {
-          action = "command_history, {}";
+          action = "command_history";
         };
         "<leader>sC" = {
-          action = "commands, {}";
+          action = "commands";
         };
         "<leader>sD" = {
-          action = "diagnostics, {}";
+          action = "diagnostics";
         };
         "<leader>sh" = {
-          action = "help_tags, {}";
+          action = "help_tags";
         };
         "<leader>sH" = {
-          action = "highlights, {}";
+          action = "highlights";
         };
         "<leader>sk" = {
-          action = "keymaps, {}";
+          action = "keymaps";
         };
         "<leader>sM" = {
-          action = "man_pages, {}";
+          action = "man_pages";
         };
         "<leader>sm" = {
-          action = "marks, {}";
+          action = "marks";
         };
         "<leader>so" = {
-          action = ''
-            vim_options, {}'';
+          action = "vim_options";
         };
         "<leader>sR" = {
-          action = "resume, {}";
+          action = "resume";
         };
         "<leader>uC" = {
-          action = "colorscheme, {}";
+          action = "colorscheme";
         };
       };
     };
@@ -92,19 +95,25 @@
         mode = "n";
         key = "<leader>sd";
         action = "<cmd>Telescope diagnostics bufnr=0<cr>";
-        options.desc = "Document diagnostics";
+        options = {
+          desc = "Document diagnostics";
+        };
       }
       {
         mode = "n";
         key = "<leader>fe";
         action = "<cmd>Telescope file_browser<cr>";
-        options.desc = "File browser";
+        options = {
+          desc = "File browser";
+        };
       }
       {
         mode = "n";
         key = "<leader>fE";
         action = "<cmd>Telescope file_browser path=%:p:h select_buffer=true<cr>";
-        options.desc = "File browser";
+        options = {
+          desc = "File browser";
+        };
       }
     ];
   };
