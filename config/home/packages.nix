@@ -56,6 +56,8 @@ in {
     obs-studio
     maxfetch
     inxi
+    haruna
+    libreoffice-qt6-fresh
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     # Import Scripts
     (import ./../scripts/emopicker9000.nix {inherit pkgs;})
