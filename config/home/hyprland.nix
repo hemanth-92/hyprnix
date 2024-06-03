@@ -132,6 +132,8 @@ in
                 color = rgba(${theme.base0A}ff)
               }
             }
+            exec-once=[workspace 1 silent] vesktop
+            exec-once=[workspace 2 silent] firefox
             exec-once = $POLKIT_BIN
             exec-once = dbus-update-activation-environment --systemd --all
             exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
