@@ -59,15 +59,19 @@
           style = "bright-black";
         };
         git_status = {
-          conflicted = "​";
-          deleted = "​";
-          format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style) ";
-          modified = "​";
-          renamed = "​";
-          staged = "​";
-          stashed = "≡";
-          style = "cyan";
-          untracked = "​";
+          format = "[\\($all_status$ahead_behind\\)]($style) ";
+          style = "bold green";
+          conflicted = "🏳";
+          up_to_date = " ";
+          untracked = " ";
+          ahead = "⇡\${count}";
+          diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
+          behind = "⇣\${count}";
+          stashed = "󰏗 ";
+          modified = " ";
+          staged = "[++\\($count\\)](green)";
+          renamed = "󰖷 ";
+          deleted = " ";
         };
         nix_shell = {
           format = "[$symbol]($style)";
