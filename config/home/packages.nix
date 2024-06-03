@@ -50,11 +50,9 @@ in {
     tenki
     yazi
     loupe
-    zed-editor
     telegram-desktop
     nomacs
     obs-studio
-    maxfetch
     inxi
     haruna
     libreoffice-qt6-fresh

@@ -6,7 +6,6 @@
     ./hyprland.nix
     ./kdenlive.nix
     ./kitty.nix
-    ./neofetch.nix
     ./packages.nix
     ./rofi.nix
     ./starship.nix

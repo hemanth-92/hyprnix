@@ -10,80 +10,109 @@
         "padding" = {
           "top" = 2;
         };
-        "type" = "small";
+        "source" = "~/.config/ascii-fastfetch";
+        "height" = 15;
+        "width" = 16;
       };
       "display" = {
-        "separator" = " -> ";
+        "separator" = " ➜  ";
       };
       "modules" = [
         "break"
+        "break"
+        "break"
         {
-          "type" = "title";
-          "keyWidth" = 10;
-          "format" = "      {6}{7}{8}";
-        }
-        {
-          "type" = "custom";
-          "format" = "  ╭───────────────────────╮";
+          "type" = "os";
+          "key" = "OS   ";
+          "keyColor" = "31"; #= color1
         }
         {
           "type" = "kernel";
-          "key" = " ";
-          "format" = "{1} {2} ({4})";
-          "keyColor" = "yellow";
-        }
-        {
-          "type" = "wm";
-          "key" = " ";
-          "keyColor" = "blue";
-        }
-        {
-          "type" = "shell";
-          "key" = " ";
-          "keyColor" = "yellow";
-        }
-        {
-          "type" = "terminal";
-          "key" = " ";
-          "keyColor" = "blue";
+          "key" = " ├  ";
+          "keyColor" = "31";
         }
         {
           "type" = "packages";
-          "key" = "󰏖 ";
-          "keyColor" = "yellow";
+          "format" = "{} (nixpkgs)";
+          "key" = " ├ 󰏖 ";
+          "keyColor" = "31";
         }
         {
-          "type" = "memory";
-          "key" = "󰍛 ";
-          "keyColor" = "magenta";
-          # format: used / total
-          "format" = "{1} / {2}";
+          "type" = "shell";
+          "key" = " └  ";
+          "keyColor" = "31";
+        }
+        "break"
+        {
+          "type" = "wm";
+          "key" = "WM   ";
+          "keyColor" = "32";
         }
         {
-          "type" = "uptime";
-          "key" = "󰔛 ";
-          "keyColor" = "green";
+          "type" = "wmtheme";
+          "key" = " ├ 󰉼 ";
+          "keyColor" = "32";
         }
         {
-          "type" = "disk";
-          "key" = "󱥎 ";
-          "format" = "{1} / {2} ({3})";
-          "folders" = "/";
+          "type" = "icons";
+          "key" = " ├ 󰀻 ";
+          "keyColor" = "32";
+        }
+        {
+          "type" = "cursor";
+          "key" = " ├  ";
+          "keyColor" = "32";
+        }
+        {
+          "type" = "terminal";
+          "key" = " ├  ";
+          "keyColor" = "32";
+        }
+        {
+          "type" = "terminalfont";
+          "key" = " └  ";
+          "keyColor" = "32";
+        }
+        "break"
+        {
+          "type" = "host";
+          "format" = "{5} {1} Type {2}";
+          "key" = "PC   ";
+          "keyColor" = "33";
         }
         {
           "type" = "cpu";
-          "key" = "󰻠 ";
-          "keyColor" = "green";
+          "format" = "{1} ({3}) @ {7} GHz";
+          "key" = " ├  ";
+          "keyColor" = "33";
         }
         {
           "type" = "gpu";
-          "key" = " 󰻑 ";
-          "keyColor" = "green";
+          "format" = "{1} {2} @ {12} GHz";
+          "key" = " ├ 󰢮 ";
+          "keyColor" = "33";
         }
         {
-          "type" = "custom";
-          "format" = "  ╰───────────────────────╯";
+          "type" = "memory";
+          "key" = " ├  ";
+          "keyColor" = "33";
         }
+        {
+          "type" = "swap";
+          "key" = " ├ 󰓡 ";
+          "keyColor" = "33";
+        }
+        {
+          "type" = "disk";
+          "key" = " ├ 󰋊 ";
+          "keyColor" = "33";
+        }
+        {
+          "type" = "monitor";
+          "key" = " └  ";
+          "keyColor" = "33";
+        }
+        "break"
         "break"
       ];
     };
