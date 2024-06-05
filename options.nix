@@ -4,7 +4,6 @@ let
   hostname = "shadowblaze";
   userHome = "/home/${username}";
   flakeDir = "${userHome}/hyprnix";
-  waybarStyle = "simplebar"; # simplebar, slickbar, or default
 in {
   # User Variables
   username = "${username}";
@@ -14,15 +13,6 @@ in {
   terminal = "kitty"; # This sets the terminal that is used by the hyprland terminal keybinding
 
   #Hyprland desgin Settings
-  slickbar =
-    if waybarStyle == "slickbar"
-    then true
-    else false;
-  simplebar =
-    if waybarStyle == "simplebar"
-    then true
-    else false;
-  bar-number = true; # Enable / Disable Workspace Numbers In Waybar
   borderAnim = true;
 
   # Wallpaper and Directory Settings

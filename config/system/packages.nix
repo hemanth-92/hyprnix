@@ -1,6 +1,9 @@
-{ pkgs, config, inputs, ... }:
-
 {
+  pkgs,
+  config,
+  inputs,
+  ...
+}: {
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
@@ -43,18 +46,18 @@
     virt-viewer
     swappy
     ripgrep
-    appimage-run 
+    appimage-run
     networkmanagerapplet
     yad
     playerctl
     nh
-    nodePackages.pnpm
+    nodePackages_latest.pnpm
   ];
 
   programs = {
     steam.gamescopeSession.enable = true;
     dconf.enable = true;
-    seahorse.enable=true;
+    seahorse.enable = true;
     hyprland = {
       enable = true;
       package = inputs.hyprland.packages.${pkgs.system}.hyprland;

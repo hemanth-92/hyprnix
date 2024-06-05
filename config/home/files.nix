@@ -3,8 +3,6 @@ _: {
   home.file = {
     ".emoji".source = ./files/emoji;
     ".base16-themes".source = ./files/base16-themes;
-    ".config/rofi/rofi.jpg".source = ./files/rofi.jpg;
-    ".config/swaylock-bg.jpg".source = ./files/media/swaylock-bg.jpg;
     ".config/ascii-fastfetch".source = ./files/ascii-fastfetch;
     ".local/share/fonts" = {
       source = ./files/fonts;
