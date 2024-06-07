@@ -10,7 +10,7 @@
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
-    hyprland.url = "github:hyprwm/hyprland/v0.38.1";
+    hyprland.url = "git+https://github.com/hyprwm/Hyprland?submodules=1";
 
     hyprlock = {
       url = "github:hyprwm/hyprlock";

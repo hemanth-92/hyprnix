@@ -1,50 +1,56 @@
-{config,lib, pkgs, ... }:
 {
+  config,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.chromium = {
     enable = true;
     package = pkgs.brave;
 
     extensions = [
       # AutoPagerize
-      { id = "igiofjhpmpihnifddepnpngfjhkfenbp"; }
+      {id = "igiofjhpmpihnifddepnpngfjhkfenbp";}
       # Awesome Screen Recorder & Screenshot
-      { id = "nlipoenfbbikpbjkfpfillcgkoblgpmj"; }
+      {id = "nlipoenfbbikpbjkfpfillcgkoblgpmj";}
       # Better PathOfExile Trading
-      { id = "fhlinfpmdlijegjlpgedcmglkakaghnk"; }
+      {id = "fhlinfpmdlijegjlpgedcmglkakaghnk";}
       # Bitwarden
-      { id = "nngceckbapebfimnlniiiahkandclblb"; }
+      {id = "nngceckbapebfimnlniiiahkandclblb";}
       # Dark Reader
-      { id = "eimadpbcbfnmbkopoojfekhnkhdbieeh"; }
+      {id = "eimadpbcbfnmbkopoojfekhnkhdbieeh";}
       # Honey
-      { id = "bmnlcjabgnpnenekpadlanbbkooimhnj"; }
+      {id = "bmnlcjabgnpnenekpadlanbbkooimhnj";}
       # JSON Viewer
-      { id = "gbmdgpbipfallnflgajpaliibnhdgobh"; }
+      {id = "gbmdgpbipfallnflgajpaliibnhdgobh";}
       # Looty
       # {id = "ajfbflclpnpbjkfibijekgcombcgehbi";}
       # PoE Wiki Search
-      { id = "nalpbalegehinpooppmmgjidgiebblad"; }
+      {id = "nalpbalegehinpooppmmgjidgiebblad";}
       # React Dev Tools
-      { id = "fmkadmapgofadopljbjfkapdkoienihi"; }
+      {id = "fmkadmapgofadopljbjfkapdkoienihi";}
       # Reddit Enhancement Suite
-      { id = "kbmfpngjjgdllneeigpgjifpgocmfgmb"; }
+      {id = "kbmfpngjjgdllneeigpgjifpgocmfgmb";}
       # Return YouTube Dislike
-      { id = "gebbhagfogifgggkldgodflihgfeippi"; }
+      {id = "gebbhagfogifgggkldgodflihgfeippi";}
       # Session Manager
-      { id = "mghenlmbmjcpehccoangkdpagbcbkdpc"; }
+      {id = "mghenlmbmjcpehccoangkdpagbcbkdpc";}
       # SponsorBlock for YouTube - Skip Sponsorships
-      { id = "mnjggcdmjocbbbhaepdhchncahnbgone"; }
+      {id = "mnjggcdmjocbbbhaepdhchncahnbgone";}
       # Surfingkeys
-      { id = "gfbliohnnapiefjpjlpjnehglfpaknnc"; }
+      {id = "gfbliohnnapiefjpjlpjnehglfpaknnc";}
       # uBlock Origin
-      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; }
+      {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";}
       # Video Speed Controller
-      { id = "nffaoalbilbmmfgbnbgppjihopabppdk"; }
+      {id = "nffaoalbilbmmfgbnbgppjihopabppdk";}
       # YouTube Auto HD + FPS
-      { id = "fcphghnknhkimeagdglkljinmpbagone"; }
+      {id = "fcphghnknhkimeagdglkljinmpbagone";}
       # Youtube-shorts block
-      { id = "jiaopdjbehhjgokpphdfgmapkobbnmjp"; }
+      {id = "jiaopdjbehhjgokpphdfgmapkobbnmjp";}
       # adblocer ultimate
-      { id = "ohahllgiabjaoigichmmfljhkcfikeof"; }
-    ]; 
+      {id = "ohahllgiabjaoigichmmfljhkcfikeof";}
+      #checker plus for gmail
+      {id = "oeopbcgkkoapgobdbedcemjljbihmemj";}
+    ];
   };
 }

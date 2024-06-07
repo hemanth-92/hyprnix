@@ -16,7 +16,6 @@ in
         {
           layer = "top";
           position = "top";
-
           modules-center = ["hyprland/workspaces"];
           modules-left = [
             "custom/startmenu"
@@ -35,7 +34,6 @@ in
             "clock"
             "tray"
           ];
-
           "hyprland/workspaces" = {
             format = "{name}";
             format-icons = {
@@ -46,36 +44,30 @@ in
             on-scroll-up = "hyprctl dispatch workspace e+1";
             on-scroll-down = "hyprctl dispatch workspace e-1";
           };
-
           "clock" = {
             format = " {:%I:%M %p}";
             tooltip = true;
             tooltip-format = "<big>{:%A, %d.%B %Y }</big><tt><small>{calendar}</small></tt>";
           };
-
           "hyprland/window" = {
             max-length = 25;
             separate-outputs = false;
             rewrite = {"" = " 🙈 No Windows? ";};
           };
-
           "memory" = {
             interval = 5;
             format = " {}%";
             tooltip = true;
           };
-
           "cpu" = {
             interval = 5;
             format = " {usage:2}%";
             tooltip = true;
           };
-
           "disk" = {
             format = " {free}";
             tooltip = true;
           };
-
           "network" = {
             format-icons = [
               "󰤯"
@@ -89,11 +81,9 @@ in
             format-disconnected = "󰤮";
             tooltip = false;
           };
-
           "tray" = {
             spacing = 12;
           };
-
           "pulseaudio" = {
             format = "{icon} {volume}% {format_source}";
             format-bluetooth = "{volume}% {icon} {format_source}";
@@ -116,25 +106,21 @@ in
             };
             on-click = "sleep 0.1 && pavucontrol";
           };
-
           "custom/themeselector" = {
             tooltip = false;
             format = "";
             on-click = "sleep 0.1 && theme-selector";
           };
-
           "custom/exit" = {
             tooltip = false;
             format = "";
             on-click = "sleep 0.1 && wlogout";
           };
-
           "custom/startmenu" = {
             tooltip = false;
             format = " ";
             on-click = "sleep 0.1 && rofi-launcher";
           };
-
           "idle_inhibitor" = {
             format = "{icon}";
             format-icons = {
@@ -143,7 +129,6 @@ in
             };
             tooltip = true;
           };
-
           "custom/notification" = {
             tooltip = false;
             format = "{icon} {}";
@@ -163,7 +148,6 @@ in
             on-click = "sleep 0.1 && task-waybar";
             escape = true;
           };
-
           "battery" = {
             states = {
               warning = 30;
@@ -189,7 +173,6 @@ in
           };
         }
       ];
-
       style = concatStrings [
         ''
           * {
@@ -206,26 +189,25 @@ in
           #workspaces {
             color: #${palette.base00};
             background: transparent;
-            margin: 4px 4px;
-            padding: 8px 5px;
-            border-radius: 16px;
+            margin: 4px;
+            border-radius: 0px;
+            border: 0px;
             font-style: normal;
           }
-          #workspaces button {
+          #workspaces button{
             color: #${palette.base03};
             background: #${palette.base00};
             margin: 4px 3px;
             opacity: 1;
             border: 0px;
-            border-radius: 16px;
+            border-radius: 15px;
             transition: ${betterTransition};
           }
           #workspaces button.active {
-            font-weight: bold;
             color: #${palette.base00};
              background: linear-gradient(45deg, #${palette.base0E}, #${palette.base0F}, #${palette.base0D}, #${palette.base09});            background-size: 300% 300%;
             animation: swiping 15s linear infinite;
-            border-radius: 16px;
+            border-radius: 15px;
             margin: 4px 3px;
             opacity: 1.0;
             border: 0px;
@@ -233,7 +215,6 @@ in
             transition: ${betterTransition};
           }
           #workspaces button:hover {
-            font-weight: bold;
             color: #${palette.base05};
             border: 0px;
             border-radius: 15px;
@@ -363,8 +344,7 @@ in
             margin: 6px 0px 6px 4px;
             padding: 0px 5px 0px 10px;
             border-radius: 15px 0px 0px 15px;
-          }
-        ''
+          }''
       ];
     };
   }
