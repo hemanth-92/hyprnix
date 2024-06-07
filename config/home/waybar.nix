@@ -206,9 +206,9 @@ in
           #workspaces {
             color: #${palette.base00};
             background: transparent;
-            margin: 4px;
-            border-radius: 0px;
-            border: 0px;
+            margin: 4px 4px;
+            padding: 8px 5px;
+            border-radius: 16px;
             font-style: normal;
           }
           #workspaces button {
@@ -217,14 +217,15 @@ in
             margin: 4px 3px;
             opacity: 1;
             border: 0px;
-            border-radius: 15px;
+            border-radius: 16px;
             transition: ${betterTransition};
           }
           #workspaces button.active {
+            font-weight: bold;
             color: #${palette.base00};
              background: linear-gradient(45deg, #${palette.base0E}, #${palette.base0F}, #${palette.base0D}, #${palette.base09});            background-size: 300% 300%;
             animation: swiping 15s linear infinite;
-            border-radius: 15px;
+            border-radius: 16px;
             margin: 4px 3px;
             opacity: 1.0;
             border: 0px;
@@ -232,6 +233,7 @@ in
             transition: ${betterTransition};
           }
           #workspaces button:hover {
+            font-weight: bold;
             color: #${palette.base05};
             border: 0px;
             border-radius: 15px;
