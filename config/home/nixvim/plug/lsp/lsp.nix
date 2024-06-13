@@ -25,6 +25,7 @@
             installCargo = false;
             installRustc = false;
           };
+          marksman.enable = true;
         };
         keymaps = {
           silent = true;

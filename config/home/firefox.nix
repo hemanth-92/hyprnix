@@ -50,10 +50,7 @@
       };
     };
   };
-  home.sessionVariables = {
-    DEFAULT_BROWSER = lib.getExe pkgs.firefox;
-    BROWSER = lib.getExe pkgs.firefox;
-  };
+
   wayland.windowManager.hyprland.settings = {
     # do not idle while watching videos
     windowrule = ["idleinhibit fullscreen,firefox-aurora"];
