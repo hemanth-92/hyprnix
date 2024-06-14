@@ -37,5 +37,6 @@
     ./direnv.nix
     ./zsh.nix
     ./obs-studio.nix
+    ./xdg.nix
   ];
 }

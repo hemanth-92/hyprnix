@@ -28,7 +28,7 @@
         ublock-origin
         user-agent-string-switcher
         screenshot-capture-annotate
-        tridactyl
+        surfingkeys
         adblocker-ultimate
       ];
       settings = {
