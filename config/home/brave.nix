@@ -48,8 +48,6 @@
       {id = "jiaopdjbehhjgokpphdfgmapkobbnmjp";}
       # adblocer ultimate
       {id = "ohahllgiabjaoigichmmfljhkcfikeof";}
-      #checker plus for gmail
-      {id = "oeopbcgkkoapgobdbedcemjljbihmemj";}
     ];
   };
   # set default browser
