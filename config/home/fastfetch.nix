@@ -8,7 +8,7 @@
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
       "logo" = {
         "padding" = {
-          "top" = 2;
+          "top" = 5;
         };
         "source" = "~/.config/ascii-fastfetch";
         "height" = 15;
@@ -18,8 +18,6 @@
         "separator" = " ➜  ";
       };
       "modules" = [
-        "break"
-        "break"
         "break"
         {
           "type" = "os";
@@ -112,7 +110,6 @@
           "key" = " └  ";
           "keyColor" = "33";
         }
-        "break"
         "break"
       ];
     };
