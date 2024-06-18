@@ -21,7 +21,7 @@ cd hyprnix
 
 ### Generate your hardware.nix
 
-By default, my repo comes with the hardware.nix for Green Demon. That one will not work for your system. That's why you have to generate your own. To do that, enter the following command:
+By default, my repo comes with my system hardware. That one will not work for your system. That's why you have to generate your own. To do that, enter the following command:
 
 ```bash
 nixos-generate-config --show-hardware-config  > hardware.nix
