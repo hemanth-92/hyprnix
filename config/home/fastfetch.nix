@@ -8,7 +8,7 @@
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
       "logo" = {
         "padding" = {
-          "top" = 5;
+          "top" = 6;
         };
         "source" = "~/.config/ascii-fastfetch";
         "height" = 15;
@@ -109,6 +109,24 @@
           "type" = "monitor";
           "key" = " └  ";
           "keyColor" = "33";
+        }
+        "break"
+        {
+          "type" = "custom";
+          "key" = "Age  ";
+          "format" = "Uptime/Age";
+          "keyColor" = "33";
+        }
+        {
+          "type" = "uptime";
+          "key" = " ├  ";
+          "keyColor" = "33";
+        }
+        {
+          "type" = "command";
+          "key" = " └  ";
+          "keyColor" = "33";
+          "text" = "birth_install=$(stat -c %Y /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days";
         }
         "break"
       ];

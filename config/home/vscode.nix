@@ -8,8 +8,6 @@
       arrterian.nix-env-selector
       # python
       ms-python.python
-      # C/C++
-      ms-vscode.cpptools
       # Color theme
       catppuccin.catppuccin-vsc
       catppuccin.catppuccin-vsc-icons

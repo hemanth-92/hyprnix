@@ -68,7 +68,7 @@ in
             misc {
               mouse_move_enables_dpms = true
               key_press_enables_dpms = false
-               initial_workspace_tracking = 0
+              initial_workspace_tracking = 0
             }
             animations {
               enabled = yes
@@ -114,9 +114,6 @@ in
                        dwindle {
               pseudotile = true
               preserve_split = true
-            }
-            master {
-              new_is_master = true
             }
             bind = ${modifier},l,exec,hyprlock
             bind = ${modifier}, b, exec, killall -SIGUSR1 waybar
