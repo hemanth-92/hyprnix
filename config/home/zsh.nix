@@ -58,7 +58,6 @@ in
         config = "cd ~/.config";
         restart = "systemctl reboot";
         poweroff = "systemctl poweroff";
-        neofetch = "neofetch --ascii ~/.config/ascii-neofetch";
       };
     };
   }

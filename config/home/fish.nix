@@ -24,18 +24,16 @@ in
           update = "nh os switch --hostname ${hostname}  --update";
           gcCleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
           v = "nvim";
-          ls = "eza -lah";
-          ll = "lsd -l";
-          la = "lsd -a";
-          lal = "lsd -al";
+          ls = "eza --icons";
+          ll = "eza -lh --icons --grid --group-directories-first";
+          la = "eza -lah --icons --grid --group-directories-first";
           ".." = "cd ..";
           "..." = "cd ../..";
           "...." = "cd ../../..";
           config = "cd ~/.config";
           restart = "systemctl reboot";
           poweroff = "systemctl poweroff";
-          neofetch = "neofetch --ascii ~/.config/ascii-neofetch";
-          fastfetch = "fastfetch";
+          cat = "bat";
         };
         shellInit = ''
           # shut up welcome message
