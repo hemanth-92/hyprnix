@@ -10,7 +10,6 @@ _: {
     ./intel-amd.nix
     ./intel-gpu.nix
     ./intel-nvidia.nix
-    ./kernel.nix
     ./logitech.nix
     ./nfs.nix
     ./ntp.nix
