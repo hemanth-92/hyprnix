@@ -56,7 +56,6 @@ in {
     inxi
     haruna
     libreoffice-qt6-fresh
-    google-chrome
     (nerdfonts.override {fonts = ["JetBrainsMono"];})
     # Import Scripts
     (import ./../scripts/emopicker9000.nix {inherit pkgs;})

@@ -115,6 +115,9 @@ in
               pseudotile = true
               preserve_split = true
             }
+            master {
+            new_status = master
+            }
             bind = ${modifier},l,exec,hyprlock
             bind = ${modifier}, b, exec, killall -SIGUSR1 waybar
             bind = ${modifier},Return,exec,${terminal}
