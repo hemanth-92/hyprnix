@@ -3,7 +3,7 @@
     plugins.none-ls = {
       enable = true;
       enableLspFormat = true;
-      updateInInsert = false;
+      update_in_insert = false;
       sources = {
         code_actions = {
           gitsigns.enable = true;
@@ -14,7 +14,7 @@
           yamllint.enable = true;
         };
         formatting = {
-          alejandra.enable = true;
+          nixfmt.enable = true;
           black = {
             enable = true;
             withArgs = ''
