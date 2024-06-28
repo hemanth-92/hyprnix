@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{ pkgs, ... }: {
   programs.vscode = {
     enable = true;
     extensions = with pkgs.vscode-extensions; [
@@ -14,12 +14,15 @@
     ];
     userSettings = {
       "update.mode" = "none";
-      "extensions.autoUpdate" = false; # This stuff fixes vscode freaking out when theres an update
-      "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
-
+      # This stuff fixes vscode freaking out when theres an update
+      "extensions.autoUpdate" = false;
+      # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
+      "window.titleBarStyle" = "custom";
       "window.menuBarVisibility" = "toggle";
-      "editor.fontFamily" = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont', 'monospace', monospace";
-      "terminal.integrated.fontFamily" = "'JetBrainsMono Nerd Font', 'SymbolsNerdFont'";
+      "editor.fontFamily" =
+        "'JetBrainsMono Nerd Font', 'SymbolsNerdFont', 'monospace', monospace";
+      "terminal.integrated.fontFamily" =
+        "'JetBrainsMono Nerd Font', 'SymbolsNerdFont'";
       "editor.fontSize" = 16;
       "workbench.colorTheme" = "Catppuccin Mocha";
       "workbench.iconTheme" = "catppuccin-mocha";
@@ -55,7 +58,7 @@
       "java" = "/etc/profiles/per-user/sdvohet/bin/java";
       "javascript.updateImportsOnFileMove.enabled" = "always";
       "editor.accessibilitySupport" = "off";
-      "terminal.integrated.env.windows" = {};
+      "terminal.integrated.env.windows" = { };
       "git.autofetch" = true;
       "window.commandCenter" = false;
       "window.zoomLevel" = 2;

@@ -7,9 +7,7 @@ _: {
     ./displaymanager.nix
     ./distrobox.nix
     ./hwclock.nix
-    ./intel-amd.nix
     ./intel-gpu.nix
-    ./intel-nvidia.nix
     ./logitech.nix
     ./nfs.nix
     ./ntp.nix
