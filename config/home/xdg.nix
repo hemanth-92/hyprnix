@@ -1,7 +1,9 @@
-{config, ...}: let
-  browser = ["brave.desktop"];
-  video = ["mpv.desktop"];
-  image = ["imv.desktop"];
+{ config, ... }:
+let
+  browser = [ "brave.desktop" ];
+  video = [ "mpv.desktop" ];
+  image = [ "imv.desktop" ];
+  nvim = [ "nvim.desktop" ];
 
   # XDG MIME types
 
@@ -16,16 +18,20 @@
     "application/pdf" = browser;
     "text/html" = browser;
     "x-scheme-handler/about" = browser;
-    "x-scheme-handler/chrome" = ["chromium-browser.desktop"];
+    "x-scheme-handler/chrome" = [ "chromium-browser.desktop" ];
     "x-scheme-handler/ftp" = browser;
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/unknown" = browser;
-    "x-scheme-handler/tg" = ["org.telegram.desktop.desktop"];
+    "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
 
     "audio/*" = video;
     "video/*" = video;
     "image/*" = image;
+
+    "text/plain" = nvim;
+    "application/x-shellscript" = nvim;
+    "text/csv" = nvim;
   };
 in {
   xdg = {

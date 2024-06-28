@@ -3,7 +3,7 @@
     plugins.none-ls = {
       enable = true;
       enableLspFormat = true;
-      update_in_insert = false;
+      settings = { update_in_insert = false; };
       sources = {
         code_actions = {
           gitsigns.enable = true;
@@ -37,16 +37,14 @@
         };
       };
     };
-    keymaps = [
-      {
-        mode = ["n" "v"];
-        key = "<leader>cf";
-        action = "<cmd>lua vim.lsp.buf.format()<cr>";
-        options = {
-          silent = true;
-          desc = "Format";
-        };
-      }
-    ];
+    keymaps = [{
+      mode = [ "n" "v" ];
+      key = "<leader>cf";
+      action = "<cmd>lua vim.lsp.buf.format()<cr>";
+      options = {
+        silent = true;
+        desc = "Format";
+      };
+    }];
   };
 }
