@@ -1,6 +1,13 @@
-{ pkgs, config, username, ... }:
-let inherit (import ../../options.nix) wallpaperDir wallpaperGit flakeDir;
-in {
+{
+  pkgs,
+  config,
+  username,
+  ...
+}:
+let
+  inherit (import ../../options.nix) wallpaperDir wallpaperGit flakeDir;
+in
+{
   # Install Packages For The User
   home.packages = with pkgs; [
     libvirt
@@ -10,7 +17,7 @@ in {
     gnome.file-roller
     swaynotificationcenter
     imv
-    transmission-gtk
+    transmission_4-gtk
     mpv
     rustup
     audacity
