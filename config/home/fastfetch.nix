@@ -1,7 +1,8 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   config = {
     home = {
-      packages = [pkgs.fastfetch];
+      packages = [ pkgs.fastfetch ];
     };
 
     xdg.configFile."fastfetch/config.jsonc".text = builtins.toJSON {
@@ -22,7 +23,7 @@
         {
           "type" = "os";
           "key" = "OS   ";
-          "keyColor" = "31"; #= color1
+          "keyColor" = "31"; # = color1
         }
         {
           "type" = "kernel";

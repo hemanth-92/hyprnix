@@ -1,7 +1,17 @@
-{ pkgs, username, hostname, ... }:
-let inherit (import ./options.nix) gitUsername flakeDir;
-in {
-  imports = [ ./hardware.nix ./config/system ];
+{
+  pkgs,
+  username,
+  hostname,
+  ...
+}:
+let
+  inherit (import ./options.nix) gitUsername flakeDir;
+in
+{
+  imports = [
+    ./hardware.nix
+    ./config/system
+  ];
 
   # Enable networking
   networking.hostName = "${hostname}"; # Define your hostname
@@ -30,11 +40,14 @@ in {
     mutableUsers = true;
     users."${username}" = {
       homeMode = "755";
-      hashedPassword =
-        "$6$18JKFnAP84d62vB.$63g0TDv22PItmkWhnh26yctPwwi5K.4x48CSHnNs11bxY0yKw/setlgeCB/pePMuCEYYgoqdN9pjFLWRQ9ZXR/";
+      hashedPassword = "$6$18JKFnAP84d62vB.$63g0TDv22PItmkWhnh26yctPwwi5K.4x48CSHnNs11bxY0yKw/setlgeCB/pePMuCEYYgoqdN9pjFLWRQ9ZXR/";
       isNormalUser = true;
       description = "${gitUsername}";
-      extraGroups = [ "networkmanager" "wheel" "libvirtd" ];
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "libvirtd"
+      ];
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [ ];
@@ -43,8 +56,7 @@ in {
 
   environment.variables = {
     FLAKE = "${flakeDir}";
-    POLKIT_BIN =
-      "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+    POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
     EDITOR = "nvim";
   };
 
@@ -53,11 +65,12 @@ in {
     settings = {
       warn-dirty = false;
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
-      substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [
-        "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="
+      experimental-features = [
+        "nix-command"
+        "flakes"
       ];
+      substituters = [ "https://hyprland.cachix.org" ];
+      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
     };
     gc = {
       automatic = true;

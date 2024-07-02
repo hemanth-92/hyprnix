@@ -1,15 +1,5 @@
-{
-  pkgs,
-  config,
-  username,
-  ...
-}: let
-  inherit
-    (import ../../options.nix)
-    wallpaperDir
-    wallpaperGit
-    flakeDir
-    ;
+{ pkgs, config, username, ... }:
+let inherit (import ../../options.nix) wallpaperDir wallpaperGit flakeDir;
 in {
   # Install Packages For The User
   home.packages = with pkgs; [
@@ -54,13 +44,14 @@ in {
     nomacs
     obs-studio
     inxi
-    haruna
     libreoffice-qt6-fresh
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
+    nixfmt-rfc-style
+    duf
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
-    (import ./../scripts/emopicker9000.nix {inherit pkgs;})
-    (import ./../scripts/task-waybar.nix {inherit pkgs;})
-    (import ./../scripts/squirtle.nix {inherit pkgs;})
+    (import ./../scripts/emopicker9000.nix { inherit pkgs; })
+    (import ./../scripts/task-waybar.nix { inherit pkgs; })
+    (import ./../scripts/squirtle.nix { inherit pkgs; })
     (import ./../scripts/wallsetter.nix {
       inherit pkgs;
       inherit wallpaperDir;
@@ -71,12 +62,12 @@ in {
       inherit pkgs;
       inherit flakeDir;
     })
-    (import ./../scripts/theme-selector.nix {inherit pkgs;})
-    (import ./../scripts/nvidia-offload.nix {inherit pkgs;})
-    (import ./../scripts/web-search.nix {inherit pkgs;})
-    (import ./../scripts/rofi-launcher.nix {inherit pkgs;})
-    (import ./../scripts/screenshootin.nix {inherit pkgs;})
-    (import ./../scripts/list-hypr-bindings.nix {inherit pkgs;})
+    (import ./../scripts/theme-selector.nix { inherit pkgs; })
+    (import ./../scripts/nvidia-offload.nix { inherit pkgs; })
+    (import ./../scripts/web-search.nix { inherit pkgs; })
+    (import ./../scripts/rofi-launcher.nix { inherit pkgs; })
+    (import ./../scripts/screenshootin.nix { inherit pkgs; })
+    (import ./../scripts/list-hypr-bindings.nix { inherit pkgs; })
   ];
   programs.gh.enable = true;
 }

@@ -14,7 +14,6 @@
           yamllint.enable = true;
         };
         formatting = {
-          nixfmt.enable = true;
           black = {
             enable = true;
             withArgs = ''
