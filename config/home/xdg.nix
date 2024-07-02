@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, lib, ... }:
 let
   browser = [ "brave.desktop" ];
   video = [ "mpv.desktop" ];
@@ -33,14 +33,19 @@ let
     "application/x-shellscript" = nvim;
     "text/csv" = nvim;
   };
-in {
+in
+{
+
   xdg = {
     enable = true;
     cacheHome = config.home.homeDirectory + "/.local/cache";
+
     mimeApps = {
       enable = true;
       defaultApplications = associations;
     };
+
+    configFile."mimeapps.list" = lib.mkIf config.xdg.mimeApps.enable { force = true; };
 
     userDirs = {
       enable = true;
