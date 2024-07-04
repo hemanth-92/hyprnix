@@ -2,6 +2,7 @@
   pkgs,
   username,
   hostname,
+  options,
   ...
 }:
 let
@@ -16,6 +17,7 @@ in
   # Enable networking
   networking.hostName = "${hostname}"; # Define your hostname
   networking.networkmanager.enable = true;
+  networking.timeServers = options.networking.timeServers.default ++ [ "pool.ntp.org" ];
   # Set your time zone
   time.timeZone = "Asia/Kolkata";
 

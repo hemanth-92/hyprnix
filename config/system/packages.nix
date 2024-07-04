@@ -52,6 +52,7 @@
     playerctl
     nh
     nodePackages_latest.pnpm
+    gimp
   ];
 
   programs = {

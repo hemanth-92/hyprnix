@@ -1,7 +1,5 @@
-{ config, lib, pkgs, username, ... }:
-
-let inherit (import ../../options.nix) printer; in
-lib.mkIf (printer == true) {
+{ pkgs, username, ... }:
+{
   services = {
     printing.enable = true;
     avahi = {
@@ -13,9 +11,12 @@ lib.mkIf (printer == true) {
   };
   hardware.sane = {
     enable = true;
-    extraBackends = [pkgs.sane-airscan];
-    disabledDefaultBackends = ["escl"];
+    extraBackends = [ pkgs.sane-airscan ];
+    disabledDefaultBackends = [ "escl" ];
   };
   programs.system-config-printer.enable = true;
-  users.users.${username}.extraGroups = ["scanner" "lp"];
+  users.users.${username}.extraGroups = [
+    "scanner"
+    "lp"
+  ];
 }

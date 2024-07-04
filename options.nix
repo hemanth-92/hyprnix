@@ -4,7 +4,8 @@ let
   hostname = "shadowblaze";
   userHome = "/home/${username}";
   flakeDir = "${userHome}/hyprnix";
-in {
+in
+{
   # User Variables
   username = "${username}";
   hostname = "${hostname}";
@@ -57,34 +58,6 @@ in {
   nfsDevice = "nas:/volume1/nas";
 
   # NTP & HWClock Settings
-  ntp = true;
   localHWClock = true;
-
-  # Enable Printer & Scanner Support
-  printer = true;
-
-  # Enable Flatpak & Larger Programs
-  distrobox = false;
-  flatpak = true;
-  kdenlive = false;
-  blender = false;
-  steam = false;
-  obs-studio = false;
-  gimp = true;
-
-  # Enable Support For
-  # Logitech Devices
-  logitech = true;
-
-  # Enable Terminals
-  # If You Disable All You Get Kitty
-  wezterm = false;
-  alacritty = false;
-  kitty = true;
-
-  # Enable Python & PyCharm
   python = true;
-
-  # Enable SyncThing
-  syncthing = false;
 }

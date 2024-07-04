@@ -1,16 +1,16 @@
-{ pkgs, config, lib, ... }:
+{ pkgs, config, ... }:
 
 let
   palette = config.colorScheme.palette;
-  inherit (import ../../options.nix) alacritty wezterm kitty;
-in lib.mkIf (wezterm == false && alacritty == false
-	     || kitty == true) {
-  # Configure Kitty
+in
+{
   programs.kitty = {
     enable = true;
     package = pkgs.kitty;
-    font.name = "JetBrainsMono Nerd Font";
-    font.size = 16;
+    font = {
+      name = "JetBrainsMono Nerd Font";
+      size = 16;
+    };
     settings = {
       scrollback_lines = 2000;
       wheel_scroll_min_lines = 1;

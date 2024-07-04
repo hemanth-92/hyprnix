@@ -23,11 +23,8 @@ in
     audacity
     pavucontrol
     tree
-    zoxide
     tmux
     cava
-    fastfetch
-    brave
     klavaro
     jdk17
     vlc
@@ -45,11 +42,9 @@ in
     swaylock
     obsidian
     tenki
-    yazi
     loupe
     telegram-desktop
     nomacs
-    obs-studio
     inxi
     libreoffice-qt6-fresh
     nixfmt-rfc-style
