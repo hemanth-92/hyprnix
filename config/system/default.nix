@@ -8,5 +8,6 @@ _: {
     ./polkit.nix
     ./printer.nix
     ./services.nix
+    ./audio.nix
   ];
 }

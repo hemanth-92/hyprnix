@@ -21,7 +21,6 @@ in
     mpv
     rustup
     audacity
-    pavucontrol
     tree
     tmux
     cava

@@ -53,6 +53,7 @@
     nh
     nodePackages_latest.pnpm
     gimp
+    python3
   ];
 
   programs = {
