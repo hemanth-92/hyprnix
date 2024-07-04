@@ -3,9 +3,11 @@
   config,
   username,
   ...
-}: let
-  wallpaper = "/home/${username}/Pictures/Wallpapers/lofi-computer.png";
-in {
+}:
+let
+  wallpaper = "/home/${username}/Pictures/Wallpapers/lofi-Room.png";
+in
+{
   xdg.configFile."hypr/hyprlock.conf".text = with config.colorScheme.palette; ''
         background {
           monitor =
@@ -48,7 +50,5 @@ in {
       }
   '';
 
-  home.packages = with pkgs; [
-    hyprlock
-  ];
+  home.packages = with pkgs; [ hyprlock ];
 }

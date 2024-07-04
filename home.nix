@@ -1,15 +1,8 @@
+{ inputs, username, ... }:
+let
+  inherit (import ./options.nix) gitUsername gitEmail theme;
+in
 {
-  inputs,
-  username,
-  ...
-}: let
-  inherit
-    (import ./options.nix)
-    gitUsername
-    gitEmail
-    theme
-    ;
-in {
   # Home Manager Settings
   home = {
     username = "${username}";
@@ -25,7 +18,6 @@ in {
   imports = [
     inputs.nix-colors.homeManagerModules.default
     inputs.nixvim.homeManagerModules.nixvim
-    inputs.hyprland.homeManagerModules.default
     ./config/home
   ];
 
@@ -43,8 +35,8 @@ in {
 
   dconf.settings = {
     "org/virt-manager/virt-manager/connections" = {
-      autoconnect = ["qemu:///system"];
-      uris = ["qemu:///system"];
+      autoconnect = [ "qemu:///system" ];
+      uris = [ "qemu:///system" ];
     };
   };
   programs.home-manager.enable = true;
