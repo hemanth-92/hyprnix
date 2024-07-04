@@ -1,12 +1,7 @@
 { config, lib, ... }:
 let
   theme = config.colorScheme.palette;
-  inherit (import ../../options.nix)
-    theKBDLayout
-    terminal
-    theSecondKBDLayout
-    sdl-videodriver
-    ;
+  inherit (import ../../options.nix) theKBDLayout terminal theSecondKBDLayout;
 in
 with lib;
 {
@@ -51,7 +46,6 @@ with lib;
           env = XDG_SESSION_DESKTOP, Hyprland
           env = GDK_BACKEND, wayland
           env = CLUTTER_BACKEND, wayland
-          env = SDL_VIDEODRIVER, ${sdl-videodriver}
           env = QT_QPA_PLATFORM, wayland
           env = QT_WAYLAND_DISABLE_WINDOWDECORATION, 1
           env = QT_AUTO_SCREEN_SCALE_FACTOR, 1
