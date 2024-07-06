@@ -18,7 +18,6 @@ with lib;
           monitor=,preferred,auto,1
           windowrule = fullscreen, ^(wlogout)$
           windowrule = animation fade,^(wlogout)$
-          windowrulev2 = workspace 1, class:^(vesktop)$
           general {
             gaps_in = 6
             gaps_out = 8
@@ -89,7 +88,6 @@ with lib;
               color = rgba(${theme.base0A}ff)
             }
           }
-          exec-once=[workspace 1 silent] vesktop
           exec-once=[workspace 2 silent] brave
           exec-once = $POLKIT_BIN
           exec-once = dbus-update-activation-environment --systemd --all

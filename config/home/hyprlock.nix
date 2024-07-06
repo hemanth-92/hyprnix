@@ -8,6 +8,7 @@ let
   wallpaper = "/home/${username}/Pictures/Wallpapers/lofi-Room.png";
 in
 {
+  home.packages = with pkgs; [ hyprlock ];
   xdg.configFile."hypr/hyprlock.conf".text = with config.colorScheme.palette; ''
         background {
           monitor =
@@ -49,6 +50,4 @@ in
           valign = center
       }
   '';
-
-  home.packages = with pkgs; [ hyprlock ];
 }
