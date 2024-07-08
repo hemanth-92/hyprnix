@@ -48,7 +48,6 @@ in
     libreoffice-qt6-fresh
     nixfmt-rfc-style
     duf
-    github-desktop
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })

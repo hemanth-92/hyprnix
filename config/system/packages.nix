@@ -51,7 +51,7 @@
     yad
     playerctl
     nh
-    nodePackages_latest.pnpm
+    corepack_latest
     gimp
     python3
   ];
