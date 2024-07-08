@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   imports = [
     ./sets.nix
     ./keys.nix
@@ -38,6 +39,7 @@
     ./plug/utils/undotree.nix
     ./plug/utils/neotree.nix
     ./plug/utils/comment.nix
+    ./plug/utils/toogleterm.nix
   ];
   programs.nixvim = {
     enable = true;
@@ -58,7 +60,5 @@
     };
   };
 
-  home.packages = with pkgs; [
-    lazygit
-  ];
+  home.packages = with pkgs; [ lazygit ];
 }
