@@ -48,6 +48,7 @@ in
     libreoffice-qt6-fresh
     nixfmt-rfc-style
     duf
+    zed-editor
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
