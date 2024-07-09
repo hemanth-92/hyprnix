@@ -11,7 +11,7 @@
     ./plug/git/gitsigns.nix
     ./plug/git/lazygit.nix
     ./plug/git/worktree.nix
-    ./plug/git/fugitive.nix
+    ./plug/git/neogit.nix
     ./plug/git/diffview.nix
 
     ./plug/lsp/conform.nix

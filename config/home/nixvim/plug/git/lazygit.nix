@@ -1,12 +1,10 @@
-{pkgs, ...}:
+{ pkgs, ... }:
 {
   programs.nixvim = {
-    extraPlugins = [
-      pkgs.vimPlugins.lazygit-nvim
-    ];
+    extraPlugins = [ pkgs.vimPlugins.lazygit-nvim ];
 
     extraConfigLua = ''
-    require("telescope").load_extension("lazygit")
+      require("telescope").load_extension("lazygit")
     '';
 
     keymaps = [
