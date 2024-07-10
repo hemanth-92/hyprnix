@@ -9,7 +9,7 @@
       notifyOnError = true;
       formattersByFt = {
         python = [ "black" ];
-        nix = [ "nixpkgs-fmt" ];
+        nix = [ "nixfmt" ];
         markdown = [
           [
             "prettierd"

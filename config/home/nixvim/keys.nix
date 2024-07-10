@@ -1,8 +1,11 @@
-_: let
-  mkKeymap = mode: key: action: {inherit mode key action;};
-  mkKeymapWithOpts = mode: key: action: opts:
-    (mkKeymap mode key action) // {options = opts;};
-in {
+_:
+let
+  mkKeymap = mode: key: action: { inherit mode key action; };
+  mkKeymapWithOpts =
+    mode: key: action: opts:
+    (mkKeymap mode key action) // { options = opts; };
+in
+{
   programs.nixvim.keymaps = [
     # fix page up and page down so the cursor doesn't move
     (mkKeymap "n" "<PageUp>" "<C-U>")
@@ -37,9 +40,9 @@ in {
     (mkKeymap "v" "<C-V>" ''"+P'')
 
     # automatically jump to end of text pasted
-    (mkKeymapWithOpts "v" "y" "y`]" {silent = true;})
-    (mkKeymapWithOpts "v" "p" "p`]" {silent = true;})
-    (mkKeymapWithOpts "n" "p" "p`]" {silent = true;})
+    (mkKeymapWithOpts "v" "y" "y`]" { silent = true; })
+    (mkKeymapWithOpts "v" "p" "p`]" { silent = true; })
+    (mkKeymapWithOpts "n" "p" "p`]" { silent = true; })
 
     # reselect text
     (mkKeymap "v" "gV" "`[v`]")
@@ -64,8 +67,8 @@ in {
     (mkKeymap "n" "g#" "g#zzzv")
 
     # only jumps of more than 5 lines are added to the jumplist
-    (mkKeymapWithOpts "n" "k" "(v:count > 5 ? \"m'\" . v:count : \"\") . 'k'" {expr = true;})
-    (mkKeymapWithOpts "n" "j" "(v:count > 5 ? \"m'\" . v:count : \"\") . 'j'" {expr = true;})
+    (mkKeymapWithOpts "n" "k" "(v:count > 5 ? \"m'\" . v:count : \"\") . 'k'" { expr = true; })
+    (mkKeymapWithOpts "n" "j" "(v:count > 5 ? \"m'\" . v:count : \"\") . 'j'" { expr = true; })
 
     # vv enter visual block mode
     (mkKeymap "n" "vv" "<C-V>")
@@ -95,5 +98,8 @@ in {
 
     # vim fugitive
     (mkKeymap "n" "<leader>gs" ":G<CR>")
+
+    #error slove this
+    (mkKeymap "i" "<" "<")
   ];
 }
