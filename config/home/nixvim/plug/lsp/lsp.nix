@@ -15,7 +15,12 @@
           pyright.enable = true;
           tailwindcss.enable = true;
           java-language-server.enable = true;
-          nixd.enable = true;
+          nixd = {
+            enable = true;
+            settings = {
+              diagnostic.suppress = [ "sema-escaping-with" ];
+            };
+          };          
           tsserver.enable = true;
           lua-ls.enable = true;
           bashls.enable = true;
