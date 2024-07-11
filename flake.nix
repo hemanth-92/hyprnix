@@ -26,11 +26,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    nixvim.url = "github:hemanth-92/nixvim";
+    
     catppuccin-grub = {
       url = "github:catppuccin/grub";
       flake = false;
