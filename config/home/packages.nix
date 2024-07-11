@@ -17,7 +17,6 @@ in
     file-roller
     swaynotificationcenter
     imv
-    transmission_4-gtk
     mpv
     rustup
     audacity
