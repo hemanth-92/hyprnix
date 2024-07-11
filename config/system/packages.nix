@@ -54,6 +54,7 @@
     corepack_latest
     gimp
     python3
+    inputs.nixvim.packages.${pkgs.system}.default
   ];
 
   programs = {

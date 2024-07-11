@@ -29,7 +29,6 @@
     ./btop.nix
     ./cava.nix
     ./bat.nix
-    ./nixvim.nix
     ./fastfetch.nix
     ./vscode.nix
     ./direnv.nix
