@@ -28,7 +28,6 @@
       powerOnBoot = true; # powers up the default Bluetooth controller on boot
     };
   };
-  sound.enable = true;
   security.rtkit.enable = true;
   programs.thunar.enable = true;
   security.pam.services.hyprlock = {
