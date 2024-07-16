@@ -27,7 +27,7 @@
     };
 
     nixvim.url = "github:hemanth-92/nixvim";
-    
+
     catppuccin-grub = {
       url = "github:catppuccin/grub";
       flake = false;
@@ -35,8 +35,10 @@
 
     impermanence.url = "github:nix-community/impermanence";
     nur.url = "github:nix-community/nur";
-    spicetify-nix.url = "github:the-argus/spicetify-nix";
-
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     catppuccin.url = "github:catppuccin/nix";
   };
 
