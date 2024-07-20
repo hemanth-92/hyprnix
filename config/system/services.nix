@@ -8,6 +8,7 @@
     tumbler.enable = true;
     gnome.gnome-keyring.enable = true;
     blueman.enable = true;
+    fprintd.enable = true;
   };
   xdg.portal = {
     enable = true;
