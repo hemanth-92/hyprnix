@@ -29,7 +29,6 @@ in
     bat
     gotop
     fzf
-    ranger
     ripgrep
     dua
     font-awesome
