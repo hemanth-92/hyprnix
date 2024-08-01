@@ -37,7 +37,7 @@
     gnumake
     ninja
     go
-    nodejs
+    nodejs_22
     symbola
     noto-fonts-color-emoji
     material-icons
