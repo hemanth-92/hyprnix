@@ -3,6 +3,7 @@ _: {
     enable = true;
     enableBashIntegration = true;
     enableZshIntegration = true;
-    options = ["--cmd cd"];
+    enableFishIntegration = true;
+    options = [ "--cmd cd" ];
   };
 }
