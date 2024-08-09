@@ -1,9 +1,4 @@
-{
-  pkgs,
-  config,
-  username,
-  ...
-}:
+{ pkgs, username, ... }:
 let
   inherit (import ../../options.nix) wallpaperDir wallpaperGit flakeDir;
 in
@@ -28,7 +23,6 @@ in
     vlc
     bat
     gotop
-    fzf
     ripgrep
     dua
     font-awesome

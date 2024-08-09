@@ -36,4 +36,11 @@
     ./obs-studio.nix
     ./xdg.nix
   ];
+  programs = {
+    fzf = {
+      enable = true;
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+    };
+  };
 }
