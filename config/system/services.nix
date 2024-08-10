@@ -22,12 +22,20 @@
     ];
   };
 
-  hardware = {
-    bluetooth = {
-      enable = true; # enables support for Bluetooth
-      powerOnBoot = true; # powers up the default Bluetooth controller on boot
-    };
+  hardware.bluetooth = {
+    enable = true; # enables support for Bluetooth
+    powerOnBoot = true; # powers up the default Bluetooth controller on boot
   };
+
+  # Battery saving.
+  networking.networkmanager.wifi.powersave = true;
+  powerManagement.enable = true;
+
+  services = {
+    throttled.enable = true; # On battery ur cpu will go down to 400 freq if this is off
+    tlp.enable = true;
+  };
+
   security.rtkit.enable = true;
   programs.thunar.enable = true;
   security.pam.services.hyprlock = {

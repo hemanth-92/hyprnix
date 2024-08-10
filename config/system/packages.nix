@@ -55,6 +55,7 @@
     gimp
     python3
     inputs.nixvim.packages.${pkgs.system}.default
+    powertop
   ];
 
   programs = {
