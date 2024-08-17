@@ -45,6 +45,10 @@
       { id = "jiaopdjbehhjgokpphdfgmapkobbnmjp"; }
       # adblocer ultimate
       { id = "ohahllgiabjaoigichmmfljhkcfikeof"; }
+      # Allow CORS
+      { id = "lhobafahddgcelffkeicbaginigeejlf"; }
+      # PixelParallel by htmlBurger
+      { id = "iffnoibnepbcloaaagchjonfplimpkob"; }
     ];
   };
   # set default browser
