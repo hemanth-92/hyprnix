@@ -56,6 +56,7 @@
     python3
     inputs.nixvim.packages.${pkgs.system}.default
     powertop
+    alsa-utils
   ];
 
   programs = {
