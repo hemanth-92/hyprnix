@@ -1,7 +1,9 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   fontName = "MonoLisa Nerd Font";
-in {
-  home.packages = with pkgs; [rofi-wayland];
+in
+{
+  home.packages = with pkgs; [ rofi-wayland ];
 
   xdg.configFile."rofi/config.rasi".text = ''
     configuration{
@@ -34,7 +36,7 @@ in {
         fg-col2: #f38ba8;
         grey: #6c7086;
 
-        font: "${fontName} 13";
+        font: "${fontName} 16";
     }
 
     element-text, element-icon , mode-switcher {
@@ -43,9 +45,9 @@ in {
     }
 
     window {
-        width: 40%;
+        width: 50%;
         transparency: "real";
-        height: 500px;
+        height: 600px;
         border: 3px;
         border-color: @border-col;
         background-color: @bg-col;
