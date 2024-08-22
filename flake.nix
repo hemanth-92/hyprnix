@@ -17,10 +17,10 @@
     #   url = "https://github.com/hyprwm/Hyprland";
     #   submodules = true;
     # };
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    # hyprlock = {
+    #   url = "github:hyprwm/hyprlock";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    # };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,7 +33,6 @@
       flake = false;
     };
 
-    impermanence.url = "github:nix-community/impermanence";
     nur.url = "github:nix-community/nur";
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -43,12 +42,7 @@
   };
 
   outputs =
-    inputs@{
-      nixpkgs,
-      home-manager,
-      impermanence,
-      ...
-    }:
+    inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       inherit (import ./options.nix) username hostname;
@@ -71,7 +65,6 @@
           };
           modules = [
             ./system.nix
-            impermanence.nixosModules.impermanence
             home-manager.nixosModules.home-manager
             {
               home-manager.extraSpecialArgs = {
