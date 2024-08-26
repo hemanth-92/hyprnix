@@ -37,7 +37,14 @@
   };
 
   security.rtkit.enable = true;
-  programs.thunar.enable = true;
+
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+    ];
+  };
   security.pam.services.hyprlock = {
     text = ''
       auth include login
