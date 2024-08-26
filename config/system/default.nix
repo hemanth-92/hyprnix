@@ -9,5 +9,6 @@ _: {
     ./printer.nix
     ./services.nix
     ./audio.nix
+    ./python.nix
   ];
 }
