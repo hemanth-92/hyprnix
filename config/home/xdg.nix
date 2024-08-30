@@ -1,6 +1,6 @@
 { config, lib, ... }:
 let
-  browser = [ "brave.desktop" ];
+  browser = [ "zen.desktop" ];
   video = [ "mpv.desktop" ];
   image = [ "imv.desktop" ];
   nvim = [ "nvim.desktop" ];

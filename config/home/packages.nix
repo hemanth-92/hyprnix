@@ -42,6 +42,7 @@ in
     duf
     zed-editor
     openssl_3_3
+    appflowy
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })

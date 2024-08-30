@@ -56,6 +56,7 @@
     inputs.nixvim.packages.${pkgs.system}.default
     powertop
     alsa-utils
+    inputs.zen-browser.packages."${system}".specific
   ];
 
   programs = {

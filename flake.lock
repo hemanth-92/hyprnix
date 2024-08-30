@@ -78,11 +78,11 @@
       },
       "locked": {
         "dir": "pkgs/firefox-addons",
-        "lastModified": 1724645012,
-        "narHash": "sha256-XJ8B9ecksgZBlWV9pnDgBWVePyHDg/cLYJ/6YF/RdRA=",
+        "lastModified": 1724990603,
+        "narHash": "sha256-28mzOhVi+Gxp+08qdQmuqrX4mf/5bE4M3Qd2SOenLZo=",
         "owner": "rycee",
         "repo": "nur-expressions",
-        "rev": "70645c904b41b9ddf70f7218898c48df93e8254f",
+        "rev": "79e336c765b0bfd77a0bb1a8c5efb7eb2c9a6b58",
         "type": "gitlab"
       },
       "original": {
@@ -337,11 +337,11 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1724224976,
-        "narHash": "sha256-Z/ELQhrSd7bMzTO8r7NZgi9g5emh+aRKoCdaAv5fiO0=",
+        "lastModified": 1724819573,
+        "narHash": "sha256-GnR7/ibgIH1vhoy8cYdmXE6iyZqKqFxQSVkFgosBh6w=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "c374d94f1536013ca8e92341b540eba4c22f9c62",
+        "rev": "71e91c409d1e654808b2621f28a327acfdad8dc2",
         "type": "github"
       },
       "original": {
@@ -368,11 +368,11 @@
     },
     "nixpkgs-stable": {
       "locked": {
-        "lastModified": 1724316499,
-        "narHash": "sha256-Qb9MhKBUTCfWg/wqqaxt89Xfi6qTD3XpTzQ9eXi3JmE=",
+        "lastModified": 1724727824,
+        "narHash": "sha256-0XH9MJk54imJm+RHOLTUJ7e+ponLW00tw5ke4MTVa1Y=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "797f7dc49e0bc7fab4b57c021cdf68f595e47841",
+        "rev": "36bae45077667aff5720e5b3f1a5458f51cf0776",
         "type": "github"
       },
       "original": {
@@ -405,6 +405,22 @@
       },
       "original": {
         "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1724224976,
+        "narHash": "sha256-Z/ELQhrSd7bMzTO8r7NZgi9g5emh+aRKoCdaAv5fiO0=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "c374d94f1536013ca8e92341b540eba4c22f9c62",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nixos",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
         "type": "github"
@@ -458,11 +474,11 @@
     },
     "nur": {
       "locked": {
-        "lastModified": 1724653290,
-        "narHash": "sha256-1RlcsdtSsaZdOFtDmPdeiKIeJzy+SjBl0Dyx6b9Bb6A=",
+        "lastModified": 1724996489,
+        "narHash": "sha256-4zZgHRrLoSwo854cgBIj8Erd8+FeZ0tTXHilWpSt9Ys=",
         "owner": "nix-community",
         "repo": "nur",
-        "rev": "727813d7042cfe707fc576fe59ffed5f9951c45e",
+        "rev": "d740d65b46aa9c7abb80f9277963937cfedfedeb",
         "type": "github"
       },
       "original": {
@@ -505,7 +521,8 @@
         "nixpkgs-stable": "nixpkgs-stable",
         "nixvim": "nixvim",
         "nur": "nur",
-        "spicetify-nix": "spicetify-nix"
+        "spicetify-nix": "spicetify-nix",
+        "zen-browser": "zen-browser"
       }
     },
     "spicetify-nix": {
@@ -516,11 +533,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1724645793,
-        "narHash": "sha256-z0QdJ8N24msqy6uakRNHpCsrNsswTA9/Evsd3+DOAZc=",
+        "lastModified": 1724991403,
+        "narHash": "sha256-n0os3uymBUoGlikG87Yp7oisYGrkEwsm3nptS9FhdAk=",
         "owner": "Gerg-L",
         "repo": "spicetify-nix",
-        "rev": "2e3b9ea2f89113d71ab57127ca7226253afd2660",
+        "rev": "0965e58aa38245b2105fec2949a9463fe34e3f05",
         "type": "github"
       },
       "original": {
@@ -578,6 +595,25 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "zen-browser": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1724852059,
+        "narHash": "sha256-Ez5Q7XNC+vet7dBeQzi0xT7hxaBpHGY5N9x289UQk6g=",
+        "owner": "Raphael-08",
+        "repo": "zen-browser",
+        "rev": "29d77090898310ab3bc70f5678c7e39f3df7fbab",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Raphael-08",
+        "ref": "main",
+        "repo": "zen-browser",
         "type": "github"
       }
     }

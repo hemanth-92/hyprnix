@@ -51,11 +51,6 @@
       { id = "iffnoibnepbcloaaagchjonfplimpkob"; }
     ];
   };
-  # set default browser
-  home.sessionVariables = {
-    DEFAULT_BROWSER = lib.getExe pkgs.brave;
-    BROWSER = lib.getExe pkgs.brave;
-  };
   wayland.windowManager.hyprland.settings.windowrule = [
     # do not idle while watching videos
     "idleinhibit fullscreen,Brave-browser"

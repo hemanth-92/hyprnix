@@ -39,6 +39,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     catppuccin.url = "github:catppuccin/nix";
+    zen-browser.url = "github:Raphael-08/zen-browser/main";
   };
 
   outputs =

@@ -88,7 +88,7 @@ with lib;
               color = rgba(${theme.base0A}ff)
             }
           }
-          exec-once=[workspace 2 silent] brave
+          exec-once=[workspace 2 silent] zen
           exec-once = $POLKIT_BIN
           exec-once = dbus-update-activation-environment --systemd --all
           exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
@@ -111,7 +111,7 @@ with lib;
           bind = ${modifier},A,exec,rofi-launcher
           bind = ${modifier}SHIFT,W,exec,web-search
           bind = ${modifier}SHIFT,N,exec,swaync-client -rs
-          bind = ${modifier},W,exec,brave
+          bind = ${modifier},W,exec,zen
           bind = ${modifier}SHIFT,P,exec,wlogout
           bind = ${modifier},E,exec,emopicker9000
           bind = ${modifier},S,exec,screenshootin
