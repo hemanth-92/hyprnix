@@ -1,6 +1,5 @@
 {
   pkgs,
-  config,
   inputs,
   ...
 }:
@@ -38,7 +37,6 @@
     ninja
     go
     nodejs_22
-    symbola
     noto-fonts-color-emoji
     material-icons
     brightnessctl

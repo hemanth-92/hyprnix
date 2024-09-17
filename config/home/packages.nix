@@ -30,7 +30,6 @@ in
     neovide
     element-desktop
     wl-clipboard
-    swaylock
     obsidian
     tenki
     loupe
