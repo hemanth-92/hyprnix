@@ -55,6 +55,7 @@
     powertop
     alsa-utils
     inputs.zen-browser.packages."${system}".specific
+    flowtime
   ];
 
   programs = {
