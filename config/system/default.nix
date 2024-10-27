@@ -1,9 +1,8 @@
 _: {
   imports = [
-    ./appimages.nix
     ./boot.nix
     ./displaymanager.nix
-    ./intel-gpu.nix
+    ./intel-drivers.nix
     ./packages.nix
     ./polkit.nix
     ./printer.nix

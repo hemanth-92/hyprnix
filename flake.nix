@@ -40,6 +40,7 @@
     };
     catppuccin.url = "github:catppuccin/nix";
     zen-browser.url = "github:Raphael-08/zen-browser/main";
+    distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
   };
 
   outputs =
@@ -67,6 +68,7 @@
           modules = [
             ./system.nix
             home-manager.nixosModules.home-manager
+            inputs.distro-grub-themes.nixosModules.${system}.default
             {
               home-manager.extraSpecialArgs = {
                 inherit username;

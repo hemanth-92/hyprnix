@@ -49,13 +49,17 @@
     yad
     playerctl
     nh
-    corepack_latest
     gimp
     inputs.nixvim.packages.${pkgs.system}.default
     powertop
     alsa-utils
     inputs.zen-browser.packages."${system}".specific
     flowtime
+    sqlite
+    turso-cli
+    pnpm
+    deno
+    okular
   ];
 
   programs = {
