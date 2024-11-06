@@ -8,8 +8,6 @@ let
       setuptools
       torch
       diffusers
-      jupyter
-      notebook
       matplotlib
       seaborn
       accelerate

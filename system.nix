@@ -80,6 +80,5 @@ in
       options = "--delete-older-than 7d";
     };
   };
-
   system.stateVersion = "23.11";
 }

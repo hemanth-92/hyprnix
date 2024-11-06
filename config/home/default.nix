@@ -24,7 +24,6 @@
     ./fish.nix
     ./zathura.nix
     ./firefox.nix
-    ./spotify.nix
     ./hyprlock.nix
     ./btop.nix
     ./cava.nix
@@ -42,7 +41,6 @@
       enableBashIntegration = true;
       enableFishIntegration = true;
       enableZshIntegration = true;
-
     };
   };
 }

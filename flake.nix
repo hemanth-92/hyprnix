@@ -27,19 +27,9 @@
     };
 
     nixvim.url = "github:hemanth-92/nixvim";
-
-    catppuccin-grub = {
-      url = "github:catppuccin/grub";
-      flake = false;
-    };
-
     nur.url = "github:nix-community/nur";
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     catppuccin.url = "github:catppuccin/nix";
-    zen-browser.url = "github:Raphael-08/zen-browser/main";
+    zen-browser.url = "github:ch4og/zen-browser-flake";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
   };
 

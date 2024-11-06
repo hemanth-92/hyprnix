@@ -22,7 +22,6 @@
     unzip
     unrar
     libnotify
-    eza
     v4l-utils
     ydotool
     wl-clipboard
@@ -44,7 +43,6 @@
     virt-viewer
     swappy
     ripgrep
-    appimage-run
     networkmanagerapplet
     yad
     playerctl
@@ -54,16 +52,13 @@
     powertop
     alsa-utils
     inputs.zen-browser.packages."${system}".specific
-    flowtime
     sqlite
     turso-cli
     pnpm
     deno
-    okular
   ];
 
   programs = {
-    steam.gamescopeSession.enable = true;
     dconf.enable = true;
     seahorse.enable = true;
     hyprland = {
@@ -78,6 +73,5 @@
     };
     virt-manager.enable = true;
   };
-
   virtualisation.libvirtd.enable = true;
 }

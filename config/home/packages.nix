@@ -5,7 +5,6 @@ in
 {
   # Install Packages For The User
   home.packages = with pkgs; [
-    libvirt
     swww
     grim
     slurp
@@ -13,35 +12,24 @@ in
     swaynotificationcenter
     imv
     mpv
-    rustup
-    audacity
     tree
     tmux
     cava
-    klavaro
     jdk17
     vlc
     bat
-    gotop
     ripgrep
     dua
     font-awesome
     swayidle
-    neovide
-    element-desktop
     wl-clipboard
     obsidian
-    tenki
-    loupe
     telegram-desktop
-    nomacs
     inxi
-    libreoffice-qt6-fresh
-    nixfmt-rfc-style
     duf
     zed-editor
     openssl_3_3
-    appflowy
+    man
     (nerdfonts.override {
       fonts = [
         "JetBrainsMono"
