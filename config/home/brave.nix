@@ -1,4 +1,4 @@
-{ pkgs, lib, ... }:
+{ pkgs, ... }:
 {
   programs.chromium = {
     enable = true;
@@ -51,8 +51,17 @@
       { id = "iffnoibnepbcloaaagchjonfplimpkob"; }
     ];
   };
-  wayland.windowManager.hyprland.settings.windowrule = [
+
+  wayland.windowManager.hyprland.settings.windowrulev2 = [
     # do not idle while watching videos
-    "idleinhibit fullscreen,Brave-browser"
+    "idleinhibit fullscreen,class:^(brave)$"
+    "idleinhibit focus,class:^(brave)$,title:(.*)(YouTube)(.*)"
+    # float save dialogs
+    # save as
+    "float,initialClass:^(brave)$,initialTitle:^(Save File)$"
+    "size <50% <50%,initialClass:^(brave)$,initialTitle:^(Save File)$"
+    # save image
+    "float,initialClass:^(brave)$,initialTitle:(.*)(wants to save)$"
+    "size <50% <50%,initialClass:^(brave)$,initialTitle:(.*)(wants to save)$"
   ];
 }

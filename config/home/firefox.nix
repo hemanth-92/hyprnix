@@ -1,14 +1,13 @@
-{
-  config,
-  inputs,
-  lib,
-  pkgs,
-  ...
+{ config
+, inputs
+, lib
+, pkgs
+, ...
 }: {
-  imports = [inputs.nur.nixosModules.nur];
+  imports = [ inputs.nur.nixosModules.nur ];
 
   programs.firefox = {
-    enable = true;
+    enable = false;
 
     policies = {
       BlockAboutConfig = false;
@@ -53,6 +52,6 @@
 
   wayland.windowManager.hyprland.settings = {
     # do not idle while watching videos
-    windowrule = ["idleinhibit fullscreen,firefox-aurora"];
+    windowrule = [ "idleinhibit fullscreen,firefox-aurora" ];
   };
 }

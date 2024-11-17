@@ -1,9 +1,8 @@
-{
-  pkgs,
-  username,
-  hostname,
-  options,
-  ...
+{ pkgs
+, username
+, hostname
+, options
+, ...
 }:
 let
   inherit (import ./options.nix) gitUsername flakeDir;

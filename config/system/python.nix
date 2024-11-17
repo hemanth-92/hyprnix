@@ -6,12 +6,7 @@ let
       pandas
       requests
       setuptools
-      torch
-      diffusers
-      matplotlib
-      seaborn
-      accelerate
-      transformers
+      rich
     ];
 in
 {

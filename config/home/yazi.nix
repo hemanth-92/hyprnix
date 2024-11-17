@@ -1,4 +1,3 @@
-{ config, lib, ... }:
 {
   programs.yazi = {
     enable = true;
@@ -45,7 +44,7 @@
       };
     };
   };
-      home.shellAliases = {
-      y = "yazi";
+  home.shellAliases = {
+    y = "yazi";
   };
 }

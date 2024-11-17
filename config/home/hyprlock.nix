@@ -1,8 +1,7 @@
-{
-  pkgs,
-  config,
-  username,
-  ...
+{ pkgs
+, config
+, username
+, ...
 }:
 let
   wallpaper = "/home/${username}/Pictures/Wallpapers/lofi-Room.png";

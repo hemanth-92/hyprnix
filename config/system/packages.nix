@@ -1,7 +1,6 @@
-{
-  pkgs,
-  inputs,
-  ...
+{ pkgs
+, inputs
+, ...
 }:
 {
   # Allow unfree packages
@@ -26,12 +25,10 @@
     ydotool
     wl-clipboard
     socat
-    cowsay
     lsd
     lshw
     pkg-config
     meson
-    hugo
     gnumake
     ninja
     go
@@ -47,13 +44,10 @@
     yad
     playerctl
     nh
-    gimp
     inputs.nixvim.packages.${pkgs.system}.default
     powertop
     alsa-utils
     inputs.zen-browser.packages."${system}".specific
-    sqlite
-    turso-cli
     pnpm
     deno
   ];
