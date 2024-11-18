@@ -78,8 +78,6 @@ with lib;
               enabled = true
               range = 6
               render_power = 1
-
-             color =  $color2
              color_inactive = 0x50000000
              }
             blur {
