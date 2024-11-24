@@ -32,7 +32,7 @@
     gnumake
     ninja
     go
-    nodejs_22
+    nodejs_23
     noto-fonts-color-emoji
     material-icons
     brightnessctl
@@ -50,6 +50,7 @@
     inputs.zen-browser.packages."${system}".specific
     pnpm
     deno
+    speechd
   ];
 
   programs = {
@@ -68,4 +69,13 @@
     virt-manager.enable = true;
   };
   virtualisation.libvirtd.enable = true;
+  fonts.packages = with pkgs; [
+    noto-fonts
+    fira-code
+    noto-fonts-cjk-sans
+    jetbrains-mono
+    font-awesome
+    terminus_font
+    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+  ];
 }

@@ -1,6 +1,6 @@
 { inputs, username, ... }:
 let
-  inherit (import ./options.nix) gitUsername gitEmail theme;
+  inherit (import ./options.nix) theme;
 in
 {
   # Home Manager Settings
@@ -23,13 +23,6 @@ in
   # Define Settings For Xresources
   xresources.properties = {
     "Xcursor.size" = 24;
-  };
-
-  # Install & Configure Git
-  programs.git = {
-    enable = true;
-    userName = "${gitUsername}";
-    userEmail = "${gitEmail}";
   };
 
   dconf.settings = {

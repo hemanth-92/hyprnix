@@ -1,7 +1,6 @@
 { config, lib, ... }:
 let
   theme = config.colorScheme.palette;
-  inherit (import ../../options.nix) theKBDLayout terminal theSecondKBDLayout;
 in
 with lib;
 {
@@ -29,8 +28,7 @@ with lib;
           }
 
           input {
-            kb_layout = ${theKBDLayout}, ${theSecondKBDLayout}
-            kb_options = grp:alt_shift_toggle
+            kb_layout = us
             follow_mouse = 1
             touchpad {
               natural_scroll = false
@@ -49,6 +47,17 @@ with lib;
           env = QT_WAYLAND_DISABLE_WINDOWDECORATION, 1
           env = QT_AUTO_SCREEN_SCALE_FACTOR, 1
           env = MOZ_ENABLE_WAYLAND, 1
+          env = SDL_VIDEODRIVER, x11
+          exec-once=[workspace 2 silent] zen
+          exec-once = $POLKIT_BIN
+          exec-once = dbus-update-activation-environment --systemd --all
+          exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
+          exec-once = swww init
+          exec-once = waybar
+          exec-once = swaync
+          exec-once = wallsetter
+          exec-once = nm-applet --indicator
+          exec-once = swayidle -w timeout 300 'hyprlock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'hyprlock -f -c 000000'
           gestures {
             workspace_swipe = true
             workspace_swipe_fingers = 3
@@ -78,7 +87,7 @@ with lib;
               enabled = true
               range = 6
               render_power = 1
-             color_inactive = 0x50000000
+              color_inactive = 0x50000000
              }
             blur {
               enabled = true
@@ -93,26 +102,16 @@ with lib;
               color = rgba(${theme.base0A}ff)
             }
           }
-          exec-once=[workspace 2 silent] zen
-          exec-once = $POLKIT_BIN
-          exec-once = dbus-update-activation-environment --systemd --all
-          exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-          exec-once = swww init
-          exec-once = waybar
-          exec-once = swaync
-          exec-once = wallsetter
-          exec-once = nm-applet --indicator
-          exec-once = swayidle -w timeout 300 'hyprlock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'hyprlock -f -c 000000'
-                     dwindle {
+          dwindle {
             pseudotile = true
             preserve_split = true
           }
           master {
-          new_status = master
+             new_status = master
           }
           bind = ${modifier},l,exec,hyprlock
           bind = ${modifier}, b, exec, killall -SIGUSR1 waybar
-          bind = ${modifier},Return,exec,${terminal}
+          bind = ${modifier},Return,exec,kitty
           bind = ${modifier},A,exec,rofi-launcher
           bind = ${modifier}SHIFT,W,exec,web-search
           bind = ${modifier}SHIFT,N,exec,swaync-client -rs

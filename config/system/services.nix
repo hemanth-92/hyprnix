@@ -8,6 +8,20 @@
     tumbler.enable = true;
     gnome.gnome-keyring.enable = true;
     blueman.enable = true;
+    throttled.enable = true; # On battery ur cpu will go down to 400 freq if this is off
+    tlp.enable = true;
+    libinput.enable = true;
+    xserver = {
+      enable = true;
+      xkb = {
+        layout = "us";
+        variant = "";
+
+      };
+      # bye bye xterm
+      excludePackages = [ pkgs.xterm ];
+    };
+
   };
   xdg.portal = {
     enable = true;
@@ -22,6 +36,8 @@
     ];
   };
 
+  zramSwap.enable = true;
+
   hardware.bluetooth = {
     enable = true; # enables support for Bluetooth
     powerOnBoot = true; # powers up the default Bluetooth controller on boot
@@ -32,8 +48,15 @@
   powerManagement.enable = true;
 
   services = {
-    throttled.enable = true; # On battery ur cpu will go down to 400 freq if this is off
-    tlp.enable = true;
+    greetd = {
+      enable = true;
+      vt = 3;
+      settings = {
+        default_session = {
+          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland";
+        };
+      };
+    };
   };
 
   security.rtkit.enable = true;

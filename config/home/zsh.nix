@@ -44,8 +44,8 @@ in
     sessionVariables = { };
     shellAliases = {
       sv = "sudo nvim";
-      rebuild = "nh os switch --hostname ${hostname}";
-      update = "nh os switch --hostname ${hostname}  --update";
+      rebuild = "nh os switch --hostname ${hostname} ~/hyprnix";
+      update = "nh os switch --hostname ${hostname}  --update ~/hyprnix";
       gcCleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       v = "nvim";
       ls = "eza --icons";

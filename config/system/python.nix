@@ -7,6 +7,8 @@ let
       requests
       setuptools
       rich
+      tkinter
+      pillow
     ];
 in
 {

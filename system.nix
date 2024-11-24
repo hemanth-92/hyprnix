@@ -5,7 +5,7 @@
 , ...
 }:
 let
-  inherit (import ./options.nix) gitUsername flakeDir;
+  inherit (import ./options.nix) flakeDir;
 in
 {
   imports = [
@@ -43,11 +43,15 @@ in
       homeMode = "755";
       hashedPassword = "$6$18JKFnAP84d62vB.$63g0TDv22PItmkWhnh26yctPwwi5K.4x48CSHnNs11bxY0yKw/setlgeCB/pePMuCEYYgoqdN9pjFLWRQ9ZXR/";
       isNormalUser = true;
-      description = "${gitUsername}";
       extraGroups = [
         "networkmanager"
         "wheel"
         "libvirtd"
+        "scanner"
+        "lp"
+        "video" 
+        "input" 
+        "audio"
       ];
       shell = pkgs.fish;
       ignoreShellProgramCheck = true;

@@ -14,7 +14,6 @@ in
     mpv
     tree
     tmux
-    cava
     jdk17
     vlc
     bat
@@ -27,14 +26,8 @@ in
     telegram-desktop
     inxi
     duf
-    zed-editor
     openssl_3_3
     man
-    (nerdfonts.override {
-      fonts = [
-        "JetBrainsMono"
-      ];
-    })
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
     (import ./../scripts/task-waybar.nix { inherit pkgs; })
@@ -50,11 +43,8 @@ in
       inherit flakeDir;
     })
     (import ./../scripts/theme-selector.nix { inherit pkgs; })
-    (import ./../scripts/nvidia-offload.nix { inherit pkgs; })
-    (import ./../scripts/web-search.nix { inherit pkgs; })
     (import ./../scripts/rofi-launcher.nix { inherit pkgs; })
     (import ./../scripts/screenshootin.nix { inherit pkgs; })
-    (import ./../scripts/list-hypr-bindings.nix { inherit pkgs; })
   ];
   programs.gh.enable = true;
 }
