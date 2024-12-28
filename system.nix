@@ -49,8 +49,8 @@ in
         "libvirtd"
         "scanner"
         "lp"
-        "video" 
-        "input" 
+        "video"
+        "input"
         "audio"
       ];
       shell = pkgs.fish;

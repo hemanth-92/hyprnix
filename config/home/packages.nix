@@ -28,6 +28,7 @@ in
     duf
     openssl_3_3
     man
+    firefox-unwrapped
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
     (import ./../scripts/task-waybar.nix { inherit pkgs; })

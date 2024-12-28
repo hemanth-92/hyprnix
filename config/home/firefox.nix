@@ -4,8 +4,6 @@
 , pkgs
 , ...
 }: {
-  imports = [ inputs.nur.nixosModules.nur ];
-
   programs.firefox = {
     enable = false;
 

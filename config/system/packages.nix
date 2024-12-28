@@ -46,11 +46,17 @@
     nh
     inputs.nixvim.packages.${pkgs.system}.default
     powertop
+    inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.ghostty.packages.${system}.default
     alsa-utils
-    inputs.zen-browser.packages."${system}".specific
     pnpm
     deno
     speechd
+    zed-editor
+    postgresql # For PostgreSQL
+    sqlite # For SQLite (lightweight and serverless)
+    qbittorrent
+    docker_26
   ];
 
   programs = {
@@ -76,6 +82,6 @@
     jetbrains-mono
     font-awesome
     terminus_font
-    (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+    nerd-fonts.jetbrains-mono
   ];
 }

@@ -11,12 +11,12 @@
     throttled.enable = true; # On battery ur cpu will go down to 400 freq if this is off
     tlp.enable = true;
     libinput.enable = true;
+    flatpak.enable = true;
     xserver = {
       enable = true;
       xkb = {
         layout = "us";
         variant = "";
-
       };
       # bye bye xterm
       excludePackages = [ pkgs.xterm ];
@@ -57,6 +57,18 @@
         };
       };
     };
+  };
+
+  services.mysql = {
+    enable = true;
+    package = pkgs.mariadb_114;
+  };
+
+  systemd.services.flatpak-repo = {
+    path = [ pkgs.flatpak ];
+    script = ''
+      flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+    '';
   };
 
   security.rtkit.enable = true;

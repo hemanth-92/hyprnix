@@ -1,8 +1,7 @@
-{
-  pkgs,
-  config,
-  gtkThemeFromScheme,
-  ...
+{ pkgs
+, config
+, gtkThemeFromScheme
+, ...
 }: {
   # Configure Cursor Theme
   home.pointerCursor = {
@@ -23,7 +22,7 @@
     };
     theme = {
       name = "${config.colorScheme.slug}";
-      package = gtkThemeFromScheme {scheme = config.colorScheme;};
+      package = gtkThemeFromScheme { scheme = config.colorScheme; };
     };
     iconTheme = {
       name = "Papirus-Dark";

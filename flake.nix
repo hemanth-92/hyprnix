@@ -4,37 +4,25 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
+    home-manager-stable = {
+      url = "github:nix-community/home-manager/release-24.11";
+      inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
     nix-colors.url = "github:misterio77/nix-colors";
-    # hyprland = {
-    #   type = "git";
-    #   url = "https://github.com/hyprwm/Hyprland";
-    #   submodules = true;
-    # };
-    # hyprlock = {
-    #   url = "github:hyprwm/hyprlock";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    firefox-addons = {
-      url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
+    firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     nixvim.url = "github:hemanth-92/nixvim";
     nur.url = "github:nix-community/nur";
     catppuccin.url = "github:catppuccin/nix";
-    zen-browser.url = "github:ch4og/zen-browser-flake";
+    # DELETEME: Zen
+    zen-browser.url = "github:0xc000022070/zen-browser-flake";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+    ghostty.url = "github:ghostty-org/ghostty";
   };
 
-  outputs =
-    inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       inherit (import ./options.nix) username hostname;
@@ -59,7 +47,12 @@
             ./system.nix
             home-manager.nixosModules.home-manager
             inputs.distro-grub-themes.nixosModules.${system}.default
+            inputs.nur.modules.nixos.default
             {
+              nixpkgs.overlays = import ./overlays/default.nix;
+            }
+            {
+              # Additional Home Manager configuration
               home-manager.extraSpecialArgs = {
                 inherit username;
                 inherit inputs;
