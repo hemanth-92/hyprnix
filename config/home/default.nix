@@ -34,6 +34,8 @@
     ./zsh.nix
     ./obs-studio.nix
     ./xdg.nix
+    ./ghostty.nix
+    ./tmux.nix
   ];
   programs = {
     fzf = {

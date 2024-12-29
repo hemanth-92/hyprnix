@@ -47,7 +47,6 @@
     inputs.nixvim.packages.${pkgs.system}.default
     powertop
     inputs.zen-browser.packages.${pkgs.system}.default
-    inputs.ghostty.packages.${system}.default
     alsa-utils
     pnpm
     deno

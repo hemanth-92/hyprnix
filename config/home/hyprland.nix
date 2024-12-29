@@ -111,7 +111,7 @@ with lib;
           }
           bind = ${modifier},l,exec,hyprlock
           bind = ${modifier}, b, exec, killall -SIGUSR1 waybar
-          bind = ${modifier},Return,exec,kitty
+          bind = ${modifier},Return,exec,ghostty
           bind = ${modifier},A,exec,rofi-launcher
           bind = ${modifier}SHIFT,W,exec,web-search
           bind = ${modifier}SHIFT,N,exec,swaync-client -rs

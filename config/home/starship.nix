@@ -5,6 +5,7 @@
       enable = true;
       enableBashIntegration = true;
       enableFishIntegration = true;
+      enableTransience = true;
       settings =
         let
           dir_bg = "blue";
@@ -101,7 +102,7 @@
       # fix starship prompt to only have newlines after the first command
       # https://github.com/starship/starship/issues/560#issuecomment-1465630645
       shellInit = ''
-        function postexec_newline --on-event fish_postexec
+        function prompt_newline --on-event fish_postexec
           echo ""
         end
       '';
@@ -109,7 +110,7 @@
       # the starship transience module doesn't handle empty commands properly
       # https://github.com/starship/starship/issues/4929
       interactiveShellInit = lib.mkAfter ''
-        function transient_prompt_func
+        function starship_transient_prompt_func
           starship module character
         end
       '';
