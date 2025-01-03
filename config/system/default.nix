@@ -8,5 +8,6 @@ _: {
     ./services.nix
     ./audio.nix
     ./python.nix
+    ./displaymanager.nix
   ];
 }

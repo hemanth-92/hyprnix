@@ -18,8 +18,11 @@
         layout = "us";
         variant = "";
       };
+      desktopManager = {
+        xfce.enable = true;
+      };
       # bye bye xterm
-      excludePackages = [ pkgs.xterm ];
+      # excludePackages = [ pkgs.xterm ];
     };
 
   };
@@ -47,17 +50,17 @@
   networking.networkmanager.wifi.powersave = true;
   powerManagement.enable = true;
 
-  services = {
-    greetd = {
-      enable = true;
-      vt = 3;
-      settings = {
-        default_session = {
-          command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland";
-        };
-      };
-    };
-  };
+  # services = {
+  #   greetd = {
+  #     enable = true;
+  #     vt = 3;
+  #     settings = {
+  #       default_session = {
+  #         command = "${pkgs.greetd.tuigreet}/bin/tuigreet --user-menu --time --theme 'border=magenta;text=cyan;prompt=green;time=red;action=blue;button=yellow;container=black;input=red' --cmd Hyprland";
+  #       };
+  #     };
+  #   };
+  # };
 
   services.mysql = {
     enable = true;

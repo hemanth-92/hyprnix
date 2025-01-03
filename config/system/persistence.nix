@@ -1,14 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  username,
-  ...
-}:
-
-let
-  inherit (import ../../options.nix) username;
-in
+_:
 {
   environment.persistence."/nix/persist" = {
     hideMounts = true;
@@ -22,7 +12,7 @@ in
     files = [
       # "/etc/machine-id"
     ];
-    users.${username} = {
+    users.zenith = {
       directories = [
         "Downloads"
         "Music"
