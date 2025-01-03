@@ -19,7 +19,6 @@
     # DELETEME: Zen
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
-    ghostty.url = "github:ghostty-org/ghostty";
   };
 
   outputs = inputs@{ nixpkgs, home-manager, ... }:
@@ -49,10 +48,6 @@
             inputs.distro-grub-themes.nixosModules.${system}.default
             inputs.nur.modules.nixos.default
             {
-              nixpkgs.overlays = import ./overlays/default.nix;
-            }
-            {
-              # Additional Home Manager configuration
               home-manager.extraSpecialArgs = {
                 inherit username;
                 inherit inputs;
