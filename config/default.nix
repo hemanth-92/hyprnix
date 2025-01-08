@@ -1,8 +1,11 @@
 { inputs, username, ... }:
-let
-  inherit (import ./options.nix) theme;
-in
 {
+  # Import Program Configurations
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+    ./home
+  ];
+
   # Home Manager Settings
   home = {
     username = "${username}";
@@ -12,13 +15,7 @@ in
   };
 
   # Set The Colorscheme
-  colorScheme = inputs.nix-colors.colorSchemes."${theme}";
-
-  # Import Program Configurations
-  imports = [
-    inputs.nix-colors.homeManagerModules.default
-    ./config/home
-  ];
+  colorScheme = inputs.nix-colors.colorSchemes."catppuccin-mocha";
 
   # Define Settings For Xresources
   xresources.properties = {

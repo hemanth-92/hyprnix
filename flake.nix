@@ -49,7 +49,7 @@
             inherit hostname;
           };
           modules = [
-            ./system.nix
+            ./nixos
             home-manager.nixosModules.home-manager
             inputs.distro-grub-themes.nixosModules.${system}.default
             inputs.nur.modules.nixos.default
@@ -57,13 +57,12 @@
               home-manager.extraSpecialArgs = {
                 inherit username;
                 inherit inputs;
-                inherit (inputs.nix-colors.lib-contrib { inherit pkgs; }) gtkThemeFromScheme;
               };
               home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 backupFileExtension = "backup";
-                users.${username} = import ./home.nix;
+                users.${username} = import ./config/default.nix;
               };
             }
           ];

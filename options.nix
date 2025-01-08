@@ -19,9 +19,7 @@ in
   flakePrev = "${userHome}/.hyprnix-previous";
   flakeBackup = "${userHome}/.hyprnix-backup";
 
-  #theming
-  theme = "catppuccin-mocha";
-  #cursorTheme = "Simp1e-Tokyo-Night-Storm";
+
 
   # System Settings
   theLocale = "en_US.UTF-8";
