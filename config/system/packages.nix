@@ -56,6 +56,8 @@
     sqlite # For SQLite (lightweight and serverless)
     qbittorrent
     docker_26
+    python313
+    firefox-unwrapped
   ];
 
   programs = {
@@ -74,13 +76,4 @@
     virt-manager.enable = true;
   };
   virtualisation.libvirtd.enable = true;
-  fonts.packages = with pkgs; [
-    noto-fonts
-    fira-code
-    noto-fonts-cjk-sans
-    jetbrains-mono
-    font-awesome
-    terminus_font
-    nerd-fonts.jetbrains-mono
-  ];
 }

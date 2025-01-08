@@ -29,7 +29,8 @@
   outputs = inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
-      inherit (import ./options.nix) username hostname;
+      username = "zenith";
+      hostname = "shadowblaze";
 
       pkgs = import nixpkgs {
         inherit system;

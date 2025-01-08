@@ -1,8 +1,21 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
-  home.packages = (with pkgs; [ nemo ]);
+  home.packages = with pkgs; [
+    nemo
+    p7zip-rar # support for encrypted archives
+    webp-pixbuf-loader # for webp thumbnails
+    xdg-terminal-exec
+    nemo-fileroller
+  ];
 
   dconf.settings = {
+    # fix open in terminal
+    "org/gnome/desktop/applications/terminal" = {
+      exec = lib.getExe pkgs.xdg-terminal-exec;
+    };
+    "org/cinnamon/desktop/applications/terminal" = {
+      exec = lib.getExe pkgs.xdg-terminal-exec;
+    };
     "org/nemo/preferences" = {
       always-use-browser = true;
       # click-double-parent-folder = true;
@@ -13,7 +26,7 @@
       quick-renames-with-pause-in-between = true;
       show-edit-icon-toolbar = false;
       show-full-path-titles = false;
-      show-hidden-files = true;
+      show-hidden-files = false;
       show-home-icon-toolbar = true;
       show-new-folder-icon-toolbar = true;
       show-open-in-terminal-toolbar = false;

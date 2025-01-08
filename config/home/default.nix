@@ -29,13 +29,13 @@
     ./cava.nix
     ./bat.nix
     ./fastfetch.nix
-    ./vscode.nix
     ./direnv.nix
     ./zsh.nix
     ./obs-studio.nix
     ./xdg.nix
     ./ghostty.nix
     ./tmux.nix
+    ./nemo.nix
   ];
   programs = {
     fzf = {

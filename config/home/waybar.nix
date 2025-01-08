@@ -1,11 +1,9 @@
-{
-  pkgs,
-  config,
-  lib,
-  ...
+{ pkgs
+, config
+, lib
+, ...
 }:
 let
-  palette = config.colorScheme.palette;
   betterTransition = "all 0.3s cubic-bezier(.55,-0.68,.48,1.682)";
 in
 with lib;
@@ -185,22 +183,22 @@ with lib;
           font-weight: bold;
         }
         window#waybar {
-          background-color: rgba(26,27,38,0);
-          border-bottom: 1px solid rgba(26,27,38,0);
+          background-color: rgba(30,30,46,0); /* base00 */
+          border-bottom: 1px solid rgba(30,30,46,0); /* base00 */
           border-radius: 0px;
-          color: #${palette.base0F};
+          color: #94e2d5; /* base0F */
         }
         #workspaces {
-          color: #${palette.base00};
+          color: #1e1e2e; /* base00 */
           background: transparent;
           margin: 4px;
           border-radius: 0px;
           border: 0px;
           font-style: normal;
         }
-        #workspaces button{
-          color: #${palette.base03};
-          background: #${palette.base00};
+        #workspaces button {
+          color: #585b70; /* base03 */
+          background: #1e1e2e; /* base00 */
           margin: 4px 3px;
           opacity: 1;
           border: 0px;
@@ -208,8 +206,9 @@ with lib;
           transition: ${betterTransition};
         }
         #workspaces button.active {
-          color: #${palette.base00};
-           background: linear-gradient(45deg, #${palette.base0E}, #${palette.base0F}, #${palette.base0D}, #${palette.base09});            background-size: 300% 300%;
+          color: #1e1e2e; /* base00 */
+          background: linear-gradient(45deg, #cba6f7, #94e2d5, #b4befe, #fab387); /* base0E, base0F, base0D, base09 */
+          background-size: 300% 300%;
           animation: swiping 15s linear infinite;
           border-radius: 15px;
           margin: 4px 3px;
@@ -219,7 +218,7 @@ with lib;
           transition: ${betterTransition};
         }
         #workspaces button:hover {
-          color: #${palette.base05};
+          color: #f2cdcd; /* base05 */
           border: 0px;
           border-radius: 15px;
           transition: ${betterTransition};
@@ -244,111 +243,112 @@ with lib;
           }
         }
         tooltip {
-          background: #${palette.base00};
-          border: 1px solid #${palette.base0E};
+          background: #1e1e2e; /* base00 */
+          border: 1px solid #cba6f7; /* base0E */
           border-radius: 10px;
         }
         tooltip label {
-          color: #${palette.base07};
+          color: #cdd6f4; /* base07 */
         }
         #window {
-          color: #${palette.base03};
-          background: #${palette.base00};
+          color: #585b70; /* base03 */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           border-radius: 15px;
           padding: 0px 10px;
         }
         #memory {
-          color: #${palette.base0F};
-          background: #${palette.base00};
+          color: #94e2d5; /* base0F */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #clock {
-          color: #${palette.base0B};
-          background: #${palette.base00};
+          color: #a6e3a1; /* base0B */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #cpu {
-          color: #${palette.base07};
-          background: #${palette.base00};
+          color: #cdd6f4; /* base07 */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #disk {
-          color: #${palette.base03};
-          background: #${palette.base00};
+          color: #585b70; /* base03 */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #battery {
-          color: #${palette.base08};
-          background: #${palette.base00};
+          color: #f5c2e7; /* base08 */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #network {
-          color: #${palette.base09};
-          background: #${palette.base00};
+          color: #fab387; /* base09 */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #tray {
-          color: #${palette.base05};
-          background: #${palette.base00};
+          color: #f2cdcd; /* base05 */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #pulseaudio {
-          color: #${palette.base0D};
-          background: #${palette.base00};
+          color: #b4befe; /* base0D */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #custom-notification {
-          color: #${palette.base0C};
-          background: #${palette.base00};
+          color: #89b4fa; /* base0C */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
         }
         #custom-themeselector {
-          color: #${palette.base0D};
-          background: #${palette.base00};
+          color: #b4befe; /* base0D */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px 6px 0px;
           padding: 0px 10px 0px 5px;
           border-radius: 0px 15px 15px 0px;
         }
         #custom-startmenu {
-          color: #${palette.base03};
-          background: #${palette.base00};
+          color: #585b70; /* base03 */
+          background: #1e1e2e; /* base00 */
           margin: 6px 4px;
           padding: 0px 8px 0px 10px;
           border-radius: 15px;
         }
         #idle_inhibitor {
-          color: #${palette.base09};
-          background: #${palette.base00};
+          color: #fab387; /* base09 */
+          background: #1e1e2e; /* base00 */
           margin: 6px 0px;
           padding: 0px 14px;
           border-radius: 0px;
         }
         #custom-exit {
-          color: #${palette.base0E};
-          background: #${palette.base00};
+          color: #cba6f7; /* base0E */
+          background: #1e1e2e; /* base00 */
           margin: 6px 0px 6px 4px;
           padding: 0px 5px 0px 10px;
           border-radius: 15px 0px 0px 15px;
-        }''
+        }
+      ''
     ];
   };
 }

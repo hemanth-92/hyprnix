@@ -8,7 +8,6 @@ in
     swww
     grim
     slurp
-    file-roller
     swaynotificationcenter
     imv
     mpv
@@ -28,7 +27,7 @@ in
     duf
     openssl_3_3
     man
-    firefox-unwrapped
+    vscode
     # Import Scripts
     (import ./../scripts/emopicker9000.nix { inherit pkgs; })
     (import ./../scripts/task-waybar.nix { inherit pkgs; })

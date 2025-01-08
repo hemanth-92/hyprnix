@@ -1,7 +1,4 @@
-{ config, lib, ... }:
-let
-  theme = config.colorScheme.palette;
-in
+{ lib, ... }:
 with lib;
 {
   wayland.windowManager.hyprland = {
@@ -21,8 +18,8 @@ with lib;
             gaps_in = 6
             gaps_out = 8
             border_size = 2
-            col.active_border = rgba(${theme.base0C}ff) rgba(${theme.base0D}ff) rgba(${theme.base0B}ff) rgba(${theme.base0E}ff) 45deg
-            col.inactive_border = rgba(${theme.base00}cc) rgba(${theme.base01}cc) 45deg
+            col.active_border = rgba(94e2d5ff) rgba(89b4faff) rgba(a6e3a1ff) rgba(f5c2e7ff) 45deg
+            col.inactive_border = rgba(181825cc) rgba(313244cc) 45deg
             layout = dwindle
             resize_on_border = true
           }
@@ -99,7 +96,7 @@ with lib;
           }
           plugin {
             hyprtrails {
-              color = rgba(${theme.base0A}ff)
+              color = rgba(f9e2afff)
             }
           }
           dwindle {
@@ -124,7 +121,7 @@ with lib;
           bind = ${modifier},O,exec,obs
           bind = ${modifier},G,exec,gimp
           bind = ${modifier}SHIFT,G,exec,godot4
-          bind = ${modifier},T,exec,thunar
+          bind = ${modifier},T,exec,nemo
           bind = ${modifier},M,exec,spotify
           bind = ${modifier},Q,killactive,
           bind = ${modifier},P,pseudo,
