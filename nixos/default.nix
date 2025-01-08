@@ -13,7 +13,6 @@
     ./nix.nix
     ./users.nix
     ./configuration.nix
-    ./opengl.nix
 
     # import hardware
     ../hardware.nix

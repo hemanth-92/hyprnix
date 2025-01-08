@@ -58,6 +58,7 @@
     docker_26
     python313
     firefox-unwrapped
+    swaynotificationcenter
   ];
 
   programs = {

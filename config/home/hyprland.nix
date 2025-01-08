@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, username, ... }:
 with lib;
 {
   wayland.windowManager.hyprland = {
@@ -49,10 +49,10 @@ with lib;
           exec-once = $POLKIT_BIN
           exec-once = dbus-update-activation-environment --systemd --all
           exec-once = systemctl --user import-environment QT_QPA_PLATFORMTHEME WAYLAND_DISPLAY XDG_CURRENT_DESKTOP
-          exec-once = swww init
-          exec-once = waybar
-          exec-once = swaync
-          exec-once = wallsetter
+          exec-once = killall -q swww;sleep .5 && swww-daemon
+          exec-once = killall -q waybar;sleep .5 && waybar
+          exec-once = killall -q swaync;sleep .5 && swaync
+          exec-once = sleep 1.5 && swww img /home/${username}/Pictures/Wallpaper/house.jpg
           exec-once = nm-applet --indicator
           exec-once = swayidle -w timeout 300 'hyprlock -f' timeout 800 'hyprctl dispatch dpms off' resume 'hyprctl dispatch dpms on' before-sleep 'hyprlock -f -c 000000'
           gestures {

@@ -58,6 +58,7 @@ _: {
     lazygit.enable = true;
   };
   home.shellAliases = {
+    gs = "git status";
     lg = "lazygit";
     ga = "git add";
     gc = "git clone";
