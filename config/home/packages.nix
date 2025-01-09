@@ -1,7 +1,4 @@
 { pkgs, username, ... }:
-let
-  inherit (import ../../options.nix) wallpaperDir wallpaperGit;
-in
 {
   # Install Packages For The User
   home.packages = with pkgs; [

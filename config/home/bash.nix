@@ -1,7 +1,4 @@
-_:
-let
-  inherit (import ../../options.nix) hostname;
-in
+{ hostname, ... }:
 {
   # Configure Bash
   programs.bash = {

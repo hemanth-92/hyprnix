@@ -1,11 +1,9 @@
-_:
-let
-  inherit (import ../../options.nix) screenshotDir;
-in
+{ pkgs, ... }:
 {
+  home.packages = with pkgs; [ swappy ];
   home.file.".config/swappy/config".text = ''
     [Default]
-    save_dir=${screenshotDir}
+    save_dir=$HOME/Pictures/Screenshots
     save_filename_format=swappy-%Y%m%d-%H%M%S.png
     show_panel=false
     line_size=5

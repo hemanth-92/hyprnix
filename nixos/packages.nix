@@ -38,7 +38,6 @@
     brightnessctl
     toybox
     virt-viewer
-    swappy
     ripgrep
     networkmanagerapplet
     yad

@@ -108,11 +108,6 @@ with lib;
           };
           on-click = "sleep 0.1 && pavucontrol";
         };
-        "custom/themeselector" = {
-          tooltip = false;
-          format = "";
-          on-click = "sleep 0.1 && theme-selector";
-        };
         "custom/exit" = {
           tooltip = false;
           format = "";
@@ -319,13 +314,6 @@ with lib;
           margin: 6px 4px;
           padding: 0px 10px;
           border-radius: 15px;
-        }
-        #custom-themeselector {
-          color: #b4befe; /* base0D */
-          background: #1e1e2e; /* base00 */
-          margin: 6px 4px 6px 0px;
-          padding: 0px 10px 0px 5px;
-          border-radius: 0px 15px 15px 0px;
         }
         #custom-startmenu {
           color: #585b70; /* base03 */

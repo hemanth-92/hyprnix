@@ -22,7 +22,6 @@ let
     "x-scheme-handler/ftp" = browser;
     "x-scheme-handler/http" = browser;
     "x-scheme-handler/https" = browser;
-    "x-scheme-handler/unknown" = browser;
     "x-scheme-handler/tg" = [ "org.telegram.desktop.desktop" ];
 
     "audio/*" = video;
@@ -39,6 +38,30 @@ let
     "application/x-7z-compressed" = "org.gnome.FileRoller.desktop";
     "application/x-bzip2-compressed-tar" = "org.gnome.FileRoller.desktop";
     "application/x-tar" = "org.gnome.FileRoller.desktop";
+
+    "image/jpeg" = image;
+    "image/png" = image;
+    "image/gif" = image;
+    "image/webp" = image;
+    "image/tiff" = image;
+    "image/x-tga" = image;
+    "image/vnd-ms.dds" = image;
+    "image/x-dds" = image;
+    "image/bmp" = image;
+    "image/vnd.microsoft.icon" = image;
+    "image/vnd.radiance" = image;
+    "image/x-exr" = image;
+    "image/x-portable-bitmap" = image;
+    "image/x-portable-graymap" = image;
+    "image/x-portable-pixmap" = image;
+    "image/x-portable-anymap" = image;
+    "image/x-qoi" = image;
+    "image/svg+xml" = image;
+    "image/svg+xml-compressed" = image;
+    "image/avif" = image;
+    "image/heic" = image;
+    "image/jxl" = image;
+
   };
 in
 {

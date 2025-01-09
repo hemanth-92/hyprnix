@@ -1,11 +1,9 @@
 { config
 , lib
 , pkgs
+, hostname
 , ...
 }:
-let
-  inherit (import ../../options.nix) hostname;
-in
 {
   programs = {
     fish = {
