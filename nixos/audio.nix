@@ -4,7 +4,6 @@
   # Fixes pipewire bug casuing the camera to always be on
   # draining battery for no reason.
   # https://gitlab.freedesktop.org/pipewire/pipewire/-/issues/2669
-  security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
     pulse.enable = true;
@@ -25,5 +24,10 @@
   };
   services.pulseaudio.enable = false;
 
-  environment.systemPackages = with pkgs; [ pavucontrol ];
+  environment.systemPackages = with pkgs;
+    [
+      pavucontrol
+      alsa-utils
+      pamixer
+    ];
 }

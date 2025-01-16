@@ -1,22 +1,18 @@
-{ config
-, inputs
-, lib
-, pkgs
-, ...
-}: {
+{ pkgs, ... }:
+{
   programs.firefox = {
-    enable = false;
+    enable = true;
 
     policies = {
       BlockAboutConfig = false;
       DefaultDownloadDirectory = "\${home}/Downloads";
     };
 
-    profiles.sdvohet = {
-      name = "sdvohet";
+    profiles.zenith = {
+      name = "zenith";
       isDefault = true;
 
-      extensions = with config.nur.repos.rycee.firefox-addons; [
+      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
         sponsorblock
         nord123
         playback-speed

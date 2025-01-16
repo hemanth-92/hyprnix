@@ -3,14 +3,8 @@
 , ...
 }:
 {
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # List System Programs
   environment.systemPackages = with pkgs; [
-    wget
-    curl
-    git
     cmatrix
     lolcat
     htop
@@ -37,16 +31,12 @@
     material-icons
     brightnessctl
     toybox
-    virt-viewer
     ripgrep
-    networkmanagerapplet
     yad
     playerctl
-    nh
     inputs.nixvim.packages.${pkgs.system}.default
     powertop
     inputs.zen-browser.packages.${pkgs.system}.default
-    alsa-utils
     pnpm
     deno
     speechd
@@ -56,24 +46,19 @@
     qbittorrent
     docker_26
     python313
-    firefox-unwrapped
-    swaynotificationcenter
+    evince # pdf
+    code-cursor
+    libreoffice-qt6-fresh
   ];
 
   programs = {
     dconf.enable = true;
     seahorse.enable = true;
-    hyprland = {
-      enable = true;
-      xwayland.enable = true;
-    };
     fuse.userAllowOther = true;
     mtr.enable = true;
     gnupg.agent = {
       enable = true;
       enableSSHSupport = true;
     };
-    virt-manager.enable = true;
   };
-  virtualisation.libvirtd.enable = true;
 }

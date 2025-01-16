@@ -1,5 +1,15 @@
-{ hostname, ... }:
+{ hostname, pkgs, ... }:
 {
+  environment.systemPackages = with pkgs; [
+    networkmanagerapplet
+    git
+    wget
+    curl
+  ];
+
+  #Allow allowUnfree Packages
+  nixpkgs.config.allowUnfree = true;
+
   # Define your hostname
   networking = {
     hostName = "${hostname}";
@@ -24,5 +34,21 @@
     LC_TELEPHONE = "en_US.UTF-8";
     LC_TIME = "en_US.UTF-8";
   };
+
+   # Configure keymap in X11
+  services.xserver = {
+    enable = true;
+    xkb = {
+      layout = "us";
+      variant = "";
+    };
+    # bye bye xterm
+    excludePackages = [ pkgs.xterm ];
+  };
+
+
+  # zram
+  zramSwap.enable = true;
+
   system.stateVersion = "23.11";
 }

@@ -1,6 +1,7 @@
-_:
+{ pkgs, ... }:
 
 {
+  home.packages = with pkgs; [ swaynotificationcenter ];
   home.file.".config/swaync/config.json".text = ''
     {
       "$schema": "/etc/xdg/swaync/configSchema.json",
@@ -62,7 +63,7 @@ _:
   '';
   home.file.".config/swaync/style.css".text = ''
     * {
-      font-family: JetBrainsMono Nerd Font Mono;
+      font-family: JetBrainsMono Nerd Font;
       font-weight: bold;
     }
     .control-center .notification-row:focus,

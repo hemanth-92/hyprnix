@@ -7,40 +7,10 @@
     gvfs.enable = true;
     tumbler.enable = true;
     gnome.gnome-keyring.enable = true;
-    blueman.enable = true;
     throttled.enable = true; # On battery ur cpu will go down to 400 freq if this is off
     tlp.enable = true;
     libinput.enable = true;
     flatpak.enable = false;
-    xserver = {
-      enable = true;
-      xkb = {
-        layout = "us";
-        variant = "";
-      };
-      # bye bye xterm
-      excludePackages = [ pkgs.xterm ];
-    };
-
-  };
-  xdg.portal = {
-    enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal
-    ];
-    configPackages = [
-      pkgs.xdg-desktop-portal-gtk
-      pkgs.xdg-desktop-portal-hyprland
-      pkgs.xdg-desktop-portal
-    ];
-  };
-
-  zramSwap.enable = true;
-
-  hardware.bluetooth = {
-    enable = true; # enables support for Bluetooth
-    powerOnBoot = true; # powers up the default Bluetooth controller on boot
   };
 
   # Battery saving.

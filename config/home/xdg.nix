@@ -2,8 +2,10 @@
 let
   browser = [ "zen.desktop" ];
   video = [ "mpv.desktop" ];
-  image = [ "imv.desktop" ];
+  image = [ "imv-dir.desktop" ];
   nvim = [ "nvim.desktop" ];
+  archive = [ "org.gnome.FileRoller.desktop" ];
+  pdf = [ "org.gnome.Evince.desktop" ];
 
   # XDG MIME types
 
@@ -15,7 +17,6 @@ let
     "application/x-extension-xhtml" = browser;
     "application/xhtml+xml" = browser;
     "application/json" = browser;
-    "application/pdf" = browser;
     "text/html" = browser;
     "x-scheme-handler/about" = browser;
     "x-scheme-handler/chrome" = [ "chromium-browser.desktop" ];
@@ -33,11 +34,12 @@ let
     "text/csv" = nvim;
 
     "inode/directory" = "nemo.desktop";
-    "application/zip" = "org.gnome.FileRoller.desktop";
-    "application/vnd.rar" = "org.gnome.FileRoller.desktop";
-    "application/x-7z-compressed" = "org.gnome.FileRoller.desktop";
-    "application/x-bzip2-compressed-tar" = "org.gnome.FileRoller.desktop";
-    "application/x-tar" = "org.gnome.FileRoller.desktop";
+
+    "application/zip" = archive;
+    "application/vnd.rar" = archive;
+    "application/x-7z-compressed" = archive;
+    "application/x-bzip2-compressed-tar" = archive;
+    "application/x-tar" = archive;
 
     "image/jpeg" = image;
     "image/png" = image;
@@ -62,6 +64,7 @@ let
     "image/heic" = image;
     "image/jxl" = image;
 
+    "application/pdf" = pdf;
   };
 in
 {

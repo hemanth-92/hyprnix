@@ -5,7 +5,7 @@
     p7zip-rar # support for encrypted archives
     webp-pixbuf-loader # for webp thumbnails
     xdg-terminal-exec
-    nemo-fileroller
+    file-roller
   ];
 
   dconf.settings = {

@@ -1,46 +1,41 @@
 { pkgs, ... }:
 
 pkgs.writeShellScriptBin "wallsetter" ''
-  # Timeout between wallpaper changes (in seconds)
-  TIMEOUT=720
 
-  # Kill any previously running instances of wallsetter
+  TIMEOUT=720
+  WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
+
   for pid in $(pidof -o %PPID -x wallsetter); do
     kill $pid
   done
 
-  # Check if the wallpaper directory exists
-  WALLPAPER_DIR="$HOME/Pictures/Wallpapers"
-  if ! [ -d "$WALLPAPER_DIR" ]; then
-    notify-send -t 5000 "Wallpaper directory '$WALLPAPER_DIR' does not exist." && exit 1
+  # Initialize swww if not running
+  if ! pgrep -x swww-daemon >/dev/null; then
+    ${pkgs.swww}/bin/swww init
   fi
 
-  # Ensure the wallpaper directory has more than one image
-  if [ $(find "$WALLPAPER_DIR" -type f | wc -l) -lt 2 ]; then
-    notify-send -t 9000 "The wallpaper folder is expected to have more than 1 image. Exiting Wallsetter." && exit 1
+  if ! [ -d "$WALLPAPER_DIR" ]; then 
+    notify-send -t 5000 "Wallpaper directory '$WALLPAPER_DIR' does not exist" 
+    exit 1
+  fi
+
+  # Count actual files, excluding .git and hidden files
+  FILE_COUNT=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f -not -path '*/\.*' | wc -l)
+  if [ "$FILE_COUNT" -lt 2 ]; then
+    notify-send -t 9000 "The wallpaper folder must have at least 2 images. Found: $FILE_COUNT" 
+    exit 1
   fi
 
   PREVIOUS=""
-
-  # Main loop to set wallpapers
   while true; do
-    # Select a random wallpaper, ensuring it's not the same as the previous one
     while true; do
-      WALLPAPER=$(find "$WALLPAPER_DIR" -type f | shuf -n 1)
+      WALLPAPER=$(find "$WALLPAPER_DIR" -maxdepth 1 -type f -not -path '*/\.*' | shuf -n 1)
       if [ "$WALLPAPER" != "$PREVIOUS" ]; then
         break
       fi
     done
-
-    PREVIOUS=$WALLPAPER
-
-    # Use `swww` to set the wallpaper with a random transition
-    ${pkgs.swww}/bin/swww img "$WALLPAPER" \
-      --transition-type random \
-      --transition-step 1 \
-      --transition-fps 60
-
-    # Wait before changing the wallpaper again
+    PREVIOUS="$WALLPAPER"
+    ${pkgs.swww}/bin/swww img "$WALLPAPER" --transition-type random --transition-step 1 --transition-fps 60
     sleep $TIMEOUT
   done
 ''

@@ -9,12 +9,6 @@
       #  exec Hyprland
       #fi
     '';
-    initExtra = ''
-      neofetch
-      if [ -f $HOME/.bashrc-personal ]; then
-        source $HOME/.bashrc-personal
-      fi
-    '';
     shellAliases = {
       sv = "sudo nvim";
       rebuild = "nh os switch --hostname ${hostname} ~/hyprnix";

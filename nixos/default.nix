@@ -13,6 +13,11 @@
     ./nix.nix
     ./users.nix
     ./configuration.nix
+    ./xfce.nix
+    ./nh.nix
+    ./bluetooth.nix
+    ./hyprland.nix
+    ./virtualization.nix
 
     # import hardware
     ../hardware.nix
