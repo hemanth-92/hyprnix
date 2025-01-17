@@ -36,13 +36,6 @@
     ./ghostty.nix
     ./tmux.nix
     ./nemo.nix
+    ./fzf.nix
   ];
-  programs = {
-    fzf = {
-      enable = true;
-      enableBashIntegration = true;
-      enableFishIntegration = true;
-      enableZshIntegration = true;
-    };
-  };
 }

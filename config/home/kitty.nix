@@ -15,8 +15,6 @@
       window_padding_width = 4;
       confirm_os_window_close = 0;
       background_opacity = "0.85";
-
-
       ## Tabs
       tab_title_template = "{index}";
       active_tab_font_style = "normal";

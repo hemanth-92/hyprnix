@@ -2,7 +2,7 @@
 let
   browser = [ "zen.desktop" ];
   video = [ "mpv.desktop" ];
-  image = [ "imv-dir.desktop" ];
+  image = [ "imv.desktop" ];
   nvim = [ "nvim.desktop" ];
   archive = [ "org.gnome.FileRoller.desktop" ];
   pdf = [ "org.gnome.Evince.desktop" ];

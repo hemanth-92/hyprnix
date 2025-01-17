@@ -40,12 +40,4 @@
       flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
     '';
   };
-
-  security.rtkit.enable = true;
-
-  security.pam.services.hyprlock = {
-    text = ''
-      auth include login
-    '';
-  };
 }

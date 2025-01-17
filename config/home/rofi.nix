@@ -1,7 +1,4 @@
 { pkgs, ... }:
-let
-  fontName = "MonoLisa Nerd Font";
-in
 {
   home.packages = with pkgs; [ rofi-wayland ];
 
@@ -10,7 +7,8 @@ in
       modi: "run,drun,window";
       icon-theme: "Oranchelo";
       show-icons: true;
-      terminal: "kitty";
+      terminal: "ghostty";
+      font: "JetBrainsMono NF 16";
       drun-display-format: "{icon} {name}";
       location: 0;
       disable-history: false;
@@ -22,10 +20,10 @@ in
       sidebar-mode: true;
     }
 
-    @theme "catppuccin-mocha"
+    @theme "theme"
   '';
 
-  home.file.".local/share/rofi/themes/catppuccin-mocha.rasi".text = ''
+  xdg.configFile."rofi/theme.rasi".text = ''
     * {
         bg-col:  #1e1e2e;
         bg-col-light: #1e1e2e;
@@ -35,8 +33,6 @@ in
         fg-col: #cdd6f4;
         fg-col2: #f38ba8;
         grey: #6c7086;
-
-        font: "${fontName} 16";
     }
 
     element-text, element-icon , mode-switcher {

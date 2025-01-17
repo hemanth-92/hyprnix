@@ -3,7 +3,7 @@
   imports = [
     ./boot.nix
     ./intel-drivers.nix
-    ./packages.nix
+    ./programs.nix
     ./polkit.nix
     ./printer.nix
     ./services.nix
@@ -18,11 +18,9 @@
     ./bluetooth.nix
     ./hyprland.nix
     ./virtualization.nix
+    ./security.nix
 
     # import hardware
     ../hardware.nix
   ];
-  environment.variables = {
-    POLKIT_BIN = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-  };
 }

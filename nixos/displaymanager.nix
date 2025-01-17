@@ -1,5 +1,4 @@
 { pkgs, ... }:
-
 {
   services = {
     displayManager.sddm = {
