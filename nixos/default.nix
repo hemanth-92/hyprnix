@@ -17,7 +17,7 @@
     ./nh.nix
     ./bluetooth.nix
     ./hyprland.nix
-    ./virtualization.nix
+    #./virtualization.nix
     ./security.nix
 
     # import hardware

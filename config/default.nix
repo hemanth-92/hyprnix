@@ -4,6 +4,8 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ./home
+    ../scripts/default.nix
+    ./hyprland/default.nix
   ];
 
   # Home Manager Settings

@@ -24,9 +24,14 @@
     # DELETEME: Zen
     zen-browser.url = "github:0xc000022070/zen-browser-flake";
     distro-grub-themes.url = "github:AdisonCavani/distro-grub-themes";
+
+    hyprmag.url = "github:SIMULATAN/hyprmag";
+
+    hypr-contrib.url = "github:hyprwm/contrib";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs =
+    inputs@{ nixpkgs, home-manager, ... }:
     let
       system = "x86_64-linux";
       username = "zenith";

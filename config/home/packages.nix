@@ -43,7 +43,6 @@
     ttyper # cli typing test
     unzip
     unrar
-    wl-clipboard # clipboard utils for wayland (wl-copy, wl-paste)
     yt-dlp-light
     xdg-utils
     inxi # show system information
@@ -64,9 +63,6 @@
     evince # pdf
     noto-fonts-color-emoji
 
-    swww
-    grim
-    slurp
     tree
     swayidle
     lm_sensors
@@ -102,17 +98,6 @@
 
     # zen-browser
     inputs.zen-browser.packages.${pkgs.system}.default
-
-    # Import Scripts
-    (import ../../scripts/emopicker9000.nix { inherit pkgs; })
-    (import ../../scripts/task-waybar.nix { inherit pkgs; })
-    (import ../../scripts/squirtle.nix { inherit pkgs; })
-    (import ../../scripts/wallsetter.nix {
-      inherit pkgs;
-      inherit username;
-    })
-    (import ../../scripts/rofi-launcher.nix { inherit pkgs; })
-    (import ../../scripts/screenshootin.nix { inherit pkgs; })
   ];
   programs.gh.enable = true;
 }

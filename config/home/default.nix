@@ -3,7 +3,6 @@
     # Enable &/ Configure Programs
     ./bash.nix
     ./gtk-qt.nix
-    ./hyprland.nix
     ./kitty.nix
     ./packages.nix
     ./rofi.nix
@@ -24,7 +23,6 @@
     ./fish.nix
     ./zathura.nix
     ./firefox.nix
-    ./hyprlock.nix
     ./btop.nix
     ./cava.nix
     ./bat.nix
