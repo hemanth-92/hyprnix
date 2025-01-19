@@ -61,7 +61,8 @@
     telegram-desktop
     qbittorrent
     evince # pdf
-    noto-fonts-color-emoji
+    audacious
+    zenity
 
     tree
     swayidle

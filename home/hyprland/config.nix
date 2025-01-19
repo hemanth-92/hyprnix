@@ -16,7 +16,7 @@ _: {
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
 
-        "hyprlock"
+        "[workspace 2 silent] zen"
       ];
 
       input = {
@@ -138,7 +138,7 @@ _: {
 
         # keybindings
         "$mainMod, Return, exec, ghostty"
-        "$mainMod, B, exec, zen"
+        "$mainMod, W, exec, zen"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 0"
         "$mainMod SHIFT, F, fullscreen, 1"
@@ -153,14 +153,15 @@ _: {
         "$mainMod, E, exec, nemo"
         "$mainMod SHIFT, B, exec, toggle_waybar"
         "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod, W,exec, wallpaper-picker"
+        #"$mainMod, W,exec, wallpaper-picker"
         "$mainMod SHIFT, W,exec, hyprctl dispatch exec '[float; size 925 615] waypaper'"
+        "ALT, S, exec, hyprctl dispatch exec pavucontrol"
         "$mainMod, N, exec, swaync-client -t -sw"
-        "$mainMod, equal, exec, woomer"
         # "$mainMod SHIFT, W, exec, vm-start"
 
         # screenshot
-        "$mainMod ,S, exec, screenshot --swappy"
+        "$mainMod, S, exec, screenshot --copy"
+        "$mainMod SHIFT, S, exec, screenshot --swappy"
 
         # switch focus
         "$mainMod, left, movefocus, l"
@@ -226,11 +227,15 @@ _: {
         "$mainMod ALT, l, moveactive, 80 0"
 
         # media and volume controls
-        # ",XF86AudioMute,exec, pamixer -t"
         ",XF86AudioPlay,exec, playerctl play-pause"
         ",XF86AudioNext,exec, playerctl next"
         ",XF86AudioPrev,exec, playerctl previous"
         ",XF86AudioStop,exec, playerctl stop"
+        ",XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"
+        ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
 
         "$mainMod, mouse_down, workspace, e-1"
         "$mainMod, mouse_up, workspace, e+1"
@@ -250,11 +255,8 @@ _: {
         "float,Viewnior"
         "float,imv"
         "float,mpv"
-        "tile,Aseprite"
-        "float,audacious"
         "pin,rofi"
         "pin,waypaper"
-        "tile, neovide"
         "idleinhibit focus,mpv"
         "float,udiskie"
         "float,title:^(Transmission)$"
@@ -278,7 +280,6 @@ _: {
         "opacity 1.0 override 1.0 override, class:(Unity)"
         "opacity 1.0 override 1.0 override, class:(zen)"
         "opacity 1.0 override 1.0 override, class:(evince)"
-        "workspace 2, class:^(zen)$"
         "idleinhibit focus, class:^(mpv)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "float,class:^(org.gnome.Calculator)$"
