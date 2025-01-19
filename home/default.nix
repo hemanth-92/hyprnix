@@ -3,7 +3,8 @@
   # Import Program Configurations
   imports = [
     inputs.nix-colors.homeManagerModules.default
-    ./home
+    ./gui
+    ./shell
     ../scripts/default.nix
     ./hyprland/default.nix
   ];
