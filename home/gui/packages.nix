@@ -1,6 +1,5 @@
 {
   pkgs,
-  username,
   inputs,
   ...
 }:
@@ -67,6 +66,7 @@
     tree
     swayidle
     lm_sensors
+    nwg-look
 
     ## CLI
     cbonsai # terminal screensaver
@@ -86,7 +86,7 @@
     gnumake
 
     # js
-    nodejs_latest
+    nodejs_22
     pnpm
     deno
 

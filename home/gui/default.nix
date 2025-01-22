@@ -18,5 +18,6 @@
     ./obs-studio.nix
     ./xdg.nix
     ./waypaper.nix
+    ./swayosd.nix
   ];
 }

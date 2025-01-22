@@ -15,7 +15,7 @@ _: {
         "swaync &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
-
+        "swayosd-server"
         "[workspace 2 silent] zen"
       ];
 
@@ -226,19 +226,11 @@ _: {
         "$mainMod ALT, k, moveactive, 0 -80"
         "$mainMod ALT, l, moveactive, 80 0"
 
-        # media and volume controls
-        ",XF86AudioPlay,exec, playerctl play-pause"
-        ",XF86AudioNext,exec, playerctl next"
-        ",XF86AudioPrev,exec, playerctl previous"
-        ",XF86AudioStop,exec, playerctl stop"
-        ",XF86AudioRaiseVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
-        ",XF86AudioLowerVolume,exec,wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
-        ",XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
-        ",XF86MonBrightnessDown,exec,brightnessctl set 5%-"
-        ",XF86MonBrightnessUp,exec,brightnessctl set +5%"
-
         "$mainMod, mouse_down, workspace, e-1"
         "$mainMod, mouse_up, workspace, e+1"
+
+        #Media
+        ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
 
         # clipboard manager
         "$mainMod, V, exec, cliphist list | rofi -dmenu -theme-str 'window {width: 50%;} listview {columns: 1;}' | cliphist decode | wl-copy"
@@ -248,6 +240,16 @@ _: {
       bindm = [
         "$mainMod, mouse:272, movewindow"
         "$mainMod, mouse:273, resizewindow"
+      ];
+
+      # binds active in lockscreen
+      bindl = [
+        ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise 5%+"
+        ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower 5%-"
+      ];
+      bindle = [
+        ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume +5 --max-volume=200"
+        ",XF86AudioLowerVolume, exec, swayosd-client --output-volume -5"
       ];
 
       # windowrule

@@ -4,16 +4,13 @@
   programs.bash = {
     enable = true;
     enableCompletion = true;
-    profileExtra = ''
-      #if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-      #  exec Hyprland
-      #fi
-    '';
     shellAliases = {
       sv = "sudo nvim";
-      rebuild = "nh os switch --hostname ${hostname} ~/hyprnix";
-      update = "nh os switch --hostname ${hostname}  --update ~/hyprnix";
-      gcCleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+      rebuild = "nh os switch";
+      update = "nh os switch -H ${hostname} --update -- --cores 6";
+      gcclean = "nh clean all --keep 5";
+      nix-search = "nh search";
+      nix-test = "nh os test";
       v = "nvim";
       ls = "eza --icons";
       ll = "eza -lh --icons --grid --group-directories-first";

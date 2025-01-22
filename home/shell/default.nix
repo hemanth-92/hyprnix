@@ -4,7 +4,6 @@
     ./eza.nix
     ./fzf.nix
     ./git.nix
-    ./zsh.nix
     ./bash.nix
     ./cava.nix
     ./btop.nix
@@ -16,7 +15,6 @@
     ./kitty.nix
     ./direnv.nix
     ./zoxide.nix
-    ./zsh.nix
     ./ghostty.nix
     ./starship.nix
   ];
