@@ -145,8 +145,8 @@ _: {
         "$mainMod, Space, exec, toggle_float"
         "$mainMod, A, exec, rofi -show drun || pkill rofi"
         "$mainMod, D, exec, vesktop"
-        "$mainMod, Escape, exec, hyprlock"
-        "$mainMod SHIFT, Escape, exec, power-menu"
+        "$mainMod, L, exec, hyprlock"
+        "$mainMod, Escape, exec, power-menu"
         "$mainMod, P, pseudo,"
         "$mainMod, X, togglesplit,"
         "$mainMod, T, exec, toggle_oppacity"
@@ -242,7 +242,7 @@ _: {
         "$mainMod, mouse:273, resizewindow"
       ];
 
-      # binds active in lockscreen
+      # Media for sound and brightness
       bindl = [
         ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise 5%+"
         ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower 5%-"

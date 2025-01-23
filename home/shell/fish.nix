@@ -1,8 +1,9 @@
-{ config
-, lib
-, pkgs
-, hostname
-, ...
+{
+  config,
+  lib,
+  pkgs,
+  hostname,
+  ...
 }:
 {
   programs = {
@@ -18,9 +19,11 @@
       shellAliases = {
         ehistory = "nvim ${config.xdg.dataHome}/fish/fish_history";
         sv = "sudo nvim";
-        rebuild = "nh os switch --hostname ${hostname} ~/hyprnix";
-        update = "nh os switch --hostname ${hostname}  --update ~/hyprnix";
-        gcCleanup = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
+        rebuild = "nh os switch";
+        update = "nh os switch -H ${hostname} --update -- --cores 6";
+        gcclean = "nh clean all --keep 5";
+        nix-search = "nh search";
+        nix-test = "nh os test";
         v = "nvim";
         ls = "eza --icons";
         ll = "eza -lh --icons --grid --group-directories-first";

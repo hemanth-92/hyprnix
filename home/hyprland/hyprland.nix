@@ -12,7 +12,6 @@
     cliphist
     wf-recorder
     glib
-    wayland
   ];
   systemd.user.targets.hyprland-session.Unit.Wants = [
     "xdg-desktop-autostart.target"

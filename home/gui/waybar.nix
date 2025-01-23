@@ -327,7 +327,7 @@ with lib;
           background: #1e1e2e; /* base00 */
           margin: 6px 0px;
           padding: 0px 14px;
-          border-radius: 0px;
+          border-radius: 0px 15px 15px 0px;
         }
         #custom-exit {
           color: #cba6f7; /* base0E */

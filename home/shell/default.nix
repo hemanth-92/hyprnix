@@ -17,5 +17,6 @@
     ./zoxide.nix
     ./ghostty.nix
     ./starship.nix
+    ./zsh.nix
   ];
 }
