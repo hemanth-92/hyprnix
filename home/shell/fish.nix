@@ -2,7 +2,6 @@
   config,
   lib,
   pkgs,
-  hostname,
   ...
 }:
 {
@@ -20,7 +19,7 @@
         ehistory = "nvim ${config.xdg.dataHome}/fish/fish_history";
         sv = "sudo nvim";
         rebuild = "nh os switch";
-        update = "nh os switch -H ${hostname} --update -- --cores 6";
+        update = "nh os switch --update";
         gcclean = "nh clean all --keep 5";
         nix-search = "nh search";
         nix-test = "nh os test";
@@ -62,5 +61,5 @@
   programs.man.generateCaches = false;
 
   # set as default interactive shell
-  programs.kitty.settings.shell = lib.mkForce (lib.getExe pkgs.fish);
+  programs.ghostty.settings.command = lib.mkForce (lib.getExe pkgs.fish);
 }

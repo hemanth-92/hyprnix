@@ -1,6 +1,7 @@
-{ pkgs
-, config
-, ...
+{
+  pkgs,
+  config,
+  ...
 }:
 {
   boot = {
@@ -15,6 +16,7 @@
     extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
 
     loader = {
+      timeout = null;
       efi = {
         canTouchEfiVariables = true;
         efiSysMountPoint = "/boot";

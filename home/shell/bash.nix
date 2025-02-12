@@ -1,13 +1,17 @@
-{ hostname, ... }:
-{
+_: {
   # Configure Bash
   programs.bash = {
     enable = true;
     enableCompletion = true;
+    profileExtra = ''
+      if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+        exec Hyprland
+      fi
+    '';
     shellAliases = {
       sv = "sudo nvim";
       rebuild = "nh os switch";
-      update = "nh os switch -H ${hostname} --update -- --cores 6";
+      update = "nh os switch --update";
       gcclean = "nh clean all --keep 5";
       nix-search = "nh search";
       nix-test = "nh os test";

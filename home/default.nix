@@ -1,4 +1,8 @@
-{ inputs, username, ... }:
+{
+  inputs,
+  username,
+  ...
+}:
 {
   # Import Program Configurations
   imports = [

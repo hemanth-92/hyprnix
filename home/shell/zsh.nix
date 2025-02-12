@@ -1,5 +1,4 @@
-{ hostname, ... }:
-{
+_: {
   programs.zsh = {
     enable = false;
     enableCompletion = true;
@@ -42,7 +41,7 @@
     shellAliases = {
       sv = "sudo nvim";
       rebuild = "nh os switch";
-      update = "nh os switch -H ${hostname} --update -- --cores 6";
+      update = "nh os switch --update";
       gcclean = "nh clean all --keep 5";
       nix-search = "nh search";
       nix-test = "nh os test";

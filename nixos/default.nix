@@ -1,5 +1,4 @@
-{ pkgs, ... }:
-{
+_: {
   imports = [
     ./boot.nix
     ./intel-drivers.nix

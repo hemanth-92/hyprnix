@@ -99,6 +99,9 @@
 
     # zen-browser
     inputs.zen-browser.packages.${pkgs.system}.default
+
+    #minecraft
+    prismlauncher
   ];
   programs.gh.enable = true;
 }

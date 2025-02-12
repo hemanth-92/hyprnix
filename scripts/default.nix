@@ -34,6 +34,8 @@ let
     builtins.readFile ../scripts/rofi-power-menu.sh
   );
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ../scripts/power-menu.sh);
+
+  create-env = pkgs.writeScriptBin "create-env" (builtins.readFile ../scripts/dev-template.sh);
 in
 {
   home.packages = with pkgs; [
@@ -63,5 +65,7 @@ in
 
     rofi-power-menu
     power-menu
+
+    create-env
   ];
 }
