@@ -12,7 +12,7 @@
       name = "zenith";
       isDefault = true;
 
-      extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+      extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         sponsorblock
         nord123
         playback-speed
