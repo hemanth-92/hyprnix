@@ -35,7 +35,7 @@
     playerctl # controller for media players
     poweralertd
     ripgrep # grep replacement
-    treefmt2 # project formatter
+    treefmt # project formatter
     tldr
     todo # cli todo list
     toipe # typing test in the terminal
@@ -62,6 +62,8 @@
     evince # pdf
     audacious
     zenity
+
+    thunderbird
 
     tree
     swayidle

@@ -16,7 +16,7 @@ _: {
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
         "swayosd-server"
-        "[workspace 2 silent] zen"
+        "[workspace 2 silent] firefox"
       ];
 
       input = {
@@ -137,10 +137,10 @@ _: {
 
         # keybindings
         "$mainMod, Return, exec, ghostty"
-        "$mainMod, W, exec, zen"
+        "$mainMod, W, exec, firefox"
         "$mainMod, Q, killactive,"
-        "$mainMod, F, fullscreen, 0"
-        "$mainMod SHIFT, F, fullscreen, 1"
+        "$mainMod, F, fullscreen, 1"
+        "$mainMod SHIFT, F, fullscreen, 0"
         "$mainMod, Space, exec, toggle_float"
         "$mainMod, A, exec, rofi -show drun || pkill rofi"
         "$mainMod, D, exec, vesktop"
