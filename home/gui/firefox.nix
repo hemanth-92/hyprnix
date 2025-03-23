@@ -25,6 +25,7 @@
         adblocker-ultimate
       ];
       settings = {
+        "extensions.autoDisableScopes" = 0; # enable extensions immediately upon new install
         "app.normandy.api_url" = "";
         "app.normandy.enabled" = false;
         "app.normandy.first_run" = false;

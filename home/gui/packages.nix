@@ -100,7 +100,7 @@
     jdk23
 
     # zen-browser
-    inputs.zen-browser.packages.${pkgs.system}.default
+    #inputs.zen-browser.packages.${pkgs.system}.default
 
     #minecraft
     prismlauncher

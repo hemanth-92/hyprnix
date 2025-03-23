@@ -136,7 +136,7 @@ _: {
         "$mainMod, K,exec, show-keybinds"
 
         # keybindings
-        "$mainMod, Return, exec, ghostty"
+        "ALT, Return, exec, ghostty"
         "$mainMod, W, exec, firefox"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 1"
@@ -253,16 +253,16 @@ _: {
 
       # windowrule
       windowrule = [
-        "float,Viewnior"
-        "float,imv"
-        "pin,rofi"
-        "pin,waypaper"
-        "idleinhibit focus,mpv"
-        "float,udiskie"
+        "float,class:^(imv)$"
+        "float,class:^(mpv)$"
+        "pin,class:^(rofi)$"
+        "pin,class:^(waypaper)$"
         "float,title:^(Transmission)$"
         "float,title:^(Volume Control)$"
         "size 700 450,title:^(Volume Control)$"
         "move 40 55%,title:^(Volume Control)$"
+        "float,title:^(Firefox — Sharing Indicator)$"
+        "move 0 0,title:^(Firefox — Sharing Indicator)$"
         "fullscreen, ^(wlogout)$"
         "animation fade,^(wlogout)$"
       ];
