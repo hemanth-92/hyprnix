@@ -261,14 +261,10 @@ _: {
         "float,title:^(Volume Control)$"
         "size 700 450,title:^(Volume Control)$"
         "move 40 55%,title:^(Volume Control)$"
-        "float,title:^(Firefox — Sharing Indicator)$"
-        "move 0 0,title:^(Firefox — Sharing Indicator)$"
-        "fullscreen, ^(wlogout)$"
-        "animation fade,^(wlogout)$"
-      ];
+        "float,title:^(firefox — Sharing Indicator)$"
+        "move 0 0,title:^(firefox — Sharing Indicator)$"
+        "idleinhibit fullscreen, class:^(firefox)$"
 
-      # windowrulev2
-      windowrulev2 = [
         "float, title:^(Picture-in-Picture)$"
         "opacity 1.0 override 1.0 override, title:^(Picture-in-Picture)$"
         "pin, title:^(Picture-in-Picture)$"
@@ -307,6 +303,11 @@ _: {
         "noshadow,class:^()$,title:^()$"
         "noblur,class:^()$,title:^()$"
       ];
+
+      # windowrulev2
+      #   windowrulev2 = [
+      #
+      #   ];
     };
 
     extraConfig = "

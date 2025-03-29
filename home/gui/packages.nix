@@ -78,7 +78,7 @@
 
     # editors
     vscode
-    zed-editor
+    #zed-editor
     inputs.nixvim.packages.${pkgs.system}.default
     code-cursor
 
