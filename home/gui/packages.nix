@@ -75,12 +75,13 @@
     cmatrix
     pipes # terminal screensaver
     tty-clock # cli clock
+    tldr
 
     # editors
-    vscode
-    #zed-editor
+    zed-editor
     inputs.nixvim.packages.${pkgs.system}.default
     code-cursor
+    vscode
 
     # C / C++
     gcc
@@ -95,12 +96,14 @@
     # Python
     python3
     python312Packages.ipython
+    uv
 
     # java
     jdk23
 
     # zen-browser
-    #inputs.zen-browser.packages.${pkgs.system}.default
+    inputs.zen-browser.packages.${pkgs.system}.default
+    #vivaldi
 
     #minecraft
     prismlauncher

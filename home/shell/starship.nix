@@ -1,4 +1,7 @@
 { lib, ... }:
+let
+  inherit (lib) concatStrings mkAfter;
+in
 {
   programs = {
     starship = {
@@ -11,11 +14,11 @@
           dir_bg = "blue";
           accent_style = "bg:${dir_bg} fg:black";
           # divine orb style :)
-          important_style = "bg:white fg:bold #ffA500";
+          important_style = "bg:white fg:bold #ff0000";
         in
         {
           add_newline = false;
-          format = lib.concatStrings [
+          format = concatStrings [
             # begin left format
             "$username"
             "$hostname"
@@ -63,24 +66,20 @@
             style = "bright-black";
           };
           git_status = {
-            format = "[\\($all_status$ahead_behind\\)]($style) ";
-            style = "bold green";
-            conflicted = "🏳";
-            up_to_date = " ";
-            untracked = " ";
-            ahead = "⇡\${count}";
-            diverged = "⇕⇡\${ahead_count}⇣\${behind_count}";
-            behind = "⇣\${count}";
-            stashed = "󰏗 ";
-            modified = " ";
-            staged = "[++\\($count\\)](green)";
-            renamed = "󰖷 ";
-            deleted = " ";
+            conflicted = "";
+            deleted = "";
+            format = "[[(*$conflicted$untracked$modified$staged$renamed$deleted)](218) ($ahead_behind$stashed)]($style) ";
+            modified = "";
+            renamed = "";
+            staged = "";
+            stashed = "≡";
+            style = "cyan";
+            untracked = "";
           };
           nix_shell = {
             format = "[$symbol]($style)";
             symbol = "";
-            style = "important_style";
+            style = "bright-magenta";
           };
           fill = {
             symbol = " ";
@@ -91,7 +90,6 @@
           time = {
             format = "[ $time ]($style)";
             disabled = false;
-            use_12hr = false;
             time_format = "%I:%M";
             style = accent_style;
           };
@@ -101,23 +99,19 @@
     fish = {
       # fix starship prompt to only have newlines after the first command
       # https://github.com/starship/starship/issues/560#issuecomment-1465630645
-      shellInit = ''
-        function prompt_newline --on-event fish_postexec
-          echo ""
-        end
-      '';
-      # add transient prompt for fish via transient.fish plugin in fish.nix
-      # the starship transience module doesn't handle empty commands properly
-      # https://github.com/starship/starship/issues/4929
-      interactiveShellInit = lib.mkAfter ''
-        function starship_transient_prompt_func
-          starship module character
-        end
-      '';
+      shellInit = # fish
+        ''
+          function prompt_newline --on-event fish_postexec
+            echo ""
+          end
+        '';
+      interactiveShellInit =
+        # fish
+        mkAfter ''
+          function starship_transient_prompt_func
+            starship module character
+          end
+        '';
     };
-
-    # some sort of race condition with kitty and starship
-    # https://github.com/kovidgoyal/kitty/issues/4476#issuecomment-1013617251
-    kitty.shellIntegration.enableBashIntegration = false;
   };
 }
