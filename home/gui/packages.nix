@@ -50,6 +50,7 @@
     # Show Disk Usage
     dua
     duf
+    dysk
 
     ## GUI Apps
     libreoffice
@@ -62,8 +63,6 @@
     evince # pdf
     audacious
     zenity
-
-    thunderbird
 
     tree
     swayidle
@@ -101,8 +100,11 @@
     # java
     jdk23
 
+    # rust
+    rustup
+
     # zen-browser
-    inputs.zen-browser.packages.${pkgs.system}.default
+    # inputs.zen-browser.packages.${pkgs.system}.default
     #vivaldi
 
     #minecraft

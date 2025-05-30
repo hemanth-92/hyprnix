@@ -13,21 +13,20 @@
     };
     wireplumber = {
       enable = true;
-      extraConfig = {
-        "10-disable-camera" = {
-          "wireplumber.profiles" = {
-            main."monitor.libcamera" = "disabled";
-          };
-        };
-      };
+      # extraConfig = {
+      #   "10-disable-camera" = {
+      #     "wireplumber.profiles" = {
+      #       main."monitor.libcamera" = "disabled";
+      #     };
+      #   };
+      # };
     };
   };
   services.pulseaudio.enable = false;
 
-  environment.systemPackages = with pkgs;
-    [
-      pavucontrol
-      alsa-utils
-      pamixer
-    ];
+  environment.systemPackages = with pkgs; [
+    pavucontrol
+    alsa-utils
+    pamixer
+  ];
 }

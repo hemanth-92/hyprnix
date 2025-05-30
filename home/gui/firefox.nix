@@ -30,7 +30,7 @@
         "app.normandy.enabled" = false;
         "app.normandy.first_run" = false;
         "app.shield.optoutstudies.enabled" = false;
-        "beacon.enabled" = false;
+        "beacon.enabled" = true;
         "browser.aboutConfig.showWarning" = false;
         "browser.discovery.enabled" = false;
         "browser.display.use_system_colors" = true;
