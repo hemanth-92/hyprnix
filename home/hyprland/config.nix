@@ -16,7 +16,7 @@ _: {
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
         "swww-daemon &"
         "swayosd-server"
-        "[workspace 2 silent] firefox"
+        "[workspace 2 silent] brave"
       ];
 
       input = {
@@ -136,8 +136,8 @@ _: {
         "$mainMod, K,exec, show-keybinds"
 
         # keybindings
-        "ALT, Return, exec, ghostty"
-        "$mainMod, W, exec, firefox"
+        "ALT, Return, exec, kitty"
+        "$mainMod, W, exec, brave"
         "$mainMod, Q, killactive,"
         "$mainMod, F, fullscreen, 1"
         "$mainMod SHIFT, F, fullscreen, 0"

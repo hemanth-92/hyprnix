@@ -20,9 +20,7 @@
         return-youtube-dislikes
         ublock-origin
         user-agent-string-switcher
-        screenshot-capture-annotate
         surfingkeys
-        adblocker-ultimate
       ];
       settings = {
         "extensions.autoDisableScopes" = 0; # enable extensions immediately upon new install
@@ -41,6 +39,7 @@
         "privacy.globalprivacycontrol.was_ever_enabled" = true;
         "security.ask_for_password" = 1;
         "security.password_lifetime" = 0;
+        "browser.urlbar.scotchBonnet.enableOverride" = true;
       };
     };
   };

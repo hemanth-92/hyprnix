@@ -103,12 +103,14 @@
     # rust
     rustup
 
+    aws-nuke
+
     # zen-browser
     # inputs.zen-browser.packages.${pkgs.system}.default
-    #vivaldi
+    #google-chrome
 
     #minecraft
-    prismlauncher
+    #prismlauncher
   ];
   programs.gh.enable = true;
 }

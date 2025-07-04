@@ -7,7 +7,7 @@
 {
   programs = {
     fish = {
-      enable = true;
+      enable = false;
       functions = {
         # use vi key bindings with hybrid emacs keybindings
         fish_user_key_bindings = ''

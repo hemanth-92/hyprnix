@@ -17,7 +17,7 @@
         "input"
         "audio"
       ];
-      shell = pkgs.fish;
+      shell = pkgs.zsh;
       ignoreShellProgramCheck = true;
       packages = with pkgs; [ ];
     };
